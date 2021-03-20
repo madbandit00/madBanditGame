@@ -17,7 +17,6 @@ class CharacterSelect extends Phaser.Scene {
 
       let text = this.add.text(20, 20, "Select a character").setScale(2, 2);
 
-      text.text.fontSize + 4;
       //this.dealText = this.add.text(75, 350, ['DEAL CARDS']).setFontSize(18).setFontFamily('Trebuchet MS').setColor('#00ffff').setInteractive();
       console.log("charselectworking");
 
@@ -81,7 +80,7 @@ class CharacterSelect extends Phaser.Scene {
 
       var r4 = this.add.rectangle(1200, 200, 148, 148, 0x6666ff);
 
-      let confirmText = this.add.text(1165, 280, "Confirm").setInteractive();
+      let confirmText = this.add.text(1165, 280, "Confirm").setScale(2, 2).setInteractive();
 
       confirmText.on('pointerdown', function (pointer) {
 
