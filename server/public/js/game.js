@@ -429,8 +429,8 @@ var smkSonata = new SMKSonata();
 var config = {
   type: Phaser.AUTO,
   parent: 'phaser-example',
-  width: 1280,
-  height: 780 ,
+  width: 640,
+  height: 480 ,
   scale: {
         mode: Phaser.Scale.FIT,
         autoCenter: Phaser.Scale.CENTER_BOTH
