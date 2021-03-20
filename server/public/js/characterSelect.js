@@ -15,7 +15,9 @@ class CharacterSelect extends Phaser.Scene {
       var self = this;
       this.socket = io();
 
-      this.add.text(20, 20, "Select a character");
+      let text = this.add.text(20, 20, "Select a character");
+
+      text.text.fontSize + 4;
       //this.dealText = this.add.text(75, 350, ['DEAL CARDS']).setFontSize(18).setFontFamily('Trebuchet MS').setColor('#00ffff').setInteractive();
       console.log("charselectworking");
 
