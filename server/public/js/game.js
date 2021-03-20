@@ -431,7 +431,10 @@ var config = {
   parent: 'phaser-example',
   width: 1280,
   height: 780 ,
-  
+  scale: {
+        mode: Phaser.Scale.FIT,
+        autoCenter: Phaser.Scale.CENTER_BOTH
+    },
   // scene: {
   //   titleScreen: titleScreen
   //   // preload: preload,
