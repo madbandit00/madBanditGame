@@ -36,6 +36,8 @@ class RoomScreen extends Phaser.Scene {
     
         
 
+    }
+
 }
 
-  export default RoomScreen;
+export default RoomScreen;
