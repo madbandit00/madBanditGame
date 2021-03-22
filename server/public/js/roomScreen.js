@@ -5,8 +5,8 @@ class RoomScreen extends Phaser.Scene {
 
     preload ()
     {
-        //this.load.html('nameform', 'assets/text/loginform.html');
-        this.load.image('pic', 'assets/pics/turkey-1985086.jpg');
+        this.load.html('nameform', 'assets/text/loginform.html');
+        //this.load.image('pic', 'assets/pics/turkey-1985086.jpg');
     }
     
     create ()
