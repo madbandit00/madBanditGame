@@ -29,7 +29,7 @@ class TitleScreen extends Phaser.Scene {
 
         console.log('down');
 
-        this.scene.start("characterSelect");
+        this.scene.start("roomScreen");
 
       }, this);
       

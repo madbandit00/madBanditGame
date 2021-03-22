@@ -420,9 +420,11 @@
 
 import TitleScreen from './titleScreen.js';
 import CharacterSelect from './characterSelect.js';
+import RoomScreen from './roomScreen.js';
 import SMKSonata from './smkSonata.js';
 
 var titleScreen = new TitleScreen();
+var roomScreen = new RoomScreen();
 var characterSelect = new CharacterSelect();
 var smkSonata = new SMKSonata();
 
@@ -446,6 +448,7 @@ var config = {
 var game = new Phaser.Game(config);
 
 game.scene.add('titleScreen', titleScreen);
+game.scene.add('roomScreen', roomScreen);
 game.scene.add('smkSonata', smkSonata);
 game.scene.add('characterSelect', characterSelect);
 
