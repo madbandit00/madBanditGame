@@ -24,22 +24,22 @@ class RoomScreen extends Phaser.Scene {
 
         var textEntry = this.add.text(110, 50, '', { font: '32px Courier', fill: '#ffff00' });
     
-        this.input.keyboard.on('keydown', function (event) {
+        // this.input.keyboard.on('keydown', function (event) {
     
-            if (event.keyCode === 8 && textEntry.text.length > 0)
-            {
-                textEntry.text = textEntry.text.substr(0, textEntry.text.length - 1);
-            }
-            else if (event.keyCode === 32 || (event.keyCode >= 48 && event.keyCode < 90))
-            {
-                textEntry.text += event.key;
-            }
+        //     if (event.keyCode === 8 && textEntry.text.length > 0)
+        //     {
+        //         textEntry.text = textEntry.text.substr(0, textEntry.text.length - 1);
+        //     }
+        //     else if (event.keyCode === 32 || (event.keyCode >= 48 && event.keyCode < 90))
+        //     {
+        //         textEntry.text += event.key;
+        //     }
     
-        });
+        // });
 
         var text = this.add.text(10, 100, 'Join', { color: 'white', fontFamily: 'Arial', fontSize: '32px '});
 
-        const text2 = this.add.text(400, 300, 'Hello World', { fixedWidth: 150, fixedHeight: 36 })
+        const text = this.add.text(400, 300, 'Hello World', { fixedWidth: 150, fixedHeight: 36 })
         text.setOrigin(0.5, 0.5)
     
         text.setInteractive().on('pointerdown', () => {
