@@ -13,7 +13,7 @@ class TitleScreen extends Phaser.Scene {
       
       let random = this.add.text(80, 60, "Play Random").setFontSize(2);
 
-      let withFriend = this.add.text(80, 100, "Play With Friend").setFontSize(size);
+      let withFriend = this.add.text(80, 100, "Play With Friend").setFontSize(2);
       
       console.log("titleworking");
 
