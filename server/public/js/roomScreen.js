@@ -5,8 +5,13 @@ class RoomScreen extends Phaser.Scene {
 
     preload ()
     {
-        //this.load.html('nameform', 'assets/text/loginform.html');
-        //this.load.image('pic', 'assets/pics/turkey-1985086.jpg');
+        this.load.scenePlugin({
+            key: 'rexuiplugin',
+            url: 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexuiplugin.min.js',
+            sceneKey: 'rexUI'
+        })
+
+        this.load.plugin('rextexteditplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rextexteditplugin.min.js', true)
     }
     
     create ()
@@ -17,7 +22,7 @@ class RoomScreen extends Phaser.Scene {
 
         this.add.text(10, 50, 'Code:', { font: '32px Courier', fill: '#ffffff' });
 
-        var textEntry = this.add.text(100, 50, '', { font: '32px Courier', fill: '#ffff00' });
+        var textEntry = this.add.text(110, 50, '', { font: '32px Courier', fill: '#ffff00' });
     
         this.input.keyboard.on('keydown', function (event) {
     
@@ -32,7 +37,14 @@ class RoomScreen extends Phaser.Scene {
     
         });
 
-        var text = this.add.text(10, 100, 'Join', { color: 'white', fontFamily: 'Arial', fontSize: '32px '});
+        var text2 = this.add.text(10, 100, 'Join', { color: 'white', fontFamily: 'Arial', fontSize: '32px '});
+
+        const text2 = this.add.text(400, 300, 'Hello World', { fixedWidth: 150, fixedHeight: 36 })
+        text.setOrigin(0.5, 0.5)
+    
+        text.setInteractive().on('pointerdown', () => {
+            this.rexUI.edit(text)
+        })
     
         
 
