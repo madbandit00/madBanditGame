@@ -5,19 +5,19 @@ class RoomScreen extends Phaser.Scene {
 
     preload ()
     {
-        this.load.html('nameform', 'assets/text/loginform.html');
+        //this.load.html('nameform', 'assets/text/loginform.html');
         this.load.image('pic', 'assets/pics/turkey-1985086.jpg');
     }
     
     create ()
     {
-        this.add.image(400, 300, 'pic');
+        //this.add.image(400, 300, 'pic');
     
         var text = this.add.text(10, 10, 'Please login to play', { color: 'white', fontFamily: 'Arial', fontSize: '32px '});
     
         var element = this.add.dom(400, 600).createFromCache('nameform');
     
-        element.setPerspective(800);
+        //element.setPerspective(800);
     
         element.addListener('click');
     
