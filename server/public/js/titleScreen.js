@@ -17,7 +17,7 @@ class TitleScreen extends Phaser.Scene {
       
       console.log("titleworking");
 
-      random.input.on('pointerdown', function (pointer) {
+      random.on('pointerdown', function (pointer) {
 
         console.log('down');
 
@@ -25,7 +25,7 @@ class TitleScreen extends Phaser.Scene {
 
       }, this);
 
-      withFriend.input.on('pointerdown', function (pointer) {
+      withFriend.on('pointerdown', function (pointer) {
 
         console.log('down');
 
