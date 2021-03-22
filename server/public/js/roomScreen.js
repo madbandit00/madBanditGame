@@ -24,10 +24,10 @@ class RoomScreen extends Phaser.Scene {
         
         this.add.text(10, 100, 'Enter Code:', { font: '32px Courier', fill: '#ffffff' });
 
-        const text3 = this.add.text(200, 50, 'Enter Code', { fixedWidth: 150, fixedHeight: 36 })
-        text.setOrigin(0.5, 0.5)
+        const text3 = this.add.text(150, 45, 'Enter Code', { fixedWidth: 175, fixedHeight: 50 })
+        text.setOrigin(0.5, 0.5).setInteractive()
     
-        text3.setInteractive().on('pointerdown', () => {
+        text3.on('pointerdown', () => {
             this.rexUI.edit(text)
         })
 
