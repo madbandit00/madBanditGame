@@ -24,7 +24,7 @@ class RoomScreen extends Phaser.Scene {
         
         this.add.text(10, 50, 'Enter Code:', { font: '32px Courier', fill: '#ffffff' });
 
-        const text3 = this.add.text(150, 50, 'Enter Code', { fixedWidth: 175, fixedHeight: 50 })
+        const text3 = this.add.text(225, 50, 'Enter Code', { fixedWidth: 175, fixedHeight: 50 })
         text3.setOrigin(0.5, 0.5).setInteractive()
     
         text3.on('pointerdown', () => {
