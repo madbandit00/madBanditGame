@@ -8,11 +8,24 @@ class TitleScreen extends Phaser.Scene {
     }
 
     create() {
-      this.add.text(20, 20, "An Ikmal Game...click to start").setScale(2, 2);
+      this.add.text(20, 20, "SMK Sonata...an Ikmal Game").setScale(2, 2);
       //this.dealText = this.add.text(75, 350, ['DEAL CARDS']).setFontSize(18).setFontFamily('Trebuchet MS').setColor('#00ffff').setInteractive();
+      
+      let random = this.add.text(40, 20, "Play Random").setFixedSize(2, 2);
+
+      let withFriend = this.add.text(60, 20, "Play With Friend").setScale(2, 2);
+      
       console.log("titleworking");
 
-      this.input.on('pointerdown', function (pointer) {
+      random.input.on('pointerdown', function (pointer) {
+
+        console.log('down');
+
+        this.scene.start("characterSelect");
+
+      }, this);
+
+      withFriend.input.on('pointerdown', function (pointer) {
 
         console.log('down');
 
