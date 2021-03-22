@@ -431,6 +431,9 @@ var smkSonata = new SMKSonata();
 var config = {
   type: Phaser.AUTO,
   parent: 'phaser-example',
+  dom: {
+    createContainer: true
+  },
   width: 1400,
   height: 600,
   scale: {

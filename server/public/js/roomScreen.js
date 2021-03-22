@@ -3,41 +3,53 @@ class RoomScreen extends Phaser.Scene {
       super({key: 'roomScreen'});
     }
 
-    preload() {
-        var url;
-        url = 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexbbcodetextplugin.min.js';
-        this.load.plugin('rexbbcodetextplugin', url, true);
-      
-        url = 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rextexteditplugin.min.js';
-        this.load.plugin('rextexteditplugin', url, true);
-    }
-
-    create() {           
-        var printText = this.add.rexBBCodeText(400, 300, 'abc', {
-            color: 'yellow',
-            fontSize: '24px',
-            fixedWidth: 200,
-            fixedHeight: 80,
-            backgroundColor: '#333333',
-            valign: 'center'
+    preload ()
+    {
+        this.load.scenePlugin({
+            key: 'rexuiplugin',
+            url: 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexuiplugin.min.js',
+            sceneKey: 'rexUI'
         })
-            .setOrigin(0.5)
-            .setInteractive()
-            .on('pointerdown', function () {
-                var config = {
-                    onTextChanged: function (textObject, text) {
-                        textObject.text = text;
-                    },
-                    selectAll: true
-                }
-                this.plugins.get('rextexteditplugin').edit(printText, config);
-            }, this);
 
-        this.add.text(0, 580, 'Click text to start editing, press enter key to stop editing')
+        this.load.plugin('rextexteditplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rextexteditplugin.min.js', true)
+    }
+    
+    create ()
+    {
+        //this.add.image(400, 300, 'pic');
+    
+        var text0 = this.add.text(10, 10, 'Create', { color: 'white', fontFamily: 'Arial', fontSize: '32px '});
+
+        var text1 = this.add.text(10, 100, 'Join', { color: 'white', fontFamily: 'Arial', fontSize: '32px '});
+        
+        this.add.text(10, 50, 'Enter Code:', { font: '32px Courier', fill: '#ffffff' });
+
+        const text3 = this.add.text(300, 80, 'Enter Code', { fixedWidth: 175, fixedHeight: 50 })
+        text3.setOrigin(0.5, 0.5);
+    
+        text3.on.setInteractive()('pointerdown', () => {
+            this.rexUI.edit(text3)
+        })
+
+        //var textEntry = this.add.text(110, 50, '', { font: '32px Courier', fill: '#ffff00' });
+    
+        // this.input.keyboard.on('keydown', function (event) {
+    
+        //     if (event.keyCode === 8 && textEntry.text.length > 0)
+        //     {
+        //         textEntry.text = textEntry.text.substr(0, textEntry.text.length - 1);
+        //     }
+        //     else if (event.keyCode === 32 || (event.keyCode >= 48 && event.keyCode < 90))
+        //     {
+        //         textEntry.text += event.key;
+        //     }
+    
+        // });
+    
+        
+
     }
 
-    update() { }
 }
-
 
 export default RoomScreen;
