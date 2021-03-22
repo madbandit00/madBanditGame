@@ -19,10 +19,10 @@ class RoomScreen extends Phaser.Scene {
         //this.add.image(400, 300, 'pic');
     
         var text0 = this.add.text(10, 10, 'Create', { color: 'white', fontFamily: 'Arial', fontSize: '32px '});
+       
+        this.add.text(10, 70, 'Enter Code:', { font: '32px Courier', fill: '#ffffff' });
 
-        var text1 = this.add.text(10, 100, 'Join', { color: 'white', fontFamily: 'Arial', fontSize: '32px '});
-        
-        this.add.text(10, 50, 'Enter Code:', { font: '32px Courier', fill: '#ffffff' });
+        var text1 = this.add.text(10, 140, 'Join', { color: 'white', fontFamily: 'Arial', fontSize: '32px '});
 
         const text3 = this.add.text(350, 80, 'Enter Code', { fixedWidth: 175, fixedHeight: 50 })
         text3.setOrigin(0.5, 0.5);
