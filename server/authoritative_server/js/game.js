@@ -58,18 +58,6 @@ let scoreCheckerBlue = 0;
 
 function create() {
 
-  function handleNewGame() {
-    let roomName = makeid(5);
-    clientRooms[socket.id] = roomName;
-    socket.emit('gameCode', roomName);
-
-    state[roomName] = initGame();
-
-    socket.join(roomName);
-    socket.number = 1;
-    socket.emit('init', 1);
-  }
-
   this.confirmedTexture = [];
 
   const self = this;
@@ -114,6 +102,18 @@ function create() {
         up: false
       }
     };
+
+    function handleNewGame() {
+      let roomName = makeid(5);
+      clientRooms[socket.id] = roomName;
+      socket.emit('gameCode', roomName);
+  
+      state[roomName] = initGame();
+  
+      socket.join(roomName);
+      socket.number = 1;
+      socket.emit('init', 1);
+    }
 
     socket.emit('textureKey', self.confirmedTexture);
 
