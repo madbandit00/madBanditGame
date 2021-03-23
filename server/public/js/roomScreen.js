@@ -1,4 +1,5 @@
 class RoomScreen extends Phaser.Scene {
+
     constructor() {
       super({key: 'roomScreen'});
     }
@@ -16,9 +17,28 @@ class RoomScreen extends Phaser.Scene {
     
     create ()
     {
+        var gameCodeDisplay = text3;
+
+
+        this.socket.on('init', handleInit);
+
+        function handleInit(number) {
+            playerNumber = number;
+          }
+
+        function handleGameCode(gameCode) {
+            text3.text = gameCode;
+        }
+          
+          
         //this.add.image(400, 300, 'pic');
     
         var text0 = this.add.text(10, 10, 'Create', { color: 'white', fontFamily: 'Arial', fontSize: '32px '});
+
+        text0.setInteractive().on('pointerdown', () => {
+            socket.emit('newGame');
+        })
+
        
         this.add.text(10, 70, 'Enter Code:', { font: '32px Courier', fill: '#ffffff' });
 

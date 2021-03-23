@@ -2,6 +2,19 @@
 const players = {};
 let playersDetect = [];
 
+const state = {};
+const clientRooms = {};
+
+function makeid(length) {
+  var result           = '';
+  var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  var charactersLength = characters.length;
+  for ( var i = 0; i < length; i++ ) {
+     result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  return result;
+}
+
 // class titlePage extends Phaser.Scene {
 //   constructor() {
 //     super("titleScreen0");
@@ -44,6 +57,18 @@ let scoreCheckerBlue = 0;
 
 
 function create() {
+
+  function handleNewGame() {
+    let roomName = makeid(5);
+    clientRooms[socket.id] = roomName;
+    socket.emit('gameCode', roomName);
+
+    state[roomName] = initGame();
+
+    socket.join(roomName);
+    socket.number = 1;
+    socket.emit('init', 1);
+  }
 
   this.confirmedTexture = [];
 
