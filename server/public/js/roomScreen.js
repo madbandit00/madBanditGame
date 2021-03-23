@@ -25,6 +25,7 @@ class RoomScreen extends Phaser.Scene {
 
 
         this.socket.on('init', handleInit);
+        socket.on('gameCode', handleGameCode);
 
         function handleInit(number) {
             playerNumber = number;
