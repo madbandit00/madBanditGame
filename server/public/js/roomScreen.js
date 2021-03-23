@@ -38,7 +38,7 @@ class RoomScreen extends Phaser.Scene {
 
             console.log(gameCode)
             text0.setText("New code: " + gameCode.toString());
-            text0.disableInteractive
+            
         }
           
           
@@ -49,15 +49,15 @@ class RoomScreen extends Phaser.Scene {
         text0.setInteractive().on('pointerdown', () => {
             self.socket.emit('newGame');
             console.log('createclicked');
-            text0.disableInteractive;
+            
         })
 
        
-        this.add.text(10, 70, 'Enter Code:', { font: '32px Courier', fill: '#ffffff' });
+        this.add.text(10, 85, 'Enter Code:', { font: '32px Courier', fill: '#ffffff' });
 
-        var text1 = this.add.text(10, 140, 'Join', { color: 'white', fontFamily: 'Arial', fontSize: '32px '});
+        var text1 = this.add.text(10, 155, 'Join', { color: 'white', fontFamily: 'Arial', fontSize: '32px '});
 
-        let text3 = this.add.text(350, 90, 'Click', { fixedWidth: 200, fixedHeight: 75 })
+        let text3 = this.add.text(350, 105, 'Click', { fixedWidth: 200, fixedHeight: 75 })
         text3.setOrigin(0.5, 0.5);
     
         text3.setInteractive().on('pointerdown', () => {
