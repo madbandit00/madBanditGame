@@ -18,8 +18,9 @@ class RoomScreen extends Phaser.Scene {
     create ()
     
     {
+        var self = this;
         this.socket = io();
-        
+
         let playerNumber;
 
 
@@ -39,7 +40,7 @@ class RoomScreen extends Phaser.Scene {
         let text0 = this.add.text(10, 10, 'Create', { color: 'white', fontFamily: 'Arial', fontSize: '32px '});
 
         text0.setInteractive().on('pointerdown', () => {
-            socket.emit('newGame');
+            self.socket.emit('newGame');
         })
 
        
