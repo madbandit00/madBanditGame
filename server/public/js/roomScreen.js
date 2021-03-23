@@ -28,6 +28,7 @@ class RoomScreen extends Phaser.Scene {
 
         function handleInit(number) {
             playerNumber = number;
+            console.log('init received')
           }
 
         function handleGameCode(gameCode) {
