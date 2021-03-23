@@ -32,10 +32,12 @@ class RoomScreen extends Phaser.Scene {
             console.log('init received')
           }
 
+        let text0 = this.add.text(10, 10, 'Create new:', { color: 'white', fontFamily: 'Arial', fontSize: '32px '});
+
         function handleGameCode(gameCode) {
 
             console.log(gameCode)
-            self.text3.setText("New code:" + gameCode.toString());
+            self.text0.setText("New code:" + gameCode.toString());
         }
           
           
