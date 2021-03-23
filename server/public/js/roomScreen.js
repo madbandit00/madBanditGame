@@ -31,7 +31,7 @@ class RoomScreen extends Phaser.Scene {
           }
 
         function handleGameCode(gameCode) {
-            text3.text = gameCode;
+            text3.setText = ("New code:" + gameCode);
         }
           
           
