@@ -43,7 +43,7 @@ class RoomScreen extends Phaser.Scene {
           
         //this.add.image(400, 300, 'pic');
     
-        let text0 = this.add.text(10, 10, 'Create new:', { color: 'white', fontFamily: 'Arial', fontSize: '32px '});
+        //let text0 = this.add.text(10, 10, 'Create new:', { color: 'white', fontFamily: 'Arial', fontSize: '32px '});
 
         text0.setInteractive().on('pointerdown', () => {
             self.socket.emit('newGame');
