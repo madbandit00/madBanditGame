@@ -119,6 +119,8 @@ function create() {
 
     console.log(self.confirmedTexture);
 
+    socket.on('newGame', handleNewGame);
+
     socket.on('textureKey', (confirmTextureKey) => {
       console.log('textureKey: ' + confirmTextureKey);
       self.confirmedTexture.push(confirmTextureKey.toString());
