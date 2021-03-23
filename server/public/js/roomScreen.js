@@ -35,7 +35,7 @@ class RoomScreen extends Phaser.Scene {
         function handleGameCode(gameCode) {
 
             console.log(gameCode)
-            self.text3.setText("New code:" + gameCode);
+            self.text3.setText("New code:" + gameCode.toString());
         }
           
           
