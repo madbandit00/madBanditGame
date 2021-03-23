@@ -108,7 +108,7 @@ function create() {
       clientRooms[socket.id] = roomName;
       socket.emit('gameCode', roomName);
   
-      state[roomName] = initGame();
+      //state[roomName] = initGame();
   
       socket.join(roomName);
       socket.number = 1;
