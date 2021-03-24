@@ -143,7 +143,7 @@ function create() {
       socket.number = 2;
       socket.emit('init', 2);
       
-      startGameInterval(roomName);
+      //startGameInterval(roomName);
     }
 
     socket.emit('textureKey', self.confirmedTexture);
