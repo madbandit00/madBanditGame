@@ -63,6 +63,10 @@ class RoomScreen extends Phaser.Scene {
 
         var text1 = this.add.text(10, 155, 'Join', { color: 'white', fontFamily: 'Arial', fontSize: '32px '});
 
+        text0.setInteractive().on('pointerdown', () => {
+            joinGame()            
+        })
+
         let text3 = this.add.text(350, 105, 'Click', { fixedWidth: 200, fixedHeight: 75 })
         text3.setOrigin(0.5, 0.5);
     
