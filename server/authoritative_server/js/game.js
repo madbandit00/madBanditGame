@@ -1,6 +1,4 @@
 
-import CharacterSelect from './characterSelect.js';
-
 const players = {};
 let playersDetect = [];
 
@@ -30,8 +28,8 @@ function makeid(length) {
 const config = {
   type: Phaser.HEADLESS,
   parent: 'phaser-example',
-  width: 1400,
-  height: 600,
+  width: 1280,
+  height: 780,
   physics: {
     default: 'arcade',
     arcade: {
@@ -39,27 +37,14 @@ const config = {
       gravity: { y: 0 }
     }
   },
-  dom: {
-    createContainer: true
-  },
   scene: {
     //titleScreen,
     preload: preload,
     create: create,
     update: update
   },
-  scale: {
-    mode: Phaser.Scale.FIT,
-    autoCenter: Phaser.Scale.CENTER_BOTH
-  },
   autoFocus: false
 };
-
-var game = new Phaser.Game(config);
-
-var characterSelect = new CharacterSelect();
-
-game.scene.add('characterSelect', characterSelect);
 
 function preload() {
   this.load.image('ship', 'assets/spaceShips_001.png');
@@ -123,7 +108,7 @@ function create() {
       clientRooms[socket.id] = roomName;
       socket.emit('gameCode', roomName);
   
-      state[roomName] = self.scene.start('characterSelect');
+      state[roomName] = this.scene.start('characterSelect');
   
       socket.join(roomName);
       socket.number = 1;
