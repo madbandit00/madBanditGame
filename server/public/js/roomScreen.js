@@ -40,6 +40,12 @@ class RoomScreen extends Phaser.Scene {
             text0.setText("New code: " + gameCode.toString());
             
         }
+
+        function joinGame() {
+            const code = gameCodeInput.value;
+            socket.emit('joinGame', code);
+            init();
+          }
           
           
         //this.add.image(400, 300, 'pic');
@@ -61,7 +67,8 @@ class RoomScreen extends Phaser.Scene {
         text3.setOrigin(0.5, 0.5);
     
         text3.setInteractive().on('pointerdown', () => {
-            this.rexUI.edit(text3)
+            this.rexUI.edit(text3);
+            console.log(text3.text);
         })
 
         //var textEntry = this.add.text(110, 50, '', { font: '32px Courier', fill: '#ffff00' });
