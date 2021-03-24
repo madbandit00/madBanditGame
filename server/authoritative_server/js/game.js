@@ -108,7 +108,7 @@ function create() {
       clientRooms[socket.id] = roomName;
       socket.emit('gameCode', roomName);
   
-      //state[roomName] = initGame();
+      state[roomName] = this.scene.start('characterSelect');
   
       socket.join(roomName);
       socket.number = 1;
@@ -120,6 +120,8 @@ function create() {
     console.log(self.confirmedTexture);
 
     socket.on('newGame', handleNewGame);
+
+    socket.on('joinGame', handleJoinGame);
 
     socket.on('textureKey', (confirmTextureKey) => {
       console.log('textureKey: ' + confirmTextureKey);
