@@ -43,7 +43,7 @@ class RoomScreen extends Phaser.Scene {
 
         function joinGame() {
             const code = text3.text;
-            socket.emit('joinGame', code);
+            self.socket.emit('joinGame', code);
             init();
           }
           
