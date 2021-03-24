@@ -115,6 +115,36 @@ function create() {
       socket.emit('init', 1);
     }
 
+    function handleJoinGame(roomName) {
+      const room = io.sockets.adapter.rooms[roomName];
+  
+      let allUsers;
+      if (room) {
+        allUsers = room.sockets;
+      }
+  
+      let numClients = 0;
+      if (allUsers) {
+        numClients = Object.keys(allUsers).length;
+      }
+  
+      if (numClients === 0) {
+        socket.emit('unknownCode');
+        return;
+      } else if (numClients > 1) {
+        socket.emit('tooManyPlayers');
+        return;
+      }
+  
+      clientRooms[socket.id] = roomName;
+  
+      socket.join(roomName);
+      socket.number = 2;
+      socket.emit('init', 2);
+      
+      startGameInterval(roomName);
+    }
+
     socket.emit('textureKey', self.confirmedTexture);
 
     console.log(self.confirmedTexture);
