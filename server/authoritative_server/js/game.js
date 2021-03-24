@@ -25,17 +25,26 @@ function makeid(length) {
 //   }
 // }
 
+var characterSelect = new CharacterSelect();
+
 const config = {
   type: Phaser.HEADLESS,
   parent: 'phaser-example',
-  width: 1280,
-  height: 780,
+  width: 1400,
+  height: 600,
+  dom: {
+    createContainer: true
+  },
   physics: {
     default: 'arcade',
     arcade: {
       debug: false,
       gravity: { y: 0 }
     }
+  },
+  scale: {
+    mode: Phaser.Scale.FIT,
+    autoCenter: Phaser.Scale.CENTER_BOTH
   },
   scene: {
     //titleScreen,
@@ -45,6 +54,10 @@ const config = {
   },
   autoFocus: false
 };
+
+var game = new Phaser.Game(config);
+
+game.scene.add('characterSelect', characterSelect);
 
 function preload() {
   this.load.image('ship', 'assets/spaceShips_001.png');
