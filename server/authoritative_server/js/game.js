@@ -1,3 +1,4 @@
+import CharacterSelect from './characterSelect.js';
 
 const players = {};
 let playersDetect = [];
