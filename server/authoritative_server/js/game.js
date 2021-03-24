@@ -128,6 +128,7 @@ function create() {
         numClients = Object.keys(allUsers).length;
       }
   
+      console.log(numClients);
       if (numClients === 0) {
         socket.emit('unknownCode');
         return;
