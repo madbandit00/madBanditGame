@@ -55,8 +55,6 @@ const config = {
   autoFocus: false
 };
 
-var game = new Phaser.Game(config);
-
 game.scene.add('characterSelect', characterSelect);
 
 function preload() {
