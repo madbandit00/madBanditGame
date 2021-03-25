@@ -19,7 +19,7 @@ class CharacterSelect extends Phaser.Scene {
     create() {
 
       var self = this;
-      this.socket = socket;
+      //this.socket = socket;
 
       let text = this.add.text(20, 20, "Select a character").setScale(2, 2);
 
