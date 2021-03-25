@@ -93,7 +93,7 @@ class CharacterSelect extends Phaser.Scene {
         
         // })
 
-        self.socket.close();
+        //self.socket.close();
         this.scene.start("smkSonata");
         
 
