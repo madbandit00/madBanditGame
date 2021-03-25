@@ -6,6 +6,12 @@ class RoomScreen extends Phaser.Scene {
       super({key: 'roomScreen'});
     }
 
+    init (data)
+    {
+      this.Socket = data;
+      console.log(this.Socket.id.toString())
+    }
+
     preload ()
     {
         this.load.scenePlugin({
@@ -21,7 +27,7 @@ class RoomScreen extends Phaser.Scene {
     
     {
         var self = this;
-        this.socket = io();
+        this.socket = this.Socket;
 
         let Socket = this.socket;
 

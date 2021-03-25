@@ -8,6 +8,11 @@ class TitleScreen extends Phaser.Scene {
     }
 
     create() {
+
+      this.socket = io();
+
+      let Socket = this.socket;
+
       this.add.text(20, 20, "SMK Sonata...an Ikmal Game").setScale(2, 2);
       //this.dealText = this.add.text(75, 350, ['DEAL CARDS']).setFontSize(18).setFontFamily('Trebuchet MS').setColor('#00ffff').setInteractive();
       
@@ -19,13 +24,9 @@ class TitleScreen extends Phaser.Scene {
 
       random.on('pointerdown', function (pointer) {
 
-        this.socket = io();
-
-        let Socket = this.socket;
-
         console.log('down', Socket);
 
-        this.scene.start("characterSelect");
+        this.scene.start("characterSelect", Socket);
 
       }, this);
 
@@ -33,7 +34,7 @@ class TitleScreen extends Phaser.Scene {
 
         console.log('down');
 
-        this.scene.start("roomScreen");
+        this.scene.start("roomScreen", Socket);
 
       }, this);
       
