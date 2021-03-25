@@ -15,8 +15,8 @@ class CharacterSelect extends Phaser.Scene {
 
     init (data)
     {
-      this.Socket = data.id;
-      console.log(this.Socket.toString())
+      this.Socket = data;
+      console.log(this.Socket.id.toString())
     }
 
     preload(){
@@ -29,7 +29,7 @@ class CharacterSelect extends Phaser.Scene {
     create() {
 
       var self = this;
-      this.socket = io();
+      this.socket = this.Socket;
 
       let text = this.add.text(20, 20, "Select a character").setScale(2, 2);
 
