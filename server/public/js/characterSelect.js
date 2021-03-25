@@ -4,10 +4,10 @@ class CharacterSelect extends Phaser.Scene {
       super({key: 'characterSelect'});
     }
 
-    init(data)
-    {    
-    this.socket = data.socket;
-    }
+    // init(data)
+    // {    
+    // this.socket = data.socket;
+    // }
 
     preload(){
         this.load.image('Adam', 'assets/adamSelect.png');
@@ -16,10 +16,10 @@ class CharacterSelect extends Phaser.Scene {
 
     }
 
-    create() {
+    create(socket) {
 
       var self = this;
-      //this.socket = socket;
+      this.socket = socket;
 
       let text = this.add.text(20, 20, "Select a character").setScale(2, 2);
 

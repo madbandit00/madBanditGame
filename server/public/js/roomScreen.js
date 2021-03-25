@@ -64,7 +64,7 @@ class RoomScreen extends Phaser.Scene {
         var text1 = this.add.text(10, 545, 'Join', { color: 'white', fontFamily: 'Arial', fontSize: '32px '});
 
         text1.setInteractive().on('pointerdown', () => {
-            this.scene.launch("characterSelect", { socket: socket})
+            this.scene.start("characterSelect", socket)
             joinGame()            
         })
 
