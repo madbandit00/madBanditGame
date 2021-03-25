@@ -15,7 +15,7 @@ class CharacterSelect extends Phaser.Scene {
 
     init (data)
     {
-    Confirm = data.text1;
+    this.Confirm = data.text1;
     console.log(Confirm.text);
     }
 
