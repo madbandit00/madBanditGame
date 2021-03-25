@@ -1,3 +1,5 @@
+import RoomScreen from './roomScreen.js';
+
 class SMKSonata extends Phaser.Scene {
 
     answerAcounter;
@@ -34,7 +36,7 @@ class SMKSonata extends Phaser.Scene {
     create() {
         
     var self = this;
-    this.socket = io();
+    this.socket = RoomScreen.socket;
     this.players = this.add.group();
 
     this.confirmedTextures = [];
