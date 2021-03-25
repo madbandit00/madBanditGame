@@ -245,7 +245,7 @@ class SMKSonata extends Phaser.Scene {
         console.log(self.confirmedTextures[0][1].toString());
 
     
-    }, 0);
+    }, 8000);
       
 
     this.dealCards = () => {
@@ -274,7 +274,7 @@ class SMKSonata extends Phaser.Scene {
                 self.opponentCards.push(opponentCard);
                 //self.opponentCards.push(opponentCard.renderCard(475 + (i * 100), 125, opponentSprite).disableInteractive());
                 }
-        }, 0);
+        }, 2000);
  
 
         // let player1;
