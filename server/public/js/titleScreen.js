@@ -19,7 +19,11 @@ class TitleScreen extends Phaser.Scene {
 
       random.on('pointerdown', function (pointer) {
 
-        console.log('down');
+        this.socket = io();
+
+        let Socket = this.socket;
+
+        console.log('down', Socket);
 
         this.scene.start("characterSelect");
 
