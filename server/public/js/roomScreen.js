@@ -1,4 +1,4 @@
-import socket from './socket.js';
+//import socket from 'socket.js';
 
 class RoomScreen extends Phaser.Scene {
 
@@ -21,13 +21,13 @@ class RoomScreen extends Phaser.Scene {
     
     {
         var self = this;
-        //this.socket = io();
+        this.socket = io();
 
         let playerNumber;
 
 
-        socket.on('init', handleInit);
-        socket.on('gameCode', handleGameCode);
+        this.socket.on('init', handleInit);
+        this.socket.on('gameCode', handleGameCode);
 
         function handleInit(number) {
             playerNumber = number;
@@ -45,7 +45,7 @@ class RoomScreen extends Phaser.Scene {
 
         function joinGame() {
             const code = text3.text;
-            socket.emit('joinGame', code);
+            self.socket.emit('joinGame', code);
             //init();
           }
           
@@ -55,7 +55,7 @@ class RoomScreen extends Phaser.Scene {
         //let text0 = this.add.text(10, 10, 'Create new:', { color: 'white', fontFamily: 'Arial', fontSize: '32px '});
 
         text0.setInteractive().on('pointerdown', () => {
-            socket.emit('newGame');
+            self.socket.emit('newGame');
             console.log('createclicked');
             
         })
