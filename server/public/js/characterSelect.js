@@ -16,7 +16,7 @@ class CharacterSelect extends Phaser.Scene {
     init (data)
   {
     Socket = data.Socket;
-    console.log(Socket.id);
+    console.log(Socket);
   }
 
     preload(){
