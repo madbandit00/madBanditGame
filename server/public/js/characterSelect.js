@@ -13,6 +13,12 @@ class CharacterSelect extends Phaser.Scene {
     // this.socket = data.socket;
     // }
 
+    init (data)
+  {
+    this.Confirm = data.text.toString();
+    console.log(Confirm);
+  }
+
     preload(){
         this.load.image('Adam', 'assets/adamSelect.png');
         this.load.image('Sydney', 'assets/sydneySelect.png');
