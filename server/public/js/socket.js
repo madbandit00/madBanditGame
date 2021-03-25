@@ -1,3 +1,3 @@
 var socket = io();
 
-module.exports = socket;
+export  {socket}

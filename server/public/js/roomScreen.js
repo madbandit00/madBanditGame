@@ -1,7 +1,5 @@
 import socket from './socket.js';
 
-var socket = socket;
-
 class RoomScreen extends Phaser.Scene {
 
     constructor() {
