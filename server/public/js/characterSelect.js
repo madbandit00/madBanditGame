@@ -15,8 +15,8 @@ class CharacterSelect extends Phaser.Scene {
 
     init (data)
     {
-      this.Confirm = data.text;
-      console.log(this.Confirm.toString())
+      this.Socket = data.text;
+      console.log(this.Socket.toString())
     }
 
     preload(){
