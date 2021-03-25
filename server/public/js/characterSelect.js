@@ -1,4 +1,6 @@
-let socket = require('./socket.js');
+import socket from './socket.js';
+
+var socket = socket;
 
 class CharacterSelect extends Phaser.Scene {
 
@@ -21,6 +23,7 @@ class CharacterSelect extends Phaser.Scene {
     create() {
 
       var self = this;
+      this.socket = io();
 
       let text = this.add.text(20, 20, "Select a character").setScale(2, 2);
 

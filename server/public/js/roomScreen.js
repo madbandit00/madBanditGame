@@ -1,4 +1,6 @@
-let socket = require('./socket.js');
+import socket from './socket.js';
+
+var socket = socket;
 
 class RoomScreen extends Phaser.Scene {
 
@@ -21,7 +23,7 @@ class RoomScreen extends Phaser.Scene {
     
     {
         var self = this;
-        
+        //this.socket = io();
 
         let playerNumber;
 

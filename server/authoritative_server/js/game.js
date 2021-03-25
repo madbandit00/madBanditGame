@@ -1,4 +1,3 @@
-
 const players = {};
 let playersDetect = [];
 
