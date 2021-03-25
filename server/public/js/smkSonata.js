@@ -37,9 +37,9 @@ class SMKSonata extends Phaser.Scene {
 
     let CharacterSelect = this.scene.get('characterSelect');
 
-    var otherPlayer = CharacterSelect.otherPlayer;
+    //var otherPlayer = CharacterSelect.otherPlayer;
 
-    console.log(otherPlayer)
+    console.log(CharacterSelect.create().otherPlayer)
         
     var self = this;
     this.socket = io();

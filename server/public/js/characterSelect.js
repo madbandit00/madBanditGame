@@ -1,4 +1,5 @@
 class CharacterSelect extends Phaser.Scene {
+
     constructor() {
       super({key: 'characterSelect'});
     }
