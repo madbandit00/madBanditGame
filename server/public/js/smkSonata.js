@@ -1,4 +1,4 @@
-//import CharacterSelect from './characterSelect.js';
+import CharacterSelect from './characterSelect.js';
 
 class SMKSonata extends Phaser.Scene {
 
@@ -39,7 +39,7 @@ class SMKSonata extends Phaser.Scene {
 
     //var otherPlayer = CharacterSelect.otherPlayer;
 
-    console.log(CharacterSelect.create().otherPlayer)
+    console.log(CharacterSelect.create().otherPlayer);
         
     var self = this;
     this.socket = io();
