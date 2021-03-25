@@ -1,3 +1,3 @@
 var socket = io();
 
-export  {socket}
+export default {socket}
