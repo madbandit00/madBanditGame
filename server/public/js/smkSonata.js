@@ -34,9 +34,13 @@ class SMKSonata extends Phaser.Scene {
     }
 
     create() {
+
+    var otherPlayer = CharacterSelect.otherPlayer;
+
+    console.log(otherPlayer)
         
     var self = this;
-    this.socket = CharacterSelect.socket;
+    this.socket = io();
     this.players = this.add.group();
 
     this.confirmedTextures = [];
