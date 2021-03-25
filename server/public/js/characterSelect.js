@@ -1,3 +1,5 @@
+import RoomScreen from './roomScreen.js';
+
 class CharacterSelect extends Phaser.Scene {
     constructor() {
       super({key: 'characterSelect'});
@@ -13,7 +15,7 @@ class CharacterSelect extends Phaser.Scene {
     create() {
 
       var self = this;
-      this.socket = io();
+      this.socket = RoomScreen.socket;
 
       let text = this.add.text(20, 20, "Select a character").setScale(2, 2);
 
