@@ -1,6 +1,6 @@
 import socket from './socket.js';
 
-var socket = socket;
+//var socket = socket;
 
 class CharacterSelect extends Phaser.Scene {
 
