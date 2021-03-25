@@ -21,8 +21,6 @@ class RoomScreen extends Phaser.Scene {
         var self = this;
         this.socket = io();
 
-        console.log(self.socket);
-
         let playerNumber;
 
 
@@ -66,7 +64,7 @@ class RoomScreen extends Phaser.Scene {
         var text1 = this.add.text(10, 545, 'Join', { color: 'white', fontFamily: 'Arial', fontSize: '32px '});
 
         text1.setInteractive().on('pointerdown', () => {
-            this.scene.launch("characterSelect")
+            this.scene.launch("characterSelect", { socket: this.socket })
             joinGame()            
         })
 
