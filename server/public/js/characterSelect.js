@@ -4,9 +4,9 @@ class CharacterSelect extends Phaser.Scene {
       super({key: 'characterSelect'});
     }
 
-    init(data)
+    init(socket)
     {    
-    this.socket = data;
+    this.socket = socket;
     }
 
     preload(){
