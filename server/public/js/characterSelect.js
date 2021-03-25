@@ -31,6 +31,8 @@ class CharacterSelect extends Phaser.Scene {
       var self = this;
       this.socket = this.Socket;
 
+      let Socket = this.socket;
+
       let text = this.add.text(20, 20, "Select a character").setScale(2, 2);
 
       //this.dealText = this.add.text(75, 350, ['DEAL CARDS']).setFontSize(18).setFontFamily('Trebuchet MS').setColor('#00ffff').setInteractive();
@@ -110,7 +112,7 @@ class CharacterSelect extends Phaser.Scene {
         // })
 
         //self.socket.close();
-        this.scene.start("smkSonata");
+        this.scene.start("smkSonata", Socket);
         
 
       },this);

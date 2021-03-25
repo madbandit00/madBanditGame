@@ -11,6 +11,12 @@ class SMKSonata extends Phaser.Scene {
 
     }
 
+    init (data)
+    {
+      this.Socket = data;
+      console.log(this.Socket.id.toString())
+    }
+
     preload() {
    
     this.load.image('ship', 'assets/spaceShips_001.png');
@@ -34,7 +40,7 @@ class SMKSonata extends Phaser.Scene {
     create() {
         
     var self = this;
-    this.socket = io();
+    this.socket = this.Socket;
     this.players = this.add.group();
 
     this.confirmedTextures = [];
