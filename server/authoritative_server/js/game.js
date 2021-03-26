@@ -220,7 +220,14 @@ function create() {
         self.isPlayerA = true;
         console.log('Player A ID: ' + socket.id);
         io.emit('isPlayerA', self.isPlayerA);
-      };
+      }
+      else {
+
+        self.isPlayerA = false;
+        io.emit('isPlayerA', self.isPlayerA);
+
+      }
+
     }
 
     // if (playersDetect[1] === socket.id) {
