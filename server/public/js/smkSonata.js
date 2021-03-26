@@ -274,6 +274,8 @@ class SMKSonata extends Phaser.Scene {
 
     this.dealCards = () => {
         //console.log (self.confirmTexture);
+
+        console.log('player A: ' + self.isPlayerA);
         
         setTimeout(() => {
             if (self.isPlayerA) {
