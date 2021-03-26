@@ -50,6 +50,8 @@ class SMKSonata extends Phaser.Scene {
         console.log('Connected!');
     });
 
+    self.socket.emit('checkID', this.Socket.id.toString());
+
     self.socket.emit('playerAorNot');
 
     this.socket.on('isPlayerA', playerAorNot);

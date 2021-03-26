@@ -199,6 +199,12 @@ function create() {
 
     //socket.emit('isPlayerA', self.isPlayerA);
 
+    socket.on('checkID', (ID) => {
+      console.log('checkID: ' + ID);
+       
+      
+    });
+
     socket.on('playerAorNot', playerAorB);
 
     function playerAorB() {
