@@ -50,9 +50,9 @@ class SMKSonata extends Phaser.Scene {
     });
 
     this.socket.on('isPlayerA', function () {
-        self.isPlayerA = true;
+        isPlayerA = true;
         //self.isPlayerB = false;
-        console.log('i am player A')
+        console.log('i am player A');
     });
 
     this.socket.on('textureKey', function (ConfirmedTexture) {
