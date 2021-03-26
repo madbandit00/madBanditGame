@@ -252,25 +252,25 @@ class SMKSonata extends Phaser.Scene {
 
         ]
 
-        for (let i = 0; i < S0.length; i++) {
+        // for (let i = 0; i < S0.length; i++) {
 
 
-            if (self.confirmedTextures[0][0] == S0[i].textureKey) {
-                playerSpriteA = S0[i].sprites;
+        //     if (self.confirmedTextures[0][0] == S0[i].textureKey) {
+        //         playerSpriteA = S0[i].sprites;
                 
-            }
+        //     }
 
-            if (self.confirmedTextures[0][1] == S0[i].textureKey) {
-                playerSpriteB = S0[i].sprites;
+        //     if (self.confirmedTextures[0][1] == S0[i].textureKey) {
+        //         playerSpriteB = S0[i].sprites;
                 
-            }
+        //     }
 
-        }
+        // }
         
 
         console.log(self.confirmedTextures[0][0].toString());
 
-        console.log(self.confirmedTextures[0][1].toString());
+        //console.log(self.confirmedTextures[0][1].toString());
 
     
     }, 10000);
