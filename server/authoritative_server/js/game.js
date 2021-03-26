@@ -220,7 +220,7 @@ function create() {
 
     socket.on('textureKey', checkTexture);
     
-    function checkTexture() {
+    function checkTexture(confirmTextureKey) {
       console.log('textureKey: ' + confirmTextureKey);
       self.confirmedTexture.push(confirmTextureKey.toString());
 
@@ -233,7 +233,7 @@ function create() {
 
     socket.on('whatTexture', returnTexture);
 
-    function returnTexture() {
+    function returnTexture(confirmTextureKey) {
       self.confirmedTexture = self.confirmedTexture;
       io.emit('whatTexture', self.confirmedTexture);
       
