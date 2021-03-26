@@ -207,9 +207,9 @@ function create() {
     playersDetect.push(socket.id);
     //playersDetect.length - 1;
 
-    if (playersDetect.length == 1 ) {
+    if (playersDetect.length === 1 ) {
       console.log('Player A ID: ' + socket.id);
-      io.emit('isPlayerA' );
+      io.emit('isPlayerA');
     };
 
     // if (playersDetect[1] === socket.id) {
