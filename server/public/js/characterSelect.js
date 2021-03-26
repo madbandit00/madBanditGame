@@ -15,13 +15,13 @@ class CharacterSelect extends Phaser.Scene {
 
     init (data)
     {
-      this.Socket = data;
+      // this.Socket = data;
       
-      console.log(this.Socket.id.toString())
+      // console.log(this.Socket.id.toString())
 
-      this.socket = this.Socket;
+      // this.socket = this.Socket;
 
-      this.socket.on('connect', function () {
+      this.data.on('connect', function () {
         console.log('Connected!');
       });
     }
@@ -41,7 +41,7 @@ class CharacterSelect extends Phaser.Scene {
 
 
 
-      let Socket = this.socket;
+      //let Socket = this.socket;
 
       let text = this.add.text(20, 20, "Select a character").setScale(2, 2);
 
@@ -122,7 +122,7 @@ class CharacterSelect extends Phaser.Scene {
         // })
 
         //self.socket.close();
-        this.scene.start("smkSonata", Socket);
+        this.scene.start("smkSonata");
         
 
       },this);
