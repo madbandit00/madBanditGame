@@ -15,7 +15,6 @@ class SMKSonata extends Phaser.Scene {
     {
       this.Socket = data;
       console.log(this.Socket.id.toString())
-      this.socket = this.Socket
     }
 
     preload() {
@@ -38,14 +37,23 @@ class SMKSonata extends Phaser.Scene {
     this.load.image('star', 'assets/star_gold.png');
     }
 
-    
-
     create() {
         
     var self = this;
+    this.socket = this.Socket
     this.players = this.add.group();
 
     this.confirmedTextures = [];
+
+    this.socket.on('connect', function () {
+        console.log('Connected!');
+    });
+
+    this.socket.on('isPlayerA', function () {
+        self.isPlayerA = true;
+        //self.isPlayerB = false;
+        console.log('i am player A')
+    })
 
     this.socket.on('textureKey', function (ConfirmedTexture) {
 
@@ -206,7 +214,7 @@ class SMKSonata extends Phaser.Scene {
 
     let playerSpriteB;
 
-    setTimeout(() => {
+  
 
 
         let S0 = [
@@ -247,7 +255,7 @@ class SMKSonata extends Phaser.Scene {
         console.log(self.confirmedTextures[0][1].toString());
 
     
-    }, 10000);
+  
       
 
     this.dealCards = () => {
