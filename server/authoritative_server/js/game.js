@@ -67,6 +67,8 @@ function create() {
     red: 0
   };
 
+  this.isPlayerA = false;
+
   this.star = this.physics.add.image(1100, 400, 'star');
   this.physics.add.collider(this.players);
 
@@ -207,22 +209,14 @@ function create() {
     playersDetect.push(socket.id);
     //playersDetect.length - 1;
 
-    socket.on('isPlayerA', (isPlayerA) => {
-      isPlayerA = true;
-      if (playersDetect.length === 1 ) {
-        console.log('Player A ID: ' + socket.id);
-        io.emit('isPlayerA');    
-        }  
-            
-      });
+    socket.emit('isPlayerA', self.isPlayerA);
+    
+    if (playersDetect.length === 1 ) {
 
-
-    // socket.on('isPlayerA', function () {
-    // if (playersDetect.length === 1 ) {
-    //   console.log('Player A ID: ' + socket.id);
-    //   io.emit('isPlayerA');
-    // };
-    // });
+      self.isPlayerA = true;
+      console.log('Player A ID: ' + socket.id);
+      io.emit('isPlayerA', self.isPlayerA);
+    };
 
     // if (playersDetect[1] === socket.id) {
     //   console.log('Player B ID: ' + socket.id);
