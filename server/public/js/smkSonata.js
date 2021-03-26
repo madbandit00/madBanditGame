@@ -45,7 +45,7 @@ class SMKSonata extends Phaser.Scene {
 
     this.confirmedTextures = [];
 
-    this.socket.on('isPlayerA', function () {
+    self.socket.on('isPlayerA', function () {
         self.isPlayerA = true;
         //self.isPlayerB = false;
         console.log('i am player A')
