@@ -27,9 +27,10 @@ class RoomScreen extends Phaser.Scene {
     
     {
         var self = this;
-        this.socket = this.Socket;
 
         let Socket = this.socket;
+        
+        this.socket = this.Socket;
 
         let playerNumber;
 
