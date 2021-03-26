@@ -275,7 +275,7 @@ class SMKSonata extends Phaser.Scene {
         console.log(self.confirmedTextures[0][1].toString());
 
     
-    }, 10000);
+    }, 9000);
       
 
     this.dealCards = () => {
