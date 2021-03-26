@@ -16,9 +16,7 @@ class SMKSonata extends Phaser.Scene {
       this.Socket = data;
       console.log(this.Socket.id.toString());
 
-      this.socket = this.Socket
-
-      this.socket.on('connect', function () {
+      this.Socket.on('connect', function () {
         console.log('Connected!');
     });
     }
