@@ -224,7 +224,7 @@ function create() {
     
     function checkTexture(confirmTextureKey) {
       console.log('textureKey: ' + confirmTextureKey);
-      self.confirmedTexture.push(confirmTextureKey.toString());
+      self.confirmedTexture.push(confirmTextureKey);
 
 
       io.emit('textureKey', self.confirmedTexture);
