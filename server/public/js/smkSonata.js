@@ -50,12 +50,6 @@ class SMKSonata extends Phaser.Scene {
         console.log('Connected!');
     });
 
-    this.socket.on('isPlayerA', function () {
-        self.isPlayerA = true;
-        //self.isPlayerB = false;
-        console.log('i am player A');
-    });
-
     this.socket.on('textureKey', function (ConfirmedTexture) {
 
         //confirmedTexture = ConfirmedTexture;
@@ -119,7 +113,7 @@ class SMKSonata extends Phaser.Scene {
         dropZoneOutline2.strokeRect(dropZone2.x - dropZone2.input.hitArea.width / 2, dropZone2.y - dropZone2.input.hitArea.height / 2, dropZone2.input.hitArea.width, dropZone2.input.hitArea.height)
     };
 
-    this.isPlayerA = false;
+    
     //this.isPlayerB = false;
     this.opponentCards = [];
     
