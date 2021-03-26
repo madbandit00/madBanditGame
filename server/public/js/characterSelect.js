@@ -13,15 +13,11 @@ class CharacterSelect extends Phaser.Scene {
     // this.socket = data.socket;
     // }
 
-    init (data, data2)
+    init (data)
     {
       this.Socket = data;
       console.log(this.Socket.id.toString())
-
-      this.isPlayerA = data2;
-
-      console.log(data2.toString())
-      
+     
     }
 
     preload(){
