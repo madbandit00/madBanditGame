@@ -209,13 +209,13 @@ function create() {
     playersDetect.push(socket.id);
     //playersDetect.length - 1;
 
-    socket.emit('isPlayerA', self.isPlayerA);
+    //socket.emit('isPlayerA', self.isPlayerA);
     
     if (playersDetect.length === 1 ) {
 
       self.isPlayerA = true;
       console.log('Player A ID: ' + socket.id);
-      io.emit('isPlayerA', self.isPlayerA);
+      io.emit('isPlayerA');
     };
 
     // if (playersDetect[1] === socket.id) {

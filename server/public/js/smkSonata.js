@@ -15,6 +15,12 @@ class SMKSonata extends Phaser.Scene {
     {
       this.Socket = data;
       console.log(this.Socket.id.toString())
+
+      this.Socket.on('isPlayerA', function () {
+        self.isPlayerA = true;
+        //self.isPlayerB = false;
+        console.log('i am player A');
+    });
       
     }
 
@@ -50,10 +56,10 @@ class SMKSonata extends Phaser.Scene {
         console.log('Connected!');
     });
 
-    this.socket.on('isPlayerA', function (playerAorNot) {
-        self.isPlayerA = playerAorNot;
+    this.socket.on('isPlayerA', function () {
+        self.isPlayerA = true;
         //self.isPlayerB = false;
-        console.log('i am player A' + playerAorNot);
+        console.log('i am player A');
     });
 
     this.socket.on('textureKey', function (ConfirmedTexture) {
