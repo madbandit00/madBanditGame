@@ -207,8 +207,6 @@ function create() {
     playersDetect.push(socket.id);
     //playersDetect.length - 1;
 
-    socket.emit('isPlayerA');
-
     if (playersDetect.length === 1 ) {
       console.log('Player A ID: ' + socket.id);
       io.emit('isPlayerA');
