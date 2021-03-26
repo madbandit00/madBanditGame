@@ -287,7 +287,7 @@ class SMKSonata extends Phaser.Scene {
             if (self.isPlayerA) {
 
                 playerSprite = playerSpriteA;
-                playerSprite2 = Phaser.Math.RND.pick([S1],[S2],[S3]);
+                playerSprite2 = playerSpriteB;
                 
 
             }else {
@@ -300,7 +300,7 @@ class SMKSonata extends Phaser.Scene {
 
         
             for (let i = 0; i < 5; i++) {
-                let playerCard = self.renderCard(475 + (i * 100), 500, Phaser.Math.RND.pick(playerSprite||playerSprite2 ));
+                let playerCard = self.renderCard(475 + (i * 100), 500, Phaser.Math.RND.pick(playerSprite||(Phaser.Math.RND.pick([S1],[S2],[S3]))));
                 //playerCardImage = [playerCard.texture.key];
                 let opponentCard = self.renderCard(475 + (i * 100), 125, Phaser.Math.RND.pick(playerSprite2)).disableInteractive();
                 self.opponentCards.push(opponentCard);
