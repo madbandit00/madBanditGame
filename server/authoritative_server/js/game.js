@@ -210,13 +210,18 @@ function create() {
     //playersDetect.length - 1;
 
     //socket.emit('isPlayerA', self.isPlayerA);
-    
-    if (playersDetect.length === 1 ) {
 
-      self.isPlayerA = true;
-      console.log('Player A ID: ' + socket.id);
-      io.emit('isPlayerA');
-    };
+    socket.on('playerAorNot', playerAorB);
+
+    function playerAorB() {
+
+      if (playersDetect.length === 1 ) {
+
+        self.isPlayerA = true;
+        console.log('Player A ID: ' + socket.id);
+        io.emit('isPlayerA', self.isPlayerA);
+      };
+    }
 
     // if (playersDetect[1] === socket.id) {
     //   console.log('Player B ID: ' + socket.id);
