@@ -56,7 +56,7 @@ class SMKSonata extends Phaser.Scene {
 
     function playerAorNot(yesOrno) {
         self.isPlayerA  = yesOrno;
-        console.log('dapat tau A or B')
+        console.log(self.isPlayerA);
       }
 
     // this.socket.on('isPlayerA', function () {
