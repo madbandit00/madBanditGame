@@ -215,7 +215,7 @@ function create() {
 
     function playerAorB() {
 
-      if (playersDetect.length === 1 ) {
+      if (socket.id === playersDetect.length[0] ) {
 
         self.isPlayerA = true;
         console.log('Player A ID: ' + socket.id);
