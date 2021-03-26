@@ -225,7 +225,7 @@ function create() {
       self.confirmedTexture.push(confirmTextureKey.toString());
 
 
-      io.emit('textureKey', self.confirmedTexture);
+      io.emit('texturePicked', self.confirmedTexture);
       
       //io.emit('updateScore', self.scores);
       
@@ -235,7 +235,7 @@ function create() {
 
     function returnTexture(confirmTextureKey) {
       self.confirmedTexture = self.confirmedTexture;
-      io.emit('whatTexture', self.confirmedTexture);
+      io.emit('texturePicked', self.confirmedTexture);
       
       //io.emit('updateScore', self.scores);
       

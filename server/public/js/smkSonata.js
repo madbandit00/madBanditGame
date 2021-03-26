@@ -72,7 +72,7 @@ class SMKSonata extends Phaser.Scene {
 
     self.socket.emit('whatTexture');
 
-    this.socket.on('textureKey', textureCheck);
+    this.socket.on('texturePicked', textureCheck);
     
     function textureCheck(ConfirmedTexture) {
     
