@@ -11,12 +11,12 @@ class SMKSonata extends Phaser.Scene {
 
     }
 
-    init (data)
-    {
-      this.Socket = data;
-      console.log(this.Socket.id.toString())
+    // init (data)
+    // {
+    //   this.Socket = data;
+    //   console.log(this.Socket.id.toString())
       
-    }
+    // }
 
     preload() {
    
