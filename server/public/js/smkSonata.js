@@ -44,7 +44,7 @@ class SMKSonata extends Phaser.Scene {
     this.socket = this.Socket;
     this.players = this.add.group();
 
-    this.confirmedTextures = [];
+    
 
     this.socket.on('connect', function () {
         console.log('Connected!');
@@ -81,6 +81,8 @@ class SMKSonata extends Phaser.Scene {
         //confirmedTexture = ConfirmedTexture;
                     
         console.log(ConfirmedTexture + ' logTest');
+
+        this.confirmedTextures = [];
 
         console.log(self.confirmedTextures);
 
@@ -287,7 +289,7 @@ class SMKSonata extends Phaser.Scene {
             if (self.isPlayerA) {
 
                 playerSprite = playerSpriteA;
-                playerSprite2 = playerSpriteB;
+                playerSprite2 = Phaser.Math.RND.pick([S1],[S2],[S3]);
                 
 
             }else {
@@ -300,7 +302,7 @@ class SMKSonata extends Phaser.Scene {
 
         
             for (let i = 0; i < 5; i++) {
-                let playerCard = self.renderCard(475 + (i * 100), 500, Phaser.Math.RND.pick(playerSprite||(Phaser.Math.RND.pick([S1],[S2],[S3]))));
+                let playerCard = self.renderCard(475 + (i * 100), 500, Phaser.Math.RND.pick(playerSprite||playerSprite2 ));
                 //playerCardImage = [playerCard.texture.key];
                 let opponentCard = self.renderCard(475 + (i * 100), 125, Phaser.Math.RND.pick(playerSprite2)).disableInteractive();
                 self.opponentCards.push(opponentCard);
