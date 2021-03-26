@@ -45,8 +45,6 @@ class SMKSonata extends Phaser.Scene {
 
     this.confirmedTextures = [];
 
-    setTimeout(() => {
-
     this.socket.on('connect', function () {
         console.log('Connected!');
     });
@@ -56,8 +54,6 @@ class SMKSonata extends Phaser.Scene {
         //self.isPlayerB = false;
         console.log('i am player A')
     })
-
-    }, 5000);
 
     this.socket.on('textureKey', function (ConfirmedTexture) {
 
@@ -218,48 +214,48 @@ class SMKSonata extends Phaser.Scene {
 
     let playerSpriteB;
 
-    setTimeout(() => {
+    // setTimeout(() => {
 
 
-        let S0 = [
+    //     let S0 = [
         
-            {
-            textureKey: 'Adam',
-            sprites: ['otherPlayer', 'adam2', 'adam3', 'adam4', 'adam5'],
-            },
-            {
-            textureKey: 'Sydney',
-            sprites: ['ship', 'sydney2', 'sydney3' , 'sydney4', 'sydney5'],
-            },
-            {
-            textureKey: 'Daniel',
-            sprites: ['Daniel1', 'Daniel2', 'Daniel3' , 'Daniel4', 'Daniel5']
-            }
+    //         {
+    //         textureKey: 'Adam',
+    //         sprites: ['otherPlayer', 'adam2', 'adam3', 'adam4', 'adam5'],
+    //         },
+    //         {
+    //         textureKey: 'Sydney',
+    //         sprites: ['ship', 'sydney2', 'sydney3' , 'sydney4', 'sydney5'],
+    //         },
+    //         {
+    //         textureKey: 'Daniel',
+    //         sprites: ['Daniel1', 'Daniel2', 'Daniel3' , 'Daniel4', 'Daniel5']
+    //         }
 
-        ]
+    //     ]
 
-        for (let i = 0; i < S0.length; i++) {
+    //     for (let i = 0; i < S0.length; i++) {
 
 
-            if (self.confirmedTextures[0][0] == S0[i].textureKey) {
-                playerSpriteA = S0[i].sprites;
+    //         if (self.confirmedTextures[0][0] == S0[i].textureKey) {
+    //             playerSpriteA = S0[i].sprites;
                 
-            }
+    //         }
 
-            if (self.confirmedTextures[0][1] == S0[i].textureKey) {
-                playerSpriteB = S0[i].sprites;
+    //         if (self.confirmedTextures[0][1] == S0[i].textureKey) {
+    //             playerSpriteB = S0[i].sprites;
                 
-            }
+    //         }
 
-        }
+    //     }
         
 
-        console.log(self.confirmedTextures[0][0].toString());
+    //     console.log(self.confirmedTextures[0][0].toString());
 
-        console.log(self.confirmedTextures[0][1].toString());
+    //     console.log(self.confirmedTextures[0][1].toString());
 
     
-    }, 10000);
+    // }, 10000);
       
 
     this.dealCards = () => {
