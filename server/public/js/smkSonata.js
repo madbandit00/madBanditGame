@@ -260,14 +260,17 @@ class SMKSonata extends Phaser.Scene {
                 
             }
 
-  
+            if (self.confirmedTextures[0][1] == S0[i].textureKey) {
+                playerSpriteB = S0[i].sprites;
+                
+            }
 
         }
         
 
         console.log(self.confirmedTextures[0][0].toString());
 
-        //console.log(self.confirmedTextures[0][1].toString());
+        console.log(self.confirmedTextures[0][1].toString());
 
     
     }, 10000);
@@ -291,7 +294,7 @@ class SMKSonata extends Phaser.Scene {
                 };
 
             console.log(playerSprite);
-            //console.log(playerSprite2);
+            console.log(playerSprite2);
 
         
             for (let i = 0; i < 5; i++) {
