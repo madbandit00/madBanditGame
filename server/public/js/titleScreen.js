@@ -21,6 +21,8 @@ class TitleScreen extends Phaser.Scene {
         console.log('i am player A');
       });
 
+      console.log(this.isPlayerA);
+
       this.add.text(20, 20, "SMK Sonata...an Ikmal Game").setScale(2, 2);
       //this.dealText = this.add.text(75, 350, ['DEAL CARDS']).setFontSize(18).setFontFamily('Trebuchet MS').setColor('#00ffff').setInteractive();
       
