@@ -6,12 +6,6 @@ class CharacterSelect extends Phaser.Scene {
 
     constructor() {
       super({key: 'characterSelect'});
-
-      this.socket = this.Socket;
-
-      this.socket.on('connect', function () {
-        console.log('Connected!');
-      });
     }
 
     // init(data)
@@ -22,7 +16,14 @@ class CharacterSelect extends Phaser.Scene {
     init (data)
     {
       this.Socket = data;
+      
       console.log(this.Socket.id.toString())
+
+      this.socket = this.Socket;
+
+      this.socket.on('connect', function () {
+        console.log('Connected!');
+      });
     }
 
     preload(){
@@ -36,6 +37,9 @@ class CharacterSelect extends Phaser.Scene {
 
       var self = this;
       
+
+
+
 
       let Socket = this.socket;
 
