@@ -222,7 +222,7 @@ function create() {
 
     socket.on('whatTexture', checkTexture);
     
-    function checkTexture() {
+    function checkTexture(confirmTextureKey) {
       console.log('textureKey: ' + confirmTextureKey);
       self.confirmedTexture.push(confirmTextureKey.toString());
 
