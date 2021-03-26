@@ -207,12 +207,21 @@ function create() {
     playersDetect.push(socket.id);
     //playersDetect.length - 1;
 
-    socket.on('isPlayerA', function () {
-    if (playersDetect.length === 1 ) {
-      console.log('Player A ID: ' + socket.id);
-      io.emit('isPlayerA');
-    };
-    });
+    socket.on('isPlayerA', () => {
+      if (playersDetect.length === 1 ) {
+        console.log('Player A ID: ' + socket.id);
+        io.emit('isPlayerA');    
+        }  
+            
+      });
+
+
+    // socket.on('isPlayerA', function () {
+    // if (playersDetect.length === 1 ) {
+    //   console.log('Player A ID: ' + socket.id);
+    //   io.emit('isPlayerA');
+    // };
+    // });
 
     // if (playersDetect[1] === socket.id) {
     //   console.log('Player B ID: ' + socket.id);
