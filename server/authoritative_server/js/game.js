@@ -201,7 +201,7 @@ function create() {
 
     socket.on('checkID', (ID) => {
       console.log('checkID: ' + ID);
-      if (ID === playersDetect.length[0] ) {
+      if (ID === playersDetect[0] ) {
 
         self.isPlayerA = true;
         console.log('Player A ID: ' + socket.id);
