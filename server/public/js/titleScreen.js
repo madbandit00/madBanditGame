@@ -11,6 +11,10 @@ class TitleScreen extends Phaser.Scene {
 
       this.socket = io();
 
+      this.socket.on('connect', function () {
+        console.log('Connected!');
+      });
+
       let Socket = this.socket;
 
       this.add.text(20, 20, "SMK Sonata...an Ikmal Game").setScale(2, 2);
