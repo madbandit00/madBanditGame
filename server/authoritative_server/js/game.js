@@ -145,24 +145,6 @@ function create() {
       //startGameInterval(roomName);
     }
 
-    socket.emit('textureKey', self.confirmedTexture);
-
-    console.log(self.confirmedTexture);
-
-    socket.on('newGame', handleNewGame);
-
-    socket.on('joinGame', handleJoinGame);
-
-    socket.on('textureKey', (confirmTextureKey) => {
-      console.log('textureKey: ' + confirmTextureKey);
-      self.confirmedTexture.push(confirmTextureKey.toString());
-
-
-      io.emit('textureKey', self.confirmedTexture);
-      
-      //io.emit('updateScore', self.scores);
-      
-    });
     // add player to server
     addPlayer(self, players[socket.id]);
     // send the players object to the new player
@@ -198,6 +180,25 @@ function create() {
         self.scores.blue += pts;
       }
       io.emit('updateScore', self.scores);
+      
+    });
+
+    socket.emit('textureKey', self.confirmedTexture);
+
+    console.log(self.confirmedTexture);
+
+    socket.on('newGame', handleNewGame);
+
+    socket.on('joinGame', handleJoinGame);
+
+    socket.on('textureKey', (confirmTextureKey) => {
+      console.log('textureKey: ' + confirmTextureKey);
+      self.confirmedTexture.push(confirmTextureKey.toString());
+
+
+      io.emit('textureKey', self.confirmedTexture);
+      
+      //io.emit('updateScore', self.scores);
       
     });
 
