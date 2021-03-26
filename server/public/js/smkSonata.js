@@ -8,6 +8,9 @@ class SMKSonata extends Phaser.Scene {
 
     constructor() {
       super({key: 'smkSonata'});
+      this.socket.on('connect', function () {
+        console.log('Connected!');
+    });
 
     }
 
@@ -44,10 +47,6 @@ class SMKSonata extends Phaser.Scene {
     this.players = this.add.group();
 
     this.confirmedTextures = [];
-
-    this.socket.on('connect', function () {
-        console.log('Connected!');
-    });
 
     this.socket.on('isPlayerA', function () {
         self.isPlayerA = true;
