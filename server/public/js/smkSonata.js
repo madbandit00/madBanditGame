@@ -294,7 +294,7 @@ class SMKSonata extends Phaser.Scene {
                 };
 
             console.log(playerSprite);
-            console.log(playerSprite2);
+            //console.log(playerSprite2);
 
         
             for (let i = 0; i < 5; i++) {
