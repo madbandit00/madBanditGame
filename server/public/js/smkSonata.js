@@ -70,8 +70,12 @@ class SMKSonata extends Phaser.Scene {
     //     console.log('i am player A');
     // });
 
-    this.socket.on('textureKey', function (ConfirmedTexture) {
+    self.socket.emit('whatTexture');
 
+    this.socket.on('textureKey', textureCheck);
+    
+    function textureCheck(ConfirmedTexture) {
+    
         //confirmedTexture = ConfirmedTexture;
                     
         console.log(ConfirmedTexture + ' logTest');
@@ -82,7 +86,7 @@ class SMKSonata extends Phaser.Scene {
 
         console.log(self.confirmedTextures);
 
-    });
+    };
     
 
     this.answerAcounter = 0;

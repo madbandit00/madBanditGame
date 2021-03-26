@@ -184,25 +184,13 @@ function create() {
       io.emit('updateScore', self.scores);
       
     });
-
-    socket.emit('textureKey', self.confirmedTexture);
+    
 
     console.log(self.confirmedTexture);
 
     socket.on('newGame', handleNewGame);
 
     socket.on('joinGame', handleJoinGame);
-
-    socket.on('textureKey', (confirmTextureKey) => {
-      console.log('textureKey: ' + confirmTextureKey);
-      self.confirmedTexture.push(confirmTextureKey.toString());
-
-
-      io.emit('textureKey', self.confirmedTexture);
-      
-      //io.emit('updateScore', self.scores);
-      
-    });
 
     //characterSelect
 
@@ -229,6 +217,21 @@ function create() {
       }
 
     }
+
+    //socket.emit('textureKey', self.confirmedTexture);
+
+    socket.on('whatTexture', checkTexture);
+    
+    function checkTexture() {
+      console.log('textureKey: ' + confirmTextureKey);
+      self.confirmedTexture.push(confirmTextureKey.toString());
+
+
+      io.emit('textureKey', self.confirmedTexture);
+      
+      //io.emit('updateScore', self.scores);
+      
+    };
 
     // if (playersDetect[1] === socket.id) {
     //   console.log('Player B ID: ' + socket.id);
