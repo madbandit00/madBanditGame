@@ -20,7 +20,7 @@ class CharacterSelect extends Phaser.Scene {
 
       this.isPlayerA = data2;
 
-      console.log(data2)
+      console.log(data2.toString())
       
     }
 
