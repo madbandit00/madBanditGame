@@ -50,7 +50,7 @@ class SMKSonata extends Phaser.Scene {
         console.log('Connected!');
     });
 
-    self.socket.emit('checkID', this.Socket.id.toString());
+    //self.socket.emit('checkID', this.Socket.id.toString());
 
     self.socket.emit('playerAorNot');
 
@@ -63,7 +63,7 @@ class SMKSonata extends Phaser.Scene {
         console.log('player A: ' + self.isPlayerA);
         //return self.isPlayerA
       }
-
+ 
     console.log('player A: ' + self.isPlayerA);
 
     // this.socket.on('isPlayerA', function () {
@@ -300,7 +300,7 @@ class SMKSonata extends Phaser.Scene {
 
         
             for (let i = 0; i < 5; i++) {
-                let playerCard = self.renderCard(475 + (i * 100), 500, Phaser.Math.RND.pick(playerSprite));
+                let playerCard = self.renderCard(475 + (i * 100), 500, Phaser.Math.RND.pick(playerSprite||playerSprite2 ));
                 //playerCardImage = [playerCard.texture.key];
                 let opponentCard = self.renderCard(475 + (i * 100), 125, Phaser.Math.RND.pick(playerSprite2)).disableInteractive();
                 self.opponentCards.push(opponentCard);

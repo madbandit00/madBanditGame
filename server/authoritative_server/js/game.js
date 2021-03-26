@@ -199,23 +199,23 @@ function create() {
 
     //socket.emit('isPlayerA', self.isPlayerA);
 
-    socket.on('checkID', (ID) => {
-      console.log('checkID: ' + ID);
-      if (ID === playersDetect[0] ) {
+    // socket.on('checkID', (ID) => {
+    //   console.log('checkID: ' + ID);
+    //   if (ID === playersDetect[0] ) {
 
-        self.isPlayerA = true;
-        console.log('Player A ID: ' + socket.id);
-        io.emit('isPlayerA', self.isPlayerA);
-      }
-      else {
+    //     self.isPlayerA = true;
+    //     console.log('Player A ID: ' + socket.id);
+    //     io.emit('isPlayerA', self.isPlayerA);
+    //   }
+    //   else {
 
-        self.isPlayerA = false;
-        io.emit('isPlayerA', self.isPlayerA);
+    //     self.isPlayerA = false;
+    //     io.emit('isPlayerA', self.isPlayerA);
 
-      }
+    //   }
        
       
-    });
+    // });
 
     socket.on('playerAorNot', playerAorB);
 
