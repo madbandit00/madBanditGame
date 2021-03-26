@@ -218,13 +218,11 @@ function create() {
 
     }
 
-    //socket.emit('textureKey', self.confirmedTexture);
-
-    socket.on('whatTexture', checkTexture);
+    socket.on('textureKey', checkTexture);
     
-    function checkTexture(confirmTextureKey) {
+    function checkTexture() {
       console.log('textureKey: ' + confirmTextureKey);
-      self.confirmedTexture.push(confirmTextureKey);
+      self.confirmedTexture.push(confirmTextureKey.toString());
 
 
       io.emit('textureKey', self.confirmedTexture);
@@ -232,6 +230,20 @@ function create() {
       //io.emit('updateScore', self.scores);
       
     };
+
+    socket.on('whatTexture', returnTexture);
+
+    function returnTexture() {
+      self.confirmedTexture = self.confirmedTexture;
+      io.emit('whatTexture', self.confirmedTexture);
+      
+      //io.emit('updateScore', self.scores);
+      
+    };
+
+
+
+    socket.emit('textureKey', self.confirmedTexture);
 
     // if (playersDetect[1] === socket.id) {
     //   console.log('Player B ID: ' + socket.id);
