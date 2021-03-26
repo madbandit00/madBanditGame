@@ -235,6 +235,10 @@ function create() {
 
     }
 
+    if (playersDetect.length > 2 ) {
+
+      self.confirmedTexture = 0;
+    }
 
     socket.on('textureKey', checkTexture);
     
