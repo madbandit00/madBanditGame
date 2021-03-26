@@ -45,6 +45,8 @@ class SMKSonata extends Phaser.Scene {
 
     this.confirmedTextures = [];
 
+    setTimeout(() => {
+
     this.socket.on('connect', function () {
         console.log('Connected!');
     });
@@ -54,6 +56,8 @@ class SMKSonata extends Phaser.Scene {
         //self.isPlayerB = false;
         console.log('i am player A')
     })
+
+    }, 5000);
 
     this.socket.on('textureKey', function (ConfirmedTexture) {
 
@@ -214,7 +218,7 @@ class SMKSonata extends Phaser.Scene {
 
     let playerSpriteB;
 
-  
+    setTimeout(() => {
 
 
         let S0 = [
@@ -255,7 +259,7 @@ class SMKSonata extends Phaser.Scene {
         console.log(self.confirmedTextures[0][1].toString());
 
     
-  
+    }, 10000);
       
 
     this.dealCards = () => {
