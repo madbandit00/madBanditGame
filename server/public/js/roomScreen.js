@@ -82,10 +82,18 @@ class RoomScreen extends Phaser.Scene {
         let text3 = this.add.text(350, 495, 'Click', { fixedWidth: 200, fixedHeight: 75 })
         text3.setOrigin(0.5, 0.5);
     
-        text3.setInteractive().on('pointerdown', () => {
-            this.rexUI.edit(text3);
-            console.log(text3.text);
-        })
+        // text3.setInteractive().on('pointerdown', () => {
+        //     this.rexUI.edit(text3);
+        //     console.log(text3.text);
+        // })
+        
+        text3.on('pointerdown', function (pointer) {
+
+            console.log('boleh');
+    
+            this.scene.start("roomScreen", Socket);
+    
+          }, this);
 
         //var textEntry = this.add.text(110, 50, '', { font: '32px Courier', fill: '#ffff00' });
     
