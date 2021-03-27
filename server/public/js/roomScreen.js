@@ -72,7 +72,7 @@ class RoomScreen extends Phaser.Scene {
        
         this.add.text(10, 475, 'Enter Code:', { font: '32px Courier', fill: '#ffffff' });
 
-        var text1 = this.add.text(10, 545, 'Join', { color: 'white', fontFamily: 'Arial', fontSize: '32px '});
+        let text1 = this.add.text(10, 545, 'Join', { color: 'white', fontFamily: 'Arial', fontSize: '32px '});
 
         // text1.setInteractive().on('pointerdown', () => {
         //     this.scene.start("characterSelect", Socket)
