@@ -27,10 +27,10 @@ class RoomScreen extends Phaser.Scene {
     
     {
         var self = this;
+       
+        this.socket = this.Socket;
 
         let Socket = this.socket;
-        
-        this.socket = this.Socket;
 
         let playerNumber;
 
@@ -83,7 +83,7 @@ class RoomScreen extends Phaser.Scene {
 
             console.log('boleh');
     
-            this.scene.launch("characterSelect", Socket);
+            this.scene.start("characterSelect", Socket);
     
           }, this);
 
