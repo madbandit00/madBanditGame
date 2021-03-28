@@ -223,6 +223,8 @@ function create() {
 
       if (playersDetect.length === 1 ) {
 
+        self.isPlayerA = true;
+
         console.log('Test: ' + socket.id);
         io.emit('isPlayerA', self.isPlayerA);
       }
