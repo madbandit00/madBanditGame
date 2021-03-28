@@ -83,7 +83,7 @@ class RoomScreen extends Phaser.Scene {
 
             console.log('boleh');
     
-            this.scene.start("characterSelect", Socket);
+            this.scene.launch("characterSelect", Socket);
     
           }, this);
 
