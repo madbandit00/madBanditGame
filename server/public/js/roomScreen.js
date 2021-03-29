@@ -41,7 +41,7 @@ class RoomScreen extends Phaser.Scene {
         function handleInit(number) {
             playerNumber = number;
             console.log('init received')
-
+            console.log(number)
             if (playerNumber === 0) {
               roomNotReadyText.setText("Room is empty :(");
               return;
