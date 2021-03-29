@@ -49,12 +49,27 @@ class RoomScreen extends Phaser.Scene {
 
         let text0 = this.add.text(10, 400, 'Create new:', { color: 'white', fontFamily: 'Arial', fontSize: '32px '});
 
-        text0.setInteractive().on('pointerdown', () => {
-            self.socket.emit('newGame');
-            console.log('createclicked');
-            text0.disableInteractive();
+        // text0.setInteractive().on('pointerdown', () => {
+        //     self.socket.emit('newGame');
+        //     console.log('createclicked');
+        //     text0.disableInteractive();
+        //     text1.destroy();
             
-        })
+        // })
+
+        text0.setInteractive().on('pointerdown', function (pointer) {
+
+          console.log('created');
+
+          self.socket.emit('newGame');
+          console.log('createclicked');
+          text0.disableInteractive();
+          text1.destroy();
+  
+          this.scene.launch("characterSelect", Socket);
+
+  
+        }, this);
 
         function handleGameCode(gameCode) {
 
