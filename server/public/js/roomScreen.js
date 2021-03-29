@@ -41,6 +41,16 @@ class RoomScreen extends Phaser.Scene {
         function handleInit(number) {
             playerNumber = number;
             console.log('init received')
+
+            if (playerNumber === 0) {
+              roomNotReadyText.setText("Room is empty :(");
+              return;
+            } else if (playerNumber > 1) {
+              roomNotReadyText.setText("Room is empty :(");
+              return;
+            } else {
+              roomNotReadyText.destroy();
+            }
           }
 
         let text0 = this.add.text(10, 400, 'Create new:', { color: 'white', fontFamily: 'Arial', fontSize: '32px '});
@@ -84,6 +94,8 @@ class RoomScreen extends Phaser.Scene {
             console.log('boleh');
     
             this.scene.launch("characterSelect", Socket);
+
+            joinGame()
     
           }, this);
 
@@ -112,16 +124,6 @@ class RoomScreen extends Phaser.Scene {
         // });
 
         let roomNotReadyText = this.add.text(1000, 425, 'Room is not ready :(', { font: '32px Courier', fill: '#ffffff' });
-
-        if (playerNumber === 0) {
-          roomNotReadyText.setText('Room is empty :(');
-          return;
-        } else if (playerNumber > 1) {
-          roomNotReadyText.setText('Room is empty :(');
-          return;
-        } else {
-          roomNotReadyText.destroy();
-        }
     
 
         //let roomEmptyText = this.add.text(1000, 525, 'Room is empty :(', { font: '32px Courier', fill: '#ffffff' });
