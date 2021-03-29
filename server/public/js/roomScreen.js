@@ -37,18 +37,13 @@ class RoomScreen extends Phaser.Scene {
 
         this.socket.on('init', handleInit);
         this.socket.on('gameCode', handleGameCode);
+        this.socket.on('unknownCode', handleUnknownCode);
+        this.socket.on('tooManyPlayers', handleTooManyPlayers);
 
         function handleInit(number) {
             playerNumber = number;
-            console.log('init received')
-            console.log(number)
-            if (playerNumber === 0) {
-              roomNotReadyText.setText("Room is empty :(");
-              return;
-            } else if (playerNumber > 1) {
-              roomNotReadyText.setText("Room is full :(");
-              return;
-            } 
+            console.log('init received');
+            
           }
 
         let text0 = this.add.text(10, 400, 'Create new:', { color: 'white', fontFamily: 'Arial', fontSize: '32px '});
@@ -122,6 +117,16 @@ class RoomScreen extends Phaser.Scene {
         // });
 
         let roomNotReadyText = this.add.text(1000, 425, 'Room is not ready :(', { font: '32px Courier', fill: '#ffffff' });
+
+        function handleUnknownCode() {
+          //reset();
+          roomNotReadyText.setText("Room is empty :(")
+        }
+        
+        function handleTooManyPlayers() {
+          //reset();
+          roomNotReadyText.setText("Room is full :(");
+        }
     
 
         //let roomEmptyText = this.add.text(1000, 525, 'Room is empty :(', { font: '32px Courier', fill: '#ffffff' });
