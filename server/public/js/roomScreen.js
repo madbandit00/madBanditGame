@@ -48,9 +48,7 @@ class RoomScreen extends Phaser.Scene {
             } else if (playerNumber > 1) {
               roomNotReadyText.setText("Room is full :(");
               return;
-            } else {
-              roomNotReadyText.destroy();
-            }
+            } 
           }
 
         let text0 = this.add.text(10, 400, 'Create new:', { color: 'white', fontFamily: 'Arial', fontSize: '32px '});
