@@ -110,6 +110,10 @@ class RoomScreen extends Phaser.Scene {
         //     }
     
         // });
+
+        let roomFullText = this.add.text(1000, 475, 'Room is full :(', { font: '32px Courier', fill: '#ffffff' });
+
+        let roomEmptyText = this.add.text(1000, 575, 'Room is empty :(', { font: '32px Courier', fill: '#ffffff' });
     
         
 
