@@ -51,7 +51,7 @@ class RoomScreen extends Phaser.Scene {
         text0.setInteractive().on('pointerdown', () => {
             self.socket.emit('newGame');
             console.log('createclicked');
-            self.socket.text0.disableInteractive();
+            self.text0.disableInteractive();
             
         })
 
