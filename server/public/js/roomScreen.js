@@ -116,7 +116,7 @@ class RoomScreen extends Phaser.Scene {
         if (playerNumber === 0) {
           roomNotReadyText.setText('Room is empty :(');
           return;
-        } else if (numClients > 1) {
+        } else if (playerNumber > 1) {
           roomNotReadyText.setText('Room is empty :(');
           return;
         } else {
