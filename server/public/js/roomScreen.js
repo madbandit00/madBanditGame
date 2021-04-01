@@ -117,7 +117,7 @@ class RoomScreen extends Phaser.Scene {
         text3.setInteractive().on('pointerdown', () => {
             this.rexUI.edit(text3);
 
-            if (text1 !== undefined){
+            if (text1.active){
 
               text1.setInteractive()
 
