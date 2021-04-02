@@ -98,7 +98,7 @@ class CharacterSelect extends Phaser.Scene {
         ship.clearTint();
 
       });
-  
+      let cam = this.cameras.main;
 
       var r4 = this.add.rectangle(1200, 200, 148, 148, 0x6666ff);
 
@@ -117,7 +117,7 @@ class CharacterSelect extends Phaser.Scene {
 
         //self.socket.close();
         this.scene.launch("smkSonata", Socket);
-        this.scene.setAlpha(0.5);
+        cam.alpha = 0.5;
         this.scene.remove('characterSelect');
         
 
