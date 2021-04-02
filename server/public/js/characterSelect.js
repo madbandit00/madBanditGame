@@ -24,16 +24,19 @@ class CharacterSelect extends Phaser.Scene {
         this.load.image('Adam', 'assets/adamSelect.png');
         this.load.image('Sydney', 'assets/sydneySelect.png');
         this.load.image('Daniel', 'assets/danielSelect.png');
+        this.load.script('BlurX', 'https://cdn.rawgit.com/photonstorm/phaser-ce/master/filters/BlurX.js');
+        this.load.script('BlurY', 'https://cdn.rawgit.com/photonstorm/phaser-ce/master/filters/BlurY.js');
+    
 
     }
-
     create() {
 
       var self = this;
       this.socket = this.Socket;
 
 
-
+      var blurX = game.add.filter('BlurX');
+      var blurY = game.add.filter('BlurY');
 
       let Socket = this.socket;
 
@@ -118,6 +121,7 @@ class CharacterSelect extends Phaser.Scene {
         //self.socket.close();
         this.scene.launch("smkSonata", Socket);
         this.scene.remove('characterSelect');
+        this.world.filters = [blurX, blurY];
         
 
       },this);
