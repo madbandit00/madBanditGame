@@ -116,8 +116,7 @@ class CharacterSelect extends Phaser.Scene {
 
         //self.socket.close();
         this.scene.launch("smkSonata", Socket);
-        let cam = this.cameras.main;
-        cam.alpha = 0.5;
+
         this.scene.remove('characterSelect');
         
 
