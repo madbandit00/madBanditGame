@@ -44,6 +44,9 @@ class SMKSonata extends Phaser.Scene {
     this.socket = this.Socket;
     this.players = this.add.group();
 
+    let cam = this.cameras.main;
+    cam.alpha = 0.5;
+
     this.confirmedTextures = [];
 
     this.socket.on('connect', function () {
@@ -274,6 +277,10 @@ class SMKSonata extends Phaser.Scene {
 
         //console.log(self.confirmedTextures[0][1].toString());
 
+        cam.destroy();
+
+        this.dealText.setInteractive();
+
     
     }, 9000);
       
@@ -442,7 +449,7 @@ class SMKSonata extends Phaser.Scene {
             }
         })
 
-        this.dealText = this.add.text(75, 350, ['DEAL CARDS']).setFontSize(18).setFontFamily('Trebuchet MS').setColor('#00ffff').setInteractive();
+        this.dealText = this.add.text(75, 350, ['DEAL CARDS']).setFontSize(18).setFontFamily('Trebuchet MS').setColor('#00ffff');
 
         this.dealText.on('pointerdown', function () {
             self.socket.emit("dealCards");
