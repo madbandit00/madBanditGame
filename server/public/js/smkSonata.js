@@ -277,7 +277,7 @@ class SMKSonata extends Phaser.Scene {
 
         //console.log(self.confirmedTextures[0][1].toString());
 
-        cam.destroy();
+        cam.alpha = 0;
 
         this.dealText.setInteractive();
 
