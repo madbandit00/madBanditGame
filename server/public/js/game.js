@@ -419,9 +419,9 @@
 // }
 
 import TitleScreen from './titleScreen.js';
+import RoomScreen from './roomScreen.js';
 import CharacterSelect from './characterSelect.js';
 import CharacterSelectPrivate from './characterSelectPrivate.js';
-import RoomScreen from './roomScreen.js';
 import SMKSonata from './smkSonata.js';
 
 var titleScreen = new TitleScreen();
