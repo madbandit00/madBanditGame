@@ -123,6 +123,8 @@ function create() {
       if (room) {
         allUsers = room.sockets;
       }
+
+      socket.emit('allUsers', allUsers);
  
       let numClients = 0;
       if (allUsers) {
