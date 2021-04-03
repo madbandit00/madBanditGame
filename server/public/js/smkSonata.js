@@ -281,6 +281,8 @@ class SMKSonata extends Phaser.Scene {
 
         this.dealText.setInteractive();
 
+        this.scene.remove('roomScreen.js');
+
     
     }, 9000);
       
