@@ -123,13 +123,13 @@ function create() {
       if (room) {
         allUsers = room.sockets;
       }
-
-      console.log(allUsers);
-  
+ 
       let numClients = 0;
       if (allUsers) {
         numClients = Object.keys(allUsers).length;
+        console.log(Object.keys(allUsers));
       }
+
   
       console.log(numClients);
       if (numClients === 0) {
