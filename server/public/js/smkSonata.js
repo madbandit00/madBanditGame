@@ -15,7 +15,7 @@ class SMKSonata extends Phaser.Scene {
     {
       this.Socket = data;
       console.log(this.Socket.id.toString());
-      this.scene.remove('roomScreen');      
+      //this.scene.remove('roomScreen');      
     }
 
     preload() {
