@@ -420,12 +420,14 @@
 
 import TitleScreen from './titleScreen.js';
 import CharacterSelect from './characterSelect.js';
+import CharacterSelectPrivate from './characterSelectPrivate';
 import RoomScreen from './roomScreen.js';
 import SMKSonata from './smkSonata.js';
 
 var titleScreen = new TitleScreen();
 var roomScreen = new RoomScreen();
 var characterSelect = new CharacterSelect();
+var characterSelectPrivate = new CharacterSelectPrivate();
 var smkSonata = new SMKSonata();
 
 var config = {
@@ -454,5 +456,6 @@ game.scene.add('titleScreen', titleScreen);
 game.scene.add('roomScreen', roomScreen);
 game.scene.add('smkSonata', smkSonata);
 game.scene.add('characterSelect', characterSelect);
+game.scene.add('characterSelectPrivate', characterSelectPrivate);
 
 game.scene.start('titleScreen');
