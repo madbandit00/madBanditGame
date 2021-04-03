@@ -103,6 +103,8 @@ class RoomScreen extends Phaser.Scene {
         text1.on('pointerdown', function (pointer) {
 
             console.log('boleh');
+
+            this.scene.remove('characterSelectPrivate');
     
             this.scene.launch("smkSonata", Socket);
 
