@@ -89,7 +89,7 @@ function create() {
   }); 
 
   io.on('connection', function (socket) {
-    console.log('A user connected: ' + socket.id);
+    console.log('A user connected: ' + socket);
     // create a new player and add it to our players objecterupd
     players[socket.id] = {
       rotation: 0,
