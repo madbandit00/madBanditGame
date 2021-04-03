@@ -66,7 +66,7 @@ class RoomScreen extends Phaser.Scene {
           text0.disableInteractive();
           text1.destroy();
   
-          this.scene.launch("smkSonata", Socket);
+          //this.scene.launch("characterSelect", Socket);
 
   
         }, this);
@@ -104,7 +104,7 @@ class RoomScreen extends Phaser.Scene {
 
             console.log('boleh');
     
-            this.scene.launch("characterSelect", Socket);
+            this.scene.launch("smkSonata", Socket);
 
             joinGame()
     
