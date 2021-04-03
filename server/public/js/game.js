@@ -420,7 +420,7 @@
 
 import TitleScreen from './titleScreen.js';
 import CharacterSelect from './characterSelect.js';
-import CharacterSelectPrivate from './characterSelectPrivate';
+import CharacterSelectPrivate from './characterSelectPrivate.js';
 import RoomScreen from './roomScreen.js';
 import SMKSonata from './smkSonata.js';
 
