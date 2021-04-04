@@ -64,6 +64,8 @@ class RoomScreen extends Phaser.Scene {
           self.socket.emit('newGame');
           console.log('createclicked');
           text0.disableInteractive();
+          this.scene.launch("smkSonata", Socket);
+          joinGame()
           //text1.destroy();
           
   
