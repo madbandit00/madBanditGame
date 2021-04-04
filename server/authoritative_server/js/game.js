@@ -117,8 +117,10 @@ function create() {
     }
 
     let private = false;
+    let Room;
     function handleJoinGame(roomName) {
       const room = io.sockets.adapter.rooms[roomName];
+      Room = room;
 
       private = true;
   
@@ -268,7 +270,7 @@ function create() {
       self.confirmedTexture = self.confirmedTexture;
       
       if (private){
-      io.sockets.in(room).emit('texturePicked', self.confirmedTexture);
+      io.sockets.in(Room).emit('texturePicked', self.confirmedTexture);
       console.log("this is private");
       }
       else{
