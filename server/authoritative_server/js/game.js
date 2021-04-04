@@ -263,7 +263,14 @@ function create() {
 
     function returnTexture(confirmTextureKey) {
       self.confirmedTexture = self.confirmedTexture;
-      io.emit('texturePicked', self.confirmedTexture);
+      
+      if (room){
+      io.sockets.in(room).emit('texturePicked', self.confirmedTexture);
+      console.log("this is private");
+      }
+      else{
+        io.emit('texturePicked', self.confirmedTexture);
+      }
       
       //io.emit('updateScore', self.scores);
       

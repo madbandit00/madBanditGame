@@ -1,4 +1,4 @@
-class SMKSonata extends Phaser.Scene {
+class SMKSonataPrivate extends Phaser.Scene {
 
     answerAcounter;
     answerBcounter;
@@ -7,7 +7,7 @@ class SMKSonata extends Phaser.Scene {
     answerBcheck;
 
     constructor() {
-      super({key: 'smkSonata'});
+      super({key: 'smkSonataPrivate'});
 
     }
 
@@ -652,4 +652,4 @@ class SMKSonata extends Phaser.Scene {
 
 }
 
-export default SMKSonata;
+export default SMKSonataPrivate;
