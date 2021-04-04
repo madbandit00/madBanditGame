@@ -257,15 +257,8 @@ function create() {
       console.log('textureKey: ' + confirmTextureKey);
       self.confirmedTexture.push(confirmTextureKey.toString());
 
-      if (private){
-        io.sockets.in(Room).emit('texturePicked', self.confirmedTexture);
-      }
-
-      else {
 
       io.emit('texturePicked', self.confirmedTexture);
-
-      }
       
       //io.emit('updateScore', self.scores);
       
