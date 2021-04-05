@@ -104,6 +104,8 @@ function create() {
       }
     };
 
+    let socketNumber;
+
     function handleNewGame() {
       let roomName = makeid(5);
       clientRooms[socket.id] = roomName;
@@ -113,6 +115,7 @@ function create() {
   
       socket.join(roomName);
       socket.number = 1;
+      socketNumber = socket.number;
       socket.emit('init', 1);
     }
 
@@ -230,7 +233,7 @@ function create() {
 
     function playerAorB() {
 
-      if (playersDetect.length === 1 ) {
+      if (playersDetect.length === 1 || socketNumber === 1) {
 
         self.isPlayerA = true;
 
