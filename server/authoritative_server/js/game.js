@@ -126,6 +126,8 @@ function create() {
       Room = room;
 
       private = true;
+
+      console.log (Room);
   
       let allUsers;
       if (room) {
