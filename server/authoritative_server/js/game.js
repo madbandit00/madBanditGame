@@ -123,11 +123,9 @@ function create() {
     let Room;
     function handleJoinGame(roomName) {
       const room = io.sockets.adapter.rooms[roomName];
-      Room = room;
+      Room = roomName;
 
       private = true;
-
-      console.log (Room);
   
       let allUsers;
       if (room) {
@@ -155,6 +153,8 @@ function create() {
       clientRooms[socket.id] = roomName;
   
       socket.join(roomName);
+      console.log (roomName);
+
       socket.number = 2;
       socket.emit('init', 2);
       
