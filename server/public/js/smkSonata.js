@@ -440,6 +440,7 @@ class SMKSonata extends Phaser.Scene {
         this.socket.on('dealCards', function () {
             self.dealCards();
             self.dealText.disableInteractive();
+            this.socket.off('dealCards');
         })
 
         this.socket.on('cardPlayed', function (gameObject, isPlayerA) {
