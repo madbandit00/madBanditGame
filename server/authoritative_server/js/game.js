@@ -326,7 +326,7 @@ function create() {
     });
 
     socket.on('cardPlayed', function (gameObject, isPlayerA) {
-        //console.log ('cardPlayed');
+        console.log ('cardPlayed');
         io.emit('cardPlayed', gameObject, isPlayerA);
     });
 
