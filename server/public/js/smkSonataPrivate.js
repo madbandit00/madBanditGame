@@ -423,6 +423,8 @@ class SMKSonataPrivate extends Phaser.Scene {
         }
 
         }
+
+        this.socket.off('dealCards');
     }
         //let self = this;
 
