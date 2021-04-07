@@ -304,7 +304,7 @@ function create() {
       self.confirmedTexture = self.confirmedTexture;
       
 {
-      io.emit('texturePickedPrivate', self.confirmedTexture);
+      io.emit('texturePicked', self.confirmedTexture);
       console.log("this is random");
       }
       
