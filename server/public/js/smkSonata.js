@@ -76,41 +76,19 @@ class SMKSonata extends Phaser.Scene {
     //     console.log('i am player A');
     // });
 
-    //self.socket.emit('whatTexture');
-
-    this.socket.on('texturePickedPrivate', textureCheckPrivate);
+    self.socket.emit('whatTexture');
 
     this.socket.on('texturePicked', textureCheck);
-
-    function textureCheckPrivate(ConfirmedTexture) {
-    
-        //confirmedTexture = ConfirmedTexture;
-        //this.socket.off('texturePicked');
-                    
-        console.log(ConfirmedTexture + ' logTest');
-
-        console.log(self.confirmedTextures);
-
-        self.confirmedTextures.push(ConfirmedTexture);
-
-        self.socket.emit('texturePickedPrivate');
-
-        console.log(self.confirmedTextures);
-
-    };
     
     function textureCheck(ConfirmedTexture) {
     
         //confirmedTexture = ConfirmedTexture;
-        //this.socket.off('texturePickedPrivate');
                     
         console.log(ConfirmedTexture + ' logTest');
 
         console.log(self.confirmedTextures);
 
         self.confirmedTextures.push(ConfirmedTexture);
-
-        self.socket.emit('texturePicked');
 
         console.log(self.confirmedTextures);
 

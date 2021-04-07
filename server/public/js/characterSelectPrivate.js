@@ -106,7 +106,7 @@ class CharacterSelectPrivate extends Phaser.Scene {
       confirmText.on('pointerdown', function (pointer) {
 
         console.log(Confirm.texture.key);
-        self.socket.emit('textureKey', Confirm.texture.key);
+        self.socket.emit('textureKeyPrivate', Confirm.texture.key);
 
         // this.socket.on('textureKey', function (confirmedTexture) {
         //   self.confirmedTexture = Confirm.texture.key;
