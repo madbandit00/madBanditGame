@@ -313,8 +313,7 @@ class SMKSonataPrivate extends Phaser.Scene {
                 let playerCard = self.renderCard(475 + (i * 100), 500, Phaser.Math.RND.pick(playerSprite||playerSprite2 ));
                 //playerCardImage = [playerCard.texture.key];
                 let opponentCard = self.renderCard(475 + (i * 100), 125, Phaser.Math.RND.pick(playerSprite2)).disableInteractive();
-                self.opponentCards.push(opponentCard);
-                return self.opponentCards;
+                self.opponentCards = self.opponentCards.push(opponentCard);
                 //self.opponentCards.push(opponentCard.renderCard(475 + (i * 100), 125, opponentSprite).disableInteractive());
                 }
         }, 2000);
