@@ -115,7 +115,7 @@ class CharacterSelectPrivate extends Phaser.Scene {
         // })
 
         //self.socket.close();
-        this.scene.launch("smkSonata", Socket);
+        this.scene.launch("smkSonataPrivate", Socket);
 
         this.scene.remove('characterSelectPrivate');
         

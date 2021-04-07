@@ -422,7 +422,8 @@ import TitleScreen from './titleScreen.js';
 import RoomScreen from './roomScreen.js';
 import CharacterSelect from './characterSelect.js';
 import CharacterSelectPrivate from './characterSelectPrivate.js';
-import SMKSonataPrivate from './smkSonataPrivate';
+import SMKSonata from './smkSonata.js';
+import SMKSonataPrivate from './smkSonataPrivate.js';
 
 var titleScreen = new TitleScreen();
 var roomScreen = new RoomScreen();
