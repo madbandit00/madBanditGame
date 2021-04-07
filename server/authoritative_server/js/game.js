@@ -333,7 +333,7 @@ function create() {
     socket.on('cardPlayedPrivate', function (gameObject, isPlayerA) {
       //console.log ('cardPlayed');
       io.emit('cardPlayedPrivate', gameObject, isPlayerA);
-  });
+    });
 
     socket.on('disconnect', function () {
         console.log('A user disconnected: ' + socket.id);
