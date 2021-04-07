@@ -416,7 +416,7 @@ class SMKSonata extends Phaser.Scene {
         this.answerAcheck = true;
         }
 
-        console.log(this.answerBcheck);
+        //console.log(this.answerBcheck);
         
 
         for (let i = 0; i < questions.length; i++) {
@@ -490,7 +490,7 @@ class SMKSonata extends Phaser.Scene {
 
         this.input.on('drop', function (pointer, gameObject, dropZone) {
 
-        console.log(gameObject.texture.key);
+        //console.log(gameObject.texture.key);
         dropZone.data.values.zoneCheckA++;
         dropZone.data.values.cards++;      
         gameObject.x = (dropZone.x - 10) + (dropZone.data.values.cards * 10);
@@ -530,7 +530,7 @@ class SMKSonata extends Phaser.Scene {
         //   player.x = dropZone2.x;
         //   player.y = dropZone2.y;
         // });
-        console.log(gameObject.texture.key);
+        //console.log(gameObject.texture.key);
         dropZone2.data.values.zoneCheckB++;
         dropZone2.data.values.cards++;
         gameObject.x = (dropZone2.x - 10) + (dropZone2.data.values.cards * 10);
@@ -541,11 +541,11 @@ class SMKSonata extends Phaser.Scene {
         if ( dropZone2.data.values.zoneCheckB +1 && self.answerBcheck == true ){
             if(playerCardImage[0].includes(gameObject.texture.key)){
             self.answerBcounter=2
-            console.log(self.answerBcounter);
+            //console.log(self.answerBcounter);
             self.socket.emit('points', self.answerBcounter);
             }else if (playerCardImage[1].includes(gameObject.texture.key)){
             self.answerBcounter=1
-            console.log(self.answerBcounter);
+            //console.log(self.answerBcounter);
             self.socket.emit('points', self.answerBcounter);
             }
             console.log('B working');

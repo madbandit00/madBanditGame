@@ -90,7 +90,7 @@ class SMKSonataPrivate extends Phaser.Scene {
 
         self.confirmedTextures.push(ConfirmedTexture);
 
-        console.log(self.confirmedTextures);
+        //console.log(self.confirmedTextures);
 
     };   
 
@@ -413,7 +413,7 @@ class SMKSonataPrivate extends Phaser.Scene {
         this.answerAcheck = true;
         }
 
-        console.log(this.answerBcheck);
+        //console.log(this.answerBcheck);
         
 
         for (let i = 0; i < questions.length; i++) {
@@ -441,7 +441,7 @@ class SMKSonataPrivate extends Phaser.Scene {
             self.dealText.disableInteractive();
         })
 
-        this.socket.on('cardPlayed', function (gameObject, isPlayerA) {
+        this.socket.on('cardPlayedPrivate', function (gameObject, isPlayerA) {
             if (isPlayerA !== self.isPlayerA) {
             console.log ('im playerB');
             let sprite = gameObject.textureKey;
@@ -504,7 +504,7 @@ class SMKSonataPrivate extends Phaser.Scene {
             console.log('A working');
         }
     
-        self.socket.emit('cardPlayed', gameObject, self.isPlayerA);
+        self.socket.emit('cardPlayedPrivate', gameObject, self.isPlayerA);
     
         })
 
@@ -537,17 +537,17 @@ class SMKSonataPrivate extends Phaser.Scene {
         if ( dropZone2.data.values.zoneCheckB +1 && self.answerBcheck == true ){
             if(playerCardImage[0].includes(gameObject.texture.key)){
             self.answerBcounter=2
-            console.log(self.answerBcounter);
+            //console.log(self.answerBcounter);
             self.socket.emit('points', self.answerBcounter);
             }else if (playerCardImage[1].includes(gameObject.texture.key)){
             self.answerBcounter=1
-            console.log(self.answerBcounter);
+            //console.log(self.answerBcounter);
             self.socket.emit('points', self.answerBcounter);
             }
             console.log('B working');
                 
         }
-        self.socket.emit('cardPlayed', gameObject, self.isPlayerA);
+        self.socket.emit('cardPlayedPrivate', gameObject, self.isPlayerA);
         return dropZone2
         //console.log(answerBcounter);
     
