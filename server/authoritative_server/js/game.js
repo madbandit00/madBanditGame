@@ -275,7 +275,7 @@ function create() {
       self.confirmedTexture = self.confirmedTexture;
       
       if (private){
-      io.sockets.in(Room).emit('texturePicked', self.confirmedTexture);
+      io.sockets.in(Room).emit('texturePickedPrivate', self.confirmedTexture);
       console.log("this is private");
       }
       else{
