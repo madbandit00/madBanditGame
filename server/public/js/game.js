@@ -422,13 +422,15 @@ import TitleScreen from './titleScreen.js';
 import RoomScreen from './roomScreen.js';
 import CharacterSelect from './characterSelect.js';
 import CharacterSelectPrivate from './characterSelectPrivate.js';
-import SMKSonata from './smkSonata.js';
+import SMKSonataPrivate from './smkSonataPrivate';
 
 var titleScreen = new TitleScreen();
 var roomScreen = new RoomScreen();
 var characterSelect = new CharacterSelect();
 var characterSelectPrivate = new CharacterSelectPrivate();
 var smkSonata = new SMKSonata();
+var smkSonataPrivate = new SMKSonataPrivate();
+
 
 var config = {
   type: Phaser.AUTO,
@@ -455,6 +457,7 @@ var game = new Phaser.Game(config);
 game.scene.add('titleScreen', titleScreen);
 game.scene.add('roomScreen', roomScreen);
 game.scene.add('smkSonata', smkSonata);
+game.scene.add('smkSonataPrivate', smkSonataPrivate);
 game.scene.add('characterSelect', characterSelect);
 game.scene.add('characterSelectPrivate', characterSelectPrivate);
 
