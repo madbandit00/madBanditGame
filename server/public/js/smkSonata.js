@@ -13,8 +13,7 @@ class SMKSonata extends Phaser.Scene {
 
     init (data)
     {
-      this.Socket = data;
-    
+      this.Socket = data;    
       console.log(this.Socket.id.toString());
       //this.scene.remove('roomScreen');      
     }
@@ -83,6 +82,7 @@ class SMKSonata extends Phaser.Scene {
     function textureCheck(ConfirmedTexture) {
     
         //confirmedTexture = ConfirmedTexture;
+        //this.socket.off('texturePicked');
                     
         console.log(ConfirmedTexture + ' logTest');
 
@@ -441,8 +441,7 @@ class SMKSonata extends Phaser.Scene {
 
         this.socket.on('dealCards', function () {
             self.dealCards();
-            self.dealText.disableInteractive();
-            
+            self.dealText.disableInteractive();            
         })
 
         this.socket.on('cardPlayed', function (gameObject, isPlayerA) {

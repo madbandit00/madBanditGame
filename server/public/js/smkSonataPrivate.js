@@ -94,6 +94,7 @@ class SMKSonataPrivate extends Phaser.Scene {
 
     };   
 
+
     this.answerAcounter = 0;
     this.answerBcounter = 0;
 
@@ -280,6 +281,8 @@ class SMKSonataPrivate extends Phaser.Scene {
         cam.alpha = 1 ;
 
         this.dealText.setInteractive();
+
+        this.scene.remove('roomScreen');
 
     
     }, 9000);
