@@ -58,6 +58,7 @@ let scoreCheckerBlue = 0;
 function create() {
 
   this.confirmedTexture = [];
+  this.confirmedTexturePrivate = [];
 
   const self = this;
   this.players = this.physics.add.group();
@@ -273,11 +274,25 @@ function create() {
     
     function checkTexturePrivate(confirmTextureKey) {
       console.log('textureKey: ' + confirmTextureKey);
-      self.confirmedTexture.push(confirmTextureKey.toString());
+      self.confirmedTexturePrivate.push(confirmTextureKey.toString());
 
 
-      io.emit('texturePicked', self.confirmedTexture);
+      io.emit('texturePickedPrivate', self.confirmedTexturePrivate);
       console.log("this is private room");
+      
+      //io.emit('updateScore', self.scores);
+      
+    };
+
+    socket.on('whatTexturePrivate', returnTexturePrivate);
+
+    function returnTexturePrivate(confirmTextureKey) {
+      self.confirmedTexturePrivate = self.confirmedTexturePrivate;
+      
+      if (private){
+      io.sockets.in(Room).emit('texturePickedPrivate', self.confirmedTexturePrivate);
+      console.log("this is private");
+      }
       
       //io.emit('updateScore', self.scores);
       
@@ -288,13 +303,9 @@ function create() {
     function returnTexture(confirmTextureKey) {
       self.confirmedTexture = self.confirmedTexture;
       
-      if (private){
-      io.sockets.in(Room).emit('texturePickedPrivate', self.confirmedTexture);
-      console.log("this is private");
-      }
-      else{
-        io.emit('texturePicked', self.confirmedTexture);
-        console.log("this is random");
+{
+      io.emit('texturePickedPrivate', self.confirmedTexture);
+      console.log("this is random");
       }
       
       //io.emit('updateScore', self.scores);

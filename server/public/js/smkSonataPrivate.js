@@ -75,7 +75,7 @@ class SMKSonataPrivate extends Phaser.Scene {
     //     console.log('i am player A');
     // });
 
-    self.socket.emit('whatTexture');
+    self.socket.emit('whatTexturePrivate');
 
     this.socket.on('texturePickedPrivate', textureCheckPrivate);
 
