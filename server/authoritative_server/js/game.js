@@ -280,6 +280,7 @@ function create() {
       }
       else{
         io.emit('texturePicked', self.confirmedTexture);
+        console.log("this is random");
       }
       
       //io.emit('updateScore', self.scores);
