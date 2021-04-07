@@ -269,19 +269,28 @@ function create() {
       
     };
 
-    socket.on('whatTexture', returnTexture);
+    socket.on('texturePickedPrivate', returnTexturePrivate);
 
-    function returnTexture(confirmTextureKey) {
+    function returnTexturePrivate(confirmTextureKey) {
       self.confirmedTexture = self.confirmedTexture;
       
       if (private){
       io.sockets.in(Room).emit('texturePickedPrivate', self.confirmedTexture);
       console.log("this is private");
-      }
-      else{
-        io.emit('texturePicked', self.confirmedTexture);
-        console.log("this is random");
-      }
+      
+      
+      //io.emit('updateScore', self.scores);
+      
+    };
+
+    socket.on('texturePicked', returnTexture);
+
+    function returnTexture(confirmTextureKey) {
+      self.confirmedTexture = self.confirmedTexture;
+      
+      io.emit('texturePicked', self.confirmedTexture);
+      console.log("this is random");
+      
       
       //io.emit('updateScore', self.scores);
       
