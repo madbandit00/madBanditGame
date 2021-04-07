@@ -236,7 +236,7 @@ function create() {
 
     function playerAorB() {
 
-      if (playersDetect.length === 1 || socketNumber === 1) {
+      if (playersDetect.length === 1) {
 
         self.isPlayerA = true;
 
@@ -326,7 +326,7 @@ function create() {
     });
 
     socket.on('cardPlayed', function (gameObject, isPlayerA) {
-        console.log ('cardPlayed');
+        //console.log ('cardPlayed');
         io.emit('cardPlayed', gameObject, isPlayerA);
     });
 
