@@ -277,6 +277,7 @@ function create() {
       if (private){
       io.sockets.in(Room).emit('texturePickedPrivate', self.confirmedTexture);
       console.log("this is private");
+      }
       
       
       //io.emit('updateScore', self.scores);
