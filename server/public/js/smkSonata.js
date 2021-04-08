@@ -494,7 +494,7 @@ class SMKSonata extends Phaser.Scene {
         this.input.on('drop', function (pointer, gameObject, dropZone) {
 
         //console.log(gameObject.texture.key);
-        if (target.name == "dropZone1") {
+        if (dropZone.name == "dropZone1") {
             // stuff
         
         dropZone.data.values.zoneCheckA++;
