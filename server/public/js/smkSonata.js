@@ -513,6 +513,8 @@ class SMKSonata extends Phaser.Scene {
             self.socket.emit('points', self.answerAcounter);
             
             self.socket.emit('cardPlayed', gameObject, self.isPlayerA);
+            }else{
+            self.socket.emit('cardPlayed', gameObject, self.isPlayerA);
             }
             console.log('A working');
         }
@@ -559,6 +561,8 @@ class SMKSonata extends Phaser.Scene {
             //console.log(self.answerBcounter);
             self.socket.emit('points', self.answerBcounter);
 
+            self.socket.emit('cardPlayed', gameObject, self.isPlayerA);
+            }else{
             self.socket.emit('cardPlayed', gameObject, self.isPlayerA);
             }
             console.log('B working');
