@@ -541,7 +541,7 @@ class SMKSonata extends Phaser.Scene {
         // });
         //console.log(gameObject.texture.key);
 
-        if (target.name == "dropZone2") {
+        if (dropZone2.name == "dropZone2") {
 
         dropZone2.data.values.zoneCheckB++;
         dropZone2.data.values.cards++;
