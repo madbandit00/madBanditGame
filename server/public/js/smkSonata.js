@@ -487,7 +487,7 @@ class SMKSonata extends Phaser.Scene {
         
         })
 
-        this.input.on('drop', function (pointer, gameObject, dropZone) {
+        this.input.on('drop', function (pointer, gameObject, dropZone, dropZone2) {
 
         //console.log(gameObject.texture.key);
         dropZone.data.values.zoneCheckA++;
@@ -507,35 +507,14 @@ class SMKSonata extends Phaser.Scene {
             self.socket.emit('points', self.answerAcounter);
             }
             console.log('A working');
-        }
-    
-        })
 
-        this.socket.on('playerUpdates', function (players) {
-        Object.keys(players).forEach(function (id) {
-            self.players.getChildren().forEach(function (player) {
-            if (players[id].playerId === player.playerId) {
-                player.setRotation(players[id].rotation);
-                player.setPosition(players[id].x, players[id].y);
-            }
-            });
-        });
-        });
 
-        this.input.on('drop', function (pointer, gameObject, dropZone2, players) {
-
-        
-        // self.players.getChildren().forEach((player) => {
-        //   player.x = dropZone2.x;
-        //   player.y = dropZone2.y;
-        // });
-        //console.log(gameObject.texture.key);
         dropZone2.data.values.zoneCheckB++;
         dropZone2.data.values.cards++;
         gameObject.x = (dropZone2.x - 10) + (dropZone2.data.values.cards * 10);
         gameObject.y = dropZone2.y;
         gameObject.disableInteractive();
-        
+
         self.socket.emit('cardPlayed', gameObject, self.isPlayerA);
 
         
@@ -552,11 +531,56 @@ class SMKSonata extends Phaser.Scene {
             console.log('B working');
                 
         }
-        
-        return dropZone2
-        //console.log(answerBcounter);
+        }
     
         })
+
+        this.socket.on('playerUpdates', function (players) {
+        Object.keys(players).forEach(function (id) {
+            self.players.getChildren().forEach(function (player) {
+            if (players[id].playerId === player.playerId) {
+                player.setRotation(players[id].rotation);
+                player.setPosition(players[id].x, players[id].y);
+            }
+            });
+        });
+        });
+
+        // this.input.on('drop', function (pointer, gameObject, dropZone2) {
+
+        
+        // // self.players.getChildren().forEach((player) => {
+        // //   player.x = dropZone2.x;
+        // //   player.y = dropZone2.y;
+        // // });
+        // //console.log(gameObject.texture.key);
+        // dropZone2.data.values.zoneCheckB++;
+        // dropZone2.data.values.cards++;
+        // gameObject.x = (dropZone2.x - 10) + (dropZone2.data.values.cards * 10);
+        // gameObject.y = dropZone2.y;
+        // gameObject.disableInteractive();
+
+        // self.socket.emit('cardPlayed', gameObject, self.isPlayerA);
+
+        
+        // if ( dropZone2.data.values.zoneCheckB +1 && self.answerBcheck == true ){
+        //     if(playerCardImage[0].includes(gameObject.texture.key)){
+        //     self.answerBcounter=2
+        //     //console.log(self.answerBcounter);
+        //     self.socket.emit('points', self.answerBcounter);
+        //     }else if (playerCardImage[1].includes(gameObject.texture.key)){
+        //     self.answerBcounter=1
+        //     //console.log(self.answerBcounter);
+        //     self.socket.emit('points', self.answerBcounter);
+        //     }
+        //     console.log('B working');
+                
+        // }
+        
+        // //return dropZone2
+        // //console.log(answerBcounter);
+    
+        // })
 
         this.socket.on('currentPlayers', function (players) {
         Object.keys(players).forEach(function (id) {
