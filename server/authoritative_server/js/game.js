@@ -327,7 +327,7 @@ function create() {
 
     socket.on('cardPlayed', function (gameObject, isPlayerA) {
         //console.log ('cardPlayed');
-        socket.emit('cardPlayed', gameObject, isPlayerA);
+        socket.broadcast.emit('cardPlayed', gameObject, isPlayerA);
     });
 
     socket.on('cardPlayedPrivate', function (gameObject, isPlayerA) {
