@@ -494,27 +494,27 @@ class SMKSonata extends Phaser.Scene {
         this.input.on('drop', function (pointer, gameObject, dropZone) {
 
         //console.log(gameObject.texture.key);
+        if (target.name == "dropZone1") {
+            // stuff
+        
         dropZone.data.values.zoneCheckA++;
         dropZone.data.values.cards++;      
         gameObject.x = (dropZone.x - 10) + (dropZone.data.values.cards * 10);
         gameObject.y = dropZone.y;           
         gameObject.disableInteractive();
 
-        
+        self.socket.emit('cardPlayed', gameObject, self.isPlayerA);
+
+        }
+
 
         if ( dropZone.data.values.zoneCheckA +1 && self.answerAcheck == true){
             if(playerCardImage[0].includes(gameObject.texture.key)){
             self.answerAcounter=2
             self.socket.emit('points', self.answerAcounter);
-
-            self.socket.emit('cardPlayed', gameObject, self.isPlayerA);
             }else if (playerCardImage[1].includes(gameObject.texture.key)){
             self.answerAcounter=1;
             self.socket.emit('points', self.answerAcounter);
-            
-            self.socket.emit('cardPlayed', gameObject, self.isPlayerA);
-            }else{
-            self.socket.emit('cardPlayed', gameObject, self.isPlayerA);
             }
             console.log('A working');
         }
@@ -540,13 +540,19 @@ class SMKSonata extends Phaser.Scene {
         //   player.y = dropZone2.y;
         // });
         //console.log(gameObject.texture.key);
+
+        if (target.name == "dropZone2") {
+
         dropZone2.data.values.zoneCheckB++;
         dropZone2.data.values.cards++;
         gameObject.x = (dropZone2.x - 10) + (dropZone2.data.values.cards * 10);
         gameObject.y = dropZone2.y;
         gameObject.disableInteractive();
 
-        
+        self.socket.emit('cardPlayed', gameObject, self.isPlayerA);
+
+        }
+
 
         
         if ( dropZone2.data.values.zoneCheckB +1 && self.answerBcheck == true ){
@@ -554,16 +560,10 @@ class SMKSonata extends Phaser.Scene {
             self.answerBcounter=2
             //console.log(self.answerBcounter);
             self.socket.emit('points', self.answerBcounter);
-
-            self.socket.emit('cardPlayed', gameObject, self.isPlayerA);
             }else if (playerCardImage[1].includes(gameObject.texture.key)){
             self.answerBcounter=1
             //console.log(self.answerBcounter);
             self.socket.emit('points', self.answerBcounter);
-
-            self.socket.emit('cardPlayed', gameObject, self.isPlayerA);
-            }else{
-            self.socket.emit('cardPlayed', gameObject, self.isPlayerA);
             }
             console.log('B working');
                 
