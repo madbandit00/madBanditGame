@@ -496,6 +496,8 @@ class SMKSonata extends Phaser.Scene {
         gameObject.y = dropZone.y;           
         gameObject.disableInteractive();
 
+        self.socket.emit('cardPlayed', gameObject, self.isPlayerA);
+
         if ( dropZone.data.values.zoneCheckA +1 && self.answerAcheck == true){
             if(playerCardImage[0].includes(gameObject.texture.key)){
             self.answerAcounter=2
@@ -506,8 +508,6 @@ class SMKSonata extends Phaser.Scene {
             }
             console.log('A working');
         }
-    
-        self.socket.emit('cardPlayed', gameObject, self.isPlayerA);
     
         })
 
@@ -535,6 +535,8 @@ class SMKSonata extends Phaser.Scene {
         gameObject.x = (dropZone2.x - 10) + (dropZone2.data.values.cards * 10);
         gameObject.y = dropZone2.y;
         gameObject.disableInteractive();
+        
+        self.socket.emit('cardPlayed', gameObject, self.isPlayerA);
 
         
         if ( dropZone2.data.values.zoneCheckB +1 && self.answerBcheck == true ){
@@ -550,7 +552,7 @@ class SMKSonata extends Phaser.Scene {
             console.log('B working');
                 
         }
-        self.socket.emit('cardPlayed', gameObject, self.isPlayerA);
+        
         return dropZone2
         //console.log(answerBcounter);
     
