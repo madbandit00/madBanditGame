@@ -506,6 +506,8 @@ class SMKSonata extends Phaser.Scene {
             if(playerCardImage[0].includes(gameObject.texture.key)){
             self.answerAcounter=2
             self.socket.emit('points', self.answerAcounter);
+
+            self.socket.emit('cardPlayed', gameObject, self.isPlayerA);
             }else if (playerCardImage[1].includes(gameObject.texture.key)){
             self.answerAcounter=1;
             self.socket.emit('points', self.answerAcounter);
@@ -550,6 +552,8 @@ class SMKSonata extends Phaser.Scene {
             self.answerBcounter=2
             //console.log(self.answerBcounter);
             self.socket.emit('points', self.answerBcounter);
+
+            self.socket.emit('cardPlayed', gameObject, self.isPlayerA);
             }else if (playerCardImage[1].includes(gameObject.texture.key)){
             self.answerBcounter=1
             //console.log(self.answerBcounter);
