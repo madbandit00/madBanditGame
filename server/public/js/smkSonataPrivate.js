@@ -493,14 +493,15 @@ class SMKSonataPrivate extends Phaser.Scene {
 
         //console.log(gameObject.texture.key);
         if (dropZone.name == "dropZone1") {
-            // stuff        
+            // stuff
+        
         dropZone.data.values.zoneCheckA++;
         dropZone.data.values.cards++;      
         gameObject.x = (dropZone.x - 10) + (dropZone.data.values.cards * 10);
         gameObject.y = dropZone.y;           
         gameObject.disableInteractive();
 
-        self.socket.emit('cardPlayed', gameObject, self.isPlayerA);
+        self.socket.emit('cardPlayedPrivate', gameObject, self.isPlayerA);
 
         }
 
@@ -513,7 +514,9 @@ class SMKSonataPrivate extends Phaser.Scene {
             self.socket.emit('points', self.answerAcounter);
             }
             console.log('A working');
-        };
+        }
+    
+        
     
         })
 
@@ -537,15 +540,16 @@ class SMKSonataPrivate extends Phaser.Scene {
         // });
         //console.log(gameObject.texture.key);
         if (dropZone2.name == "dropZone2") {
+            // stuff
+        
+        dropZone.data.values.zoneCheckA++;
+        dropZone.data.values.cards++;      
+        gameObject.x = (dropZone.x - 10) + (dropZone.data.values.cards * 10);
+        gameObject.y = dropZone.y;           
+        gameObject.disableInteractive();
 
-            dropZone2.data.values.zoneCheckB++;
-            dropZone2.data.values.cards++;
-            gameObject.x = (dropZone2.x - 10) + (dropZone2.data.values.cards * 10);
-            gameObject.y = dropZone2.y;
-            gameObject.disableInteractive();
-    
-            self.socket.emit('cardPlayed', gameObject, self.isPlayerA);
-    
+        self.socket.emit('cardPlayedPrivate', gameObject, self.isPlayerA);
+
         }
 
         
@@ -562,7 +566,7 @@ class SMKSonataPrivate extends Phaser.Scene {
             console.log('B working');
                 
         }
-
+        
         return dropZone2
         //console.log(answerBcounter);
     
