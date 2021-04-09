@@ -542,13 +542,13 @@ class SMKSonataPrivate extends Phaser.Scene {
         if (dropZone2.name == "dropZone2") {
             // stuff
         
-        dropZone.data.values.zoneCheckA++;
-        dropZone.data.values.cards++;      
-        gameObject.x = (dropZone.x - 10) + (dropZone.data.values.cards * 10);
-        gameObject.y = dropZone.y;           
-        gameObject.disableInteractive();
+            dropZone2.data.values.zoneCheckB++;
+            dropZone2.data.values.cards++;
+            gameObject.x = (dropZone2.x - 10) + (dropZone2.data.values.cards * 10);
+            gameObject.y = dropZone2.y;
+            gameObject.disableInteractive();
 
-        self.socket.emit('cardPlayedPrivate', gameObject, self.isPlayerA);
+            self.socket.emit('cardPlayedPrivate', gameObject, self.isPlayerA);
 
         }
 
