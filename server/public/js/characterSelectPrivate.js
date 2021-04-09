@@ -101,7 +101,7 @@ class CharacterSelectPrivate extends Phaser.Scene {
 
       var r4 = this.add.rectangle(1200, 200, 148, 148, 0x6666ff);
 
-      let confirmText = this.add.text(1165, 280, "Confirm").setScale(2, 2).setInteractive();
+      let confirmText = this.add.text(1165, 325, "Confirm").setScale(2, 2).setInteractive();
 
       confirmText.on('pointerdown', function (pointer) {
 
