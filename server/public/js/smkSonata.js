@@ -150,11 +150,11 @@ class SMKSonata extends Phaser.Scene {
     //this.zone = new Zone(this);
     this.dropZone = this.renderZone();
 
-    this.dropZone.setName("dropZone1")
+    this.dropZone.setName("dropZone1");
     // this.answerA = this.renderA();
     this.dropZone2 = this.renderZone2();
 
-    this.dropZone2.setName("dropZone2")
+    this.dropZone2.setName("dropZone2");
 
     // this.renderOutlineA = this.renderOutlineA(this.answerA);
 
