@@ -115,7 +115,7 @@ function create() {
       y: Math.floor(Math.random() * 500) + 50,
       playerId: socket.id,
       team: (self.isPlayerA) ? 'red' : 'blue',
-      console.log('isPlayerA: ' + self.isPlayerA);
+      console.log('isPlayerA: ' + self.isPlayerA),
       //Math.floor(Math.random() * 2) == 0
       input: {
         left: false,
