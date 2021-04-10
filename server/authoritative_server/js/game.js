@@ -97,7 +97,7 @@ function create() {
       x: Math.floor(Math.random() * 700) + 50,
       y: Math.floor(Math.random() * 500) + 50,
       playerId: socket.id,
-      team: self.isPlayerA ? 'red' : 'blue',
+      team: (Math.floor(Math.random() * 2) == 0) ? 'red' : 'blue',
       input: {
         left: false,
         right: false,
@@ -241,10 +241,8 @@ function create() {
         self.isPlayerA = true;
 
         console.log('isPlayerA: ' + self.isPlayerA);
-
+        console.log(playersDetect[0]);
         io.emit('isPlayerA', self.isPlayerA);
-
-        return self.isPlayerA;
       }
       // else {
 
