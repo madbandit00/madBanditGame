@@ -69,8 +69,6 @@ function create() {
   };
 
   this.isPlayerA = false;
-  
-  //this.imPlayerA = false;
 
   this.star = this.physics.add.image(1100, 400, 'star');
   this.physics.add.collider(this.players);
@@ -94,28 +92,12 @@ function create() {
   io.on('connection', function (socket) {
     console.log('A user connected: ' + socket.id);
     // create a new player and add it to our players objecterupd
-
-    socket.on('playerAorNot', playerAorB);
-
-    function playerAorB() {
-
-      if (playersDetect.length === 1) {
-
-        self.isPlayerA = true;
-
-        console.log('isPlayerA: ' + self.isPlayerA);
-        io.emit('isPlayerA', self.isPlayerA);
-      }
-
-    }
-    
     players[socket.id] = {
       rotation: 0,
       x: Math.floor(Math.random() * 700) + 50,
       y: Math.floor(Math.random() * 500) + 50,
       playerId: socket.id,
-      team: (self.isPlayerA ? 'red' : 'blue'),
-      //Math.floor(Math.random() * 2) == 0
+      team: (Math.floor(Math.random() * 2) == 0) ? 'red' : 'blue',
       input: {
         left: false,
         right: false,
@@ -250,14 +232,25 @@ function create() {
       
     // });
 
-    // socket.emit('imPlayerA', checkPlayerAorB);
+    socket.on('playerAorNot', playerAorB);
 
-    // function checkPlayerAorB() {
+    function playerAorB() {
 
-    //     self.imPlayerA = true;
+      if (playersDetect.length === 1) {
 
-    //     io.emit('imPlayerA', self.imPlayerA);
-    //   }
+        self.isPlayerA = true;
+
+        console.log('Test: ' + socket.id);
+        io.emit('isPlayerA', self.isPlayerA);
+      }
+      // else {
+
+      //   self.isPlayerA = false;
+      //   io.emit('isPlayerA', self.isPlayerA);
+
+      // }
+
+    }
 
     if (playersDetect.length > 2 ) {
 
@@ -310,8 +303,8 @@ function create() {
     function returnTexture(confirmTextureKey) {
       self.confirmedTexture = self.confirmedTexture;
       
-      {
-    io.emit('texturePicked', self.confirmedTexture);
+{
+      io.emit('texturePicked', self.confirmedTexture);
       console.log("this is random");
       }
       
