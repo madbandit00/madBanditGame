@@ -55,7 +55,7 @@ class SMKSonata extends Phaser.Scene {
 
     //self.socket.emit('checkID', this.Socket.id.toString());
 
-    //self.socket.emit('playerAorNot', self.isPlayerA);
+    self.socket.emit('playerAorNot');
 
     this.socket.on('isPlayerA', playerAorNot);
 
