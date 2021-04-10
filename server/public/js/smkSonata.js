@@ -57,9 +57,9 @@ class SMKSonata extends Phaser.Scene {
 
     self.socket.emit('playerAorNot');
 
-    this.socket.on('isPlayerA', playerAorNot);
+    this.socket.on('playerAorNot', checkPlayerAorNot);
 
-    function playerAorNot(yesOrno) {
+    function checkPlayerAorNot(yesOrno) {
 
         this.isPlayerA = false;
         self.isPlayerA  = yesOrno;
