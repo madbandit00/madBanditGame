@@ -64,10 +64,11 @@ class SMKSonata extends Phaser.Scene {
         this.isPlayerA = false;
         self.isPlayerA  = yesOrno;
         console.log('player A: ' + self.isPlayerA);
-        return self.isPlayerA
+        //return self.isPlayerA
+        self.socket.emit('imPlayerA', self.isPlayerA);
       }
  
-    console.log('player A: ' + self.isPlayerA);
+    //console.log('player A: ' + self.isPlayerA);
 
     // this.socket.on('isPlayerA', function () {
     //     self.isPlayerA = true;

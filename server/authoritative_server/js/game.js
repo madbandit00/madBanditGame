@@ -69,6 +69,8 @@ function create() {
   };
 
   this.isPlayerA = false;
+  
+  this.imPlayerA = false;
 
   this.star = this.physics.add.image(1100, 400, 'star');
   this.physics.add.collider(this.players);
@@ -97,7 +99,7 @@ function create() {
       x: Math.floor(Math.random() * 700) + 50,
       y: Math.floor(Math.random() * 500) + 50,
       playerId: socket.id,
-      team: (self.isPlayerA) ? 'red' : 'blue',
+      team: (self.imPlayerA) ? 'red' : 'blue',
       input: {
         left: false,
         right: false,
@@ -231,6 +233,15 @@ function create() {
        
       
     // });
+
+    socket.emit('imPlayerA', checkPlayerAorB);
+
+    function checkPlayerAorB() {
+
+        self.imPlayerA = true;
+
+        io.emit('imPlayerA', self.imPlayerA);
+      }
 
     socket.on('playerAorNot', playerAorB);
 
