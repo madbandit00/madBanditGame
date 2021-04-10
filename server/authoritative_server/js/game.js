@@ -94,6 +94,21 @@ function create() {
   io.on('connection', function (socket) {
     console.log('A user connected: ' + socket.id);
     // create a new player and add it to our players objecterupd
+
+    socket.on('playerAorNot', playerAorB);
+
+    function playerAorB() {
+
+      if (playersDetect.length === 1) {
+
+        self.isPlayerA = true;
+
+        console.log('isPlayerA: ' + self.isPlayerA);
+        io.emit('isPlayerA', self.isPlayerA);
+      }
+
+    }
+    
     players[socket.id] = {
       rotation: 0,
       x: Math.floor(Math.random() * 700) + 50,
@@ -242,26 +257,6 @@ function create() {
 
     //     io.emit('imPlayerA', self.imPlayerA);
     //   }
-
-    socket.on('playerAorNot', playerAorB);
-
-    function playerAorB() {
-
-      if (playersDetect.length === 1) {
-
-        self.isPlayerA = true;
-
-        console.log('Test: ' + self.isPlayerA);
-        io.emit('isPlayerA', self.isPlayerA);
-      }
-      // else {
-
-      //   self.isPlayerA = false;
-      //   io.emit('isPlayerA', self.isPlayerA);
-
-      // }
-
-    }
 
     if (playersDetect.length > 2 ) {
 
