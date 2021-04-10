@@ -241,7 +241,7 @@ function create() {
         self.isPlayerA = true;
 
         console.log('Test: ' + socket.id);
-        io.emit('isPlayerA', self.isPlayerA);
+        socket.broadcast.emit('isPlayerA', self.isPlayerA);
       }
       // else {
 
