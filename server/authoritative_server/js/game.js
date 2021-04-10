@@ -303,8 +303,8 @@ function create() {
     function returnTexture(confirmTextureKey) {
       self.confirmedTexture = self.confirmedTexture;
       
-{
-      io.emit('texturePicked', self.confirmedTexture);
+      {
+    io.emit('texturePicked', self.confirmedTexture);
       console.log("this is random");
       }
       
