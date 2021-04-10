@@ -240,11 +240,11 @@ function create() {
 
         self.isPlayerA = true;
 
-        console.log('Test: ' + socket.id);
-
-        return self.isPlayerA;
+        console.log('isPlayerA: ' + socket.id);
 
         io.emit('isPlayerA', self.isPlayerA);
+
+        return self.isPlayerA;
       }
       // else {
 
