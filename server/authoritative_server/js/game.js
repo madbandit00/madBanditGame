@@ -70,7 +70,7 @@ function create() {
 
   this.isPlayerA = false;
   
-  this.imPlayerA = false;
+  //this.imPlayerA = false;
 
   this.star = this.physics.add.image(1100, 400, 'star');
   this.physics.add.collider(this.players);
@@ -234,14 +234,14 @@ function create() {
       
     // });
 
-    socket.emit('imPlayerA', checkPlayerAorB);
+    // socket.emit('imPlayerA', checkPlayerAorB);
 
-    function checkPlayerAorB() {
+    // function checkPlayerAorB() {
 
-        self.imPlayerA = true;
+    //     self.imPlayerA = true;
 
-        io.emit('imPlayerA', self.imPlayerA);
-      }
+    //     io.emit('imPlayerA', self.imPlayerA);
+    //   }
 
     socket.on('playerAorNot', playerAorB);
 
@@ -251,7 +251,7 @@ function create() {
 
         self.isPlayerA = true;
 
-        console.log('Test: ' + socket.id);
+        console.log('Test: ' + self.isPlayerA);
         io.emit('isPlayerA', self.isPlayerA);
       }
       // else {
