@@ -97,7 +97,7 @@ function create() {
       x: Math.floor(Math.random() * 700) + 50,
       y: Math.floor(Math.random() * 500) + 50,
       playerId: socket.id,
-      team: playersDetect[0] ? 'red' : 'blue',
+      team: (playersDetect[0] === players[socket.id]) ? 'red' : 'blue',
       input: {
         left: false,
         right: false,
