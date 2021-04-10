@@ -240,7 +240,7 @@ function create() {
 
         self.isPlayerA = true;
 
-        console.log('isPlayerA: ' + socket.id);
+        console.log('isPlayerA: ' + self.isPlayerA);
 
         io.emit('isPlayerA', self.isPlayerA);
 
