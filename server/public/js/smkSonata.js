@@ -285,8 +285,6 @@ class SMKSonata extends Phaser.Scene {
 
         cam.alpha = 1 ;
 
-        //this.dealText.setInteractive();
-
         this.dealText.setTint(0xefc53f).setInteractive();
 
         this.scene.remove('roomScreen');
@@ -461,7 +459,7 @@ class SMKSonata extends Phaser.Scene {
             }
         })
 
-        this.dealText = this.add.text(75, 350, ['DEAL CARDS']).setFontSize(18).setFontFamily('Trebuchet MS').setColor('#00ffff');
+        this.dealText = this.add.text(75, 350, ['DEAL CARDS']).setFontSize(18).setFontFamily('Trebuchet MS');
 
         this.dealText.on('pointerdown', function () {
             self.socket.emit("dealCards");
