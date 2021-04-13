@@ -285,7 +285,7 @@ class SMKSonata extends Phaser.Scene {
 
         cam.alpha = 1 ;
 
-        this.dealText.setColor('#FFA500').setInteractive();
+        this.dealText.setInteractive();
 
         this.scene.remove('roomScreen');
 
