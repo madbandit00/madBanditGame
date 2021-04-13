@@ -471,7 +471,7 @@ class SMKSonata extends Phaser.Scene {
         })
 
         this.dealText.on('pointerout', function () {
-            //self.dealText.setColor('#00ffff');
+            self.dealText.setColor('#00ffff');
         })
 
         this.input.on('drag', function (pointer, gameObject, dragX, dragY) {
