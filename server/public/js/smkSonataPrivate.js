@@ -441,9 +441,15 @@ class SMKSonataPrivate extends Phaser.Scene {
         //     console.log('i am player B')
         // })
 
+        let pointerOffColor;
+        
         this.socket.on('dealCards', function () {
+            self.dealText.setColor('#FFFFFF');
+
+            pointerOffColor = 'white';
+
             self.dealCards();
-            self.dealText.disableInteractive();
+            self.dealText.disableInteractive();         
         })
 
         this.socket.on('cardPlayedPrivate', function (gameObject, isPlayerA) {
@@ -467,7 +473,19 @@ class SMKSonataPrivate extends Phaser.Scene {
         })
 
         this.dealText.on('pointerout', function () {
-            self.dealText.setColor('#00ffff');
+
+            if (pointerOffColor == 'white'){
+
+                self.dealText.setColor('#FFFFFF');
+                
+            }
+
+            else {
+                
+                self.dealText.setColor('#00ffff');
+        
+            }
+            
         })
 
         this.input.on('drag', function (pointer, gameObject, dragX, dragY) {
