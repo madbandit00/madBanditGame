@@ -477,7 +477,7 @@ class SMKSonata extends Phaser.Scene {
 
         this.dealText.on('pointerout', function () {
 
-            if (pointerOffColor = 'white'){
+            if (pointerOffColor == 'white'){
 
                 self.dealText.setColor('#FFFFFF');
                 
