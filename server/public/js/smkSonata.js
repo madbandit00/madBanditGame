@@ -519,7 +519,7 @@ class SMKSonata extends Phaser.Scene {
         
         dropZone.data.values.zoneCheckA++;
         dropZone.data.values.cards++;  
-
+        console.log(dropZone.data.values.cards)
         gameObject.x = (dropZone.x - 10) + (dropZone.data.values.cards * 10);
         gameObject.y = dropZone.y;           
         gameObject.disableInteractive();
