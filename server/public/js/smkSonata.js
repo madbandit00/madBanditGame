@@ -436,7 +436,7 @@ class SMKSonata extends Phaser.Scene {
 
         }
 
-        //this.socket.off('dealCards');
+        this.socket.off('dealCards');
         this.renderQuestions = renderQuestions;
 
         
