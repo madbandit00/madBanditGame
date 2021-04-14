@@ -465,7 +465,7 @@ class SMKSonata extends Phaser.Scene {
             self.renderCard(((self.dropZone.x - 400) + (self.dropZone.data.values.cards * 25)), (self.dropZone.y + 125), sprite).disableInteractive();
             if (self.dropZone.data.values.cards >= 5){
 
-                renderQuestions.destroy();
+                self.renderQuestions.destroy();
 
                 }
             
