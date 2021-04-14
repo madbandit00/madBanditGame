@@ -588,7 +588,6 @@ class SMKSonata extends Phaser.Scene {
             }
             console.log('B working');
 
-            console.log("cards dropped" + (self.dropZone.data.values.cards + self.dropZone2.data.values.cards))
                 
         }
         
@@ -633,6 +632,8 @@ class SMKSonata extends Phaser.Scene {
             self.star.setPosition(starLocation.x, starLocation.y);
         }
         });
+
+        console.log("cards dropped" + (self.dropZone.data.values.cards + self.dropZone2.data.values.cards))
 
         this.cursors = this.input.keyboard.createCursorKeys();
         this.leftKeyPressed = false;
