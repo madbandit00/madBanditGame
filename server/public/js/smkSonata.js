@@ -587,6 +587,8 @@ class SMKSonata extends Phaser.Scene {
             self.socket.emit('points', self.answerBcounter);
             }
             console.log('B working');
+
+            console.log("cards dropped" + (self.dropZone.data.values.cards + self.dropZone2.data.values.cards))
                 
         }
         
@@ -595,7 +597,6 @@ class SMKSonata extends Phaser.Scene {
     
         })
 
-        console.log("cards dropped" + self.dropZone.data.values.cards )
 
         this.socket.on('currentPlayers', function (players) {
         Object.keys(players).forEach(function (id) {
