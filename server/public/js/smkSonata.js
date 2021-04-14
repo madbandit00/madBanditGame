@@ -588,6 +588,13 @@ class SMKSonata extends Phaser.Scene {
             }
             console.log('B working');
 
+            if (self.dropZone.data.values.cards + self.dropZone2.data.values.cards == 5){
+
+                self.dropZone.data.values.cards = 0;
+                self.dropZone2.data.values.cards = 0;
+
+            }
+
             console.log("cards dropped" + (self.dropZone.data.values.cards + self.dropZone2.data.values.cards))
                 
         }
