@@ -519,6 +519,7 @@ class SMKSonata extends Phaser.Scene {
         
         dropZone.data.values.zoneCheckA++;
         dropZone.data.values.cards++;  
+
         gameObject.x = (dropZone.x - 10) + (dropZone.data.values.cards * 10);
         gameObject.y = dropZone.y;           
         gameObject.disableInteractive();
@@ -594,7 +595,7 @@ class SMKSonata extends Phaser.Scene {
     
         })
 
-        console.log("cards dropped" + (dropZone.data.values.cards + dropZone2.data.values.cards))
+        console.log("cards dropped" + (self.dropZone.data.values.cards + self.dropZone2.data.values.cards))
 
         this.socket.on('currentPlayers', function (players) {
         Object.keys(players).forEach(function (id) {
