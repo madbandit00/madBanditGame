@@ -538,6 +538,16 @@ class SMKSonata extends Phaser.Scene {
             self.socket.emit('points', self.answerAcounter);
             }
             console.log('A working');
+
+            if (self.dropZone.data.values.cards + self.dropZone2.data.values.cards == 5){
+
+                self.renderQuestions.destroy();
+                self.dropZone.data.values.cards = 0;
+                self.dropZone2.data.values.cards = 0;
+
+            }
+
+            
         }
     
         })
@@ -590,12 +600,13 @@ class SMKSonata extends Phaser.Scene {
 
             if (self.dropZone.data.values.cards + self.dropZone2.data.values.cards == 5){
 
+                self.renderQuestions.destroy();
                 self.dropZone.data.values.cards = 0;
                 self.dropZone2.data.values.cards = 0;
 
             }
 
-            console.log("cards dropped" + (self.dropZone.data.values.cards + self.dropZone2.data.values.cards))
+            //console.log("cards dropped" + (self.dropZone.data.values.cards + self.dropZone2.data.values.cards))
                 
         }
         
