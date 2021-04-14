@@ -554,6 +554,7 @@ class SMKSonata extends Phaser.Scene {
             self.renderQuestions.destroy();
             self.renderAnswers[0].destroy();
             self.renderAnswers[1].destroy();
+            self.dealText.setInteractive();
             self.dealText.setColor('#00ffff');
             self.dropZone.data.values.cards = 0;
             self.dropZone2.data.values.cards = 0;
@@ -615,7 +616,7 @@ class SMKSonata extends Phaser.Scene {
             self.renderQuestions.destroy();
             self.renderAnswers[0].destroy();
             self.renderAnswers[1].destroy();
-            //console.log(self.renderAnswers[0])
+            self.dealText.setInteractive();
             self.dealText.setColor('#00ffff');
             self.dropZone.data.values.cards = 0;
             self.dropZone2.data.values.cards = 0;
