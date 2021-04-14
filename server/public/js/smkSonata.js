@@ -612,8 +612,8 @@ class SMKSonata extends Phaser.Scene {
         if (self.dropZone.data.values.cards + self.dropZone2.data.values.cards == 5){
 
             self.renderQuestions.destroy();
-            //self.renderAnswers.destroy();
-            console.log(self.renderAnswers)
+            self.renderAnswers.destroy();
+            //console.log(self.renderAnswers)
             self.dealText.setColor('#00ffff');
             self.dropZone.data.values.cards = 0;
             self.dropZone2.data.values.cards = 0;
