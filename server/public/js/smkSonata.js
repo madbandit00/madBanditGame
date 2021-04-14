@@ -219,7 +219,7 @@ class SMKSonata extends Phaser.Scene {
         let a = self.add.text(x1, y1, answerA).setFontSize(18).setFontFamily('Trebuchet MS').setColor('#00ffff');
         let b = self.add.text(x2, y2, answerB).setFontSize(18).setFontFamily('Trebuchet MS').setColor('#00ffff');
         
-        return a, b;
+        return [a, b];
         
     };
 
@@ -432,6 +432,7 @@ class SMKSonata extends Phaser.Scene {
         let renderAnswers = self.renderAB(450, 325, 850, 325, [questions[i].A], [questions[i].B]);
 
         this.renderAnswers = renderAnswers;
+        
         }
 
         }
@@ -612,8 +613,7 @@ class SMKSonata extends Phaser.Scene {
         if (self.dropZone.data.values.cards + self.dropZone2.data.values.cards == 5){
 
             self.renderQuestions.destroy();
-            //self.renderAnswers.destroy();
-            console.log(self.renderAnswers.text)
+            self.renderAnswers.destroy();
             self.dealText.setColor('#00ffff');
             self.dropZone.data.values.cards = 0;
             self.dropZone2.data.values.cards = 0;
