@@ -601,7 +601,7 @@ class SMKSonata extends Phaser.Scene {
 
             if (self.dropZone.data.values.cards + self.dropZone2.data.values.cards == 5){
 
-                self.renderQuestions.destroy();
+                renderQuestions.destroy();
                 self.dropZone.data.values.cards = 0;
                 self.dropZone2.data.values.cards = 0;
 
