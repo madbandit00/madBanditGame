@@ -433,7 +433,7 @@ class SMKSonata extends Phaser.Scene {
         }
 
         this.socket.off('dealCards');
-        return renderQuestions
+        this.renderQuestions = renderQuestions;
     }
         //let self = this;
 
@@ -540,15 +540,15 @@ class SMKSonata extends Phaser.Scene {
             }
             console.log('A working');
 
-            if (self.dropZone.data.values.cards + self.dropZone2.data.values.cards == 5){
-
-                self.renderQuestions.destroy();
-                self.dropZone.data.values.cards = 0;
-                self.dropZone2.data.values.cards = 0;
-
-            }
-
             
+        }
+
+        if (self.dropZone.data.values.cards + self.dropZone2.data.values.cards == 5){
+
+            self.renderQuestions.destroy();
+            self.dropZone.data.values.cards = 0;
+            self.dropZone2.data.values.cards = 0;
+
         }
     
         })
@@ -598,18 +598,18 @@ class SMKSonata extends Phaser.Scene {
             self.socket.emit('points', self.answerBcounter);
             }
             console.log('B working');
-
-            if (self.dropZone.data.values.cards + self.dropZone2.data.values.cards == 5){
-
-                renderQuestions.destroy();
-                self.dropZone.data.values.cards = 0;
-                self.dropZone2.data.values.cards = 0;
-
-            }
-
-            console.log("cards dropped" + (self.dropZone.data.values.cards + self.dropZone2.data.values.cards))
                 
         }
+
+        if (self.dropZone.data.values.cards + self.dropZone2.data.values.cards == 5){
+
+            renderQuestions.destroy();
+            self.dropZone.data.values.cards = 0;
+            self.dropZone2.data.values.cards = 0;
+
+        }
+
+        console.log("cards dropped" + (self.dropZone.data.values.cards + self.dropZone2.data.values.cards))
         
         return dropZone2
         //console.log(answerBcounter);
