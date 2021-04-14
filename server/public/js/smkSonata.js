@@ -218,6 +218,9 @@ class SMKSonata extends Phaser.Scene {
     this.renderAB = (x1, y1, x2, y2, answerA, answerB) => {
         let a = self.add.text(x1, y1, answerA).setFontSize(18).setFontFamily('Trebuchet MS').setColor('#00ffff');
         let b = self.add.text(x2, y2, answerB).setFontSize(18).setFontFamily('Trebuchet MS').setColor('#00ffff');
+
+        let AB = [a, b];
+        return AB;
         
     };
 
