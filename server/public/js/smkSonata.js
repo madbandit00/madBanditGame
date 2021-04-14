@@ -428,6 +428,8 @@ class SMKSonata extends Phaser.Scene {
 
         if (renderQuestions.text == questions[i].question ) {
         let renderAnswers = self.renderAB(450, 325, 850, 325, [questions[i].A], [questions[i].B]);
+        
+        this.renderAnswers = renderAnswers;
         }
 
         }
@@ -435,7 +437,7 @@ class SMKSonata extends Phaser.Scene {
         this.socket.off('dealCards');
         this.renderQuestions = renderQuestions;
 
-        this.renderAnswers = renderAnswers;
+        
     }
         //let self = this;
 
