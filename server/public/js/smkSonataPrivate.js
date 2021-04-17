@@ -509,33 +509,47 @@ class SMKSonataPrivate extends Phaser.Scene {
 
         this.input.on('drop', function (pointer, gameObject, dropZone) {
 
-        //console.log(gameObject.texture.key);
-        if (dropZone.name == "dropZone1") {
-            // stuff
-        
-        dropZone.data.values.zoneCheckA++;
-        dropZone.data.values.cards++;      
-        gameObject.x = (dropZone.x - 10) + (dropZone.data.values.cards * 10);
-        gameObject.y = dropZone.y;           
-        gameObject.disableInteractive();
-
-        self.socket.emit('cardPlayedPrivate', gameObject, self.isPlayerA);
-
-        }
-
-        if ( dropZone.data.values.zoneCheckA +1 && self.answerAcheck == true){
-            if(playerCardImage[0].includes(gameObject.texture.key)){
-            self.answerAcounter=2
-            self.socket.emit('points', self.answerAcounter);
-            }else if (playerCardImage[1].includes(gameObject.texture.key)){
-            self.answerAcounter=1;
-            self.socket.emit('points', self.answerAcounter);
+            //console.log(gameObject.texture.key);
+            if (dropZone.name == "dropZone1") {
+                // stuff
+            
+            dropZone.data.values.zoneCheckA++;
+            dropZone.data.values.cards++;  
+            //console.log(dropZone.data.values.cards)
+            gameObject.x = (dropZone.x - 10) + (dropZone.data.values.cards * 10);
+            gameObject.y = dropZone.y;           
+            gameObject.disableInteractive();
+    
+            self.socket.emit('cardPlayed', gameObject, self.isPlayerA);
+    
             }
-            console.log('A working');
-        }
     
+    
+            if ( dropZone.data.values.zoneCheckA +1 && self.answerAcheck == true){
+                if(playerCardImage[0].includes(gameObject.texture.key)){
+                self.answerAcounter=2
+                self.socket.emit('points', self.answerAcounter);
+                }else if (playerCardImage[1].includes(gameObject.texture.key)){
+                self.answerAcounter=1;
+                self.socket.emit('points', self.answerAcounter);
+                }
+                console.log('A working');
+    
+                
+            }
+    
+            if (self.dropZone.data.values.cards + self.dropZone2.data.values.cards == 5){
+    
+                self.renderQuestions.destroy();
+                self.renderAnswers[0].destroy();
+                self.renderAnswers[1].destroy();
+                // self.dealText.setInteractive();
+                // self.dealText.setColor('#00ffff');
+                self.dropZone.data.values.cards = 0;
+                self.dropZone2.data.values.cards = 0;
+    
+            }
         
-    
         })
 
         this.socket.on('playerUpdates', function (players) {
@@ -549,45 +563,60 @@ class SMKSonataPrivate extends Phaser.Scene {
         });
         });
 
-        this.input.on('drop', function (pointer, gameObject, dropZone2, players) {
+        this.input.on('drop', function (pointer, gameObject, dropZone2) {
 
         
-        // self.players.getChildren().forEach((player) => {
-        //   player.x = dropZone2.x;
-        //   player.y = dropZone2.y;
-        // });
-        //console.log(gameObject.texture.key);
-        if (dropZone2.name == "dropZone2") {
-            // stuff
-        
+            // self.players.getChildren().forEach((player) => {
+            //   player.x = dropZone2.x;
+            //   player.y = dropZone2.y;
+            // });
+            //console.log(gameObject.texture.key);
+    
+            if (dropZone2.name == "dropZone2") {
+    
             dropZone2.data.values.zoneCheckB++;
             dropZone2.data.values.cards++;
             gameObject.x = (dropZone2.x - 10) + (dropZone2.data.values.cards * 10);
             gameObject.y = dropZone2.y;
             gameObject.disableInteractive();
-
-            self.socket.emit('cardPlayedPrivate', gameObject, self.isPlayerA);
-
-        }
-
-        
-        if ( dropZone2.data.values.zoneCheckB +1 && self.answerBcheck == true ){
-            if(playerCardImage[0].includes(gameObject.texture.key)){
-            self.answerBcounter=2
-            //console.log(self.answerBcounter);
-            self.socket.emit('points', self.answerBcounter);
-            }else if (playerCardImage[1].includes(gameObject.texture.key)){
-            self.answerBcounter=1
-            //console.log(self.answerBcounter);
-            self.socket.emit('points', self.answerBcounter);
-            }
-            console.log('B working');
-                
-        }
-        
-        return dropZone2
-        //console.log(answerBcounter);
     
+            self.socket.emit('cardPlayed', gameObject, self.isPlayerA);
+    
+            }
+    
+    
+            
+            if ( dropZone2.data.values.zoneCheckB +1 && self.answerBcheck == true ){
+                if(playerCardImage[0].includes(gameObject.texture.key)){
+                self.answerBcounter=2
+                //console.log(self.answerBcounter);
+                self.socket.emit('points', self.answerBcounter);
+                }else if (playerCardImage[1].includes(gameObject.texture.key)){
+                self.answerBcounter=1
+                //console.log(self.answerBcounter);
+                self.socket.emit('points', self.answerBcounter);
+                }
+                console.log('B working');
+                    
+            }
+    
+            if (self.dropZone.data.values.cards + self.dropZone2.data.values.cards == 5){
+    
+                self.renderQuestions.destroy();
+                self.renderAnswers[0].destroy();
+                self.renderAnswers[1].destroy();
+                // self.dealText.setInteractive();
+                // self.dealText.setColor('#00ffff');
+                self.dropZone.data.values.cards = 0;
+                self.dropZone2.data.values.cards = 0;
+    
+            }
+    
+            console.log("cards dropped" + (self.dropZone.data.values.cards + self.dropZone2.data.values.cards))
+            
+            return dropZone2
+            //console.log(answerBcounter);
+        
         })
 
         this.socket.on('currentPlayers', function (players) {
