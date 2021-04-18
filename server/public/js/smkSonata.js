@@ -471,10 +471,10 @@ class SMKSonata extends Phaser.Scene {
             //console.log(self.dropZone.data.values.cards);
             let droppedCard = self.renderCard(((self.dropZone.x - 400) + (self.dropZone.data.values.cards * 25)), (self.dropZone.y + 125), sprite).disableInteractive();
             
-            if (self.dropZone.data.values.cards > 4){
-                droppedCard.destroy();
+            // if (self.dropZone.data.values.cards > 4){
+            //     droppedCard.destroy();
 
-            }
+            // }
         
             }
         })
