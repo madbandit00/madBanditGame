@@ -565,7 +565,7 @@ class SMKSonata extends Phaser.Scene {
             self.dropZone.data.values.cards = 0;
             self.dropZone2.data.values.cards = 0;
 
-            self.gameObject.destroy();
+            gameObject.destroy();
 
             }
     
