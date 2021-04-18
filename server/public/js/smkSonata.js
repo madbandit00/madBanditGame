@@ -539,9 +539,6 @@ class SMKSonata extends Phaser.Scene {
 
         self.socket.emit('cardPlayed', gameObject, self.isPlayerA);
 
-            if (dropZone.data.values.cards > 4){
-                gameObject.destroy();
-            }
 
         }
 
@@ -568,8 +565,6 @@ class SMKSonata extends Phaser.Scene {
             self.dealText.setColor('#00ffff');
             self.dropZone.data.values.cards = 0;
             self.dropZone2.data.values.cards = 0;
-
-            gameObject.destroy();
 
             }
     
