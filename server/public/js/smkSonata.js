@@ -536,10 +536,8 @@ class SMKSonata extends Phaser.Scene {
         gameObject.x = (dropZone.x - 10) + (dropZone.data.values.cards * 10);
         gameObject.y = dropZone.y;           
         gameObject.disableInteractive();
+        gameObject.destroy();
 
-        if (dropZone.data.values.cards > 4){
-            gameObject.destroy();
-        }
 
         self.socket.emit('cardPlayed', gameObject, self.isPlayerA);
 
@@ -601,6 +599,7 @@ class SMKSonata extends Phaser.Scene {
         gameObject.x = (dropZone2.x - 10) + (dropZone2.data.values.cards * 10);
         gameObject.y = dropZone2.y;
         gameObject.disableInteractive();
+        gameObject.destroy();
 
         self.socket.emit('cardPlayed', gameObject, self.isPlayerA);
 
