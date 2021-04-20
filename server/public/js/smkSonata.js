@@ -526,6 +526,8 @@ class SMKSonata extends Phaser.Scene {
 
         this.input.on('drop', function (pointer, gameObject, dropZone) {
 
+        console.log(self.dropZone.data.values.cards + self.dropZone2.data.values.cards);
+
         //console.log(gameObject.texture.key);
         if (dropZone.name == "dropZone1") {
             // stuff
@@ -591,6 +593,8 @@ class SMKSonata extends Phaser.Scene {
         //   player.y = dropZone2.y;
         // });
         //console.log(gameObject.texture.key);
+
+        console.log(self.dropZone.data.values.cards + self.dropZone2.data.values.cards);
 
         if (dropZone2.name == "dropZone2") {
 
