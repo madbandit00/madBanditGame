@@ -467,7 +467,7 @@ class SMKSonata extends Phaser.Scene {
             console.log ('im playerB');
             let sprite = gameObject.textureKey;
             self.opponentCards.shift().destroy();
-            self.dropZone.data.values.cards++;
+            //self.dropZone.data.values.cards++;
             //console.log(self.dropZone.data.values.cards);
             //let droppedCard = self.renderCard(((self.dropZone.x - 400) + (self.dropZone.data.values.cards * 25)), (self.dropZone.y + 125), sprite).disableInteractive();
             
@@ -635,6 +635,8 @@ class SMKSonata extends Phaser.Scene {
             self.dropZone.data.values.cards = 0;
             self.dropZone2.data.values.cards = 0;
             self.dealCards();
+
+           
 
         }
 
