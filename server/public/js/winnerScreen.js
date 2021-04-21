@@ -1,4 +1,4 @@
-class winnerScreen extends Phaser.Scene {
+class WinnerScreen extends Phaser.Scene {
     constructor() {
       super({key: 'winnerScreen'});
     }
@@ -44,4 +44,4 @@ class winnerScreen extends Phaser.Scene {
     }
   }
 
-  export default winnerScreen;
+  export default WinnerScreen;

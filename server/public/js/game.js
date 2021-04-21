@@ -424,6 +424,7 @@ import CharacterSelect from './characterSelect.js';
 import CharacterSelectPrivate from './characterSelectPrivate.js';
 import SMKSonata from './smkSonata.js';
 import SMKSonataPrivate from './smkSonataPrivate.js';
+import WinnerScreen from './winnerScreen.js';
 
 var titleScreen = new TitleScreen();
 var roomScreen = new RoomScreen();
@@ -431,6 +432,7 @@ var characterSelect = new CharacterSelect();
 var characterSelectPrivate = new CharacterSelectPrivate();
 var smkSonata = new SMKSonata();
 var smkSonataPrivate = new SMKSonataPrivate();
+var winnerScreen = new WinnerScreen();
 
 
 var config = {
@@ -461,5 +463,6 @@ game.scene.add('smkSonata', smkSonata);
 game.scene.add('smkSonataPrivate', smkSonataPrivate);
 game.scene.add('characterSelect', characterSelect);
 game.scene.add('characterSelectPrivate', characterSelectPrivate);
+game.scene.add('winnerScreen', winnerScreen);
 
 game.scene.start('titleScreen');
