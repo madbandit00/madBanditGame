@@ -673,6 +673,14 @@ class SMKSonata extends Phaser.Scene {
         this.socket.on('updateScore', function (scores) {
         self.blueScoreText.setText('CCS: ' + scores.blue);
         self.redScoreText.setText('JOJO: ' + scores.red);
+
+        if (scores.red > 29){
+            console.log ('CCS wins')
+        }
+
+        if (scores.blue > 29){
+            console.log ('JOJO wins')
+        }
         });
 
 
