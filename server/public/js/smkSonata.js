@@ -675,11 +675,11 @@ class SMKSonata extends Phaser.Scene {
         self.redScoreText.setText('JOJO: ' + scores.red);
 
         if (scores.red > 29){
-            console.log ('CCS wins')
+            console.log ('JOJO wins')
         }
 
         if (scores.blue > 29){
-            console.log ('JOJO wins')
+            console.log ('CCS wins')
         }
         });
 
