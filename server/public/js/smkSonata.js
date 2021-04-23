@@ -679,6 +679,7 @@ class SMKSonata extends Phaser.Scene {
             //this.scene.start("characterSelect", Socket);
             //self.scene.stop('smkSonata');
             self.scene.start("winnerScreen");
+            self.socket.off('playerUpdates');
             
         };
 
@@ -686,6 +687,7 @@ class SMKSonata extends Phaser.Scene {
             console.log ('JOJO wins')
             //self.scene.stop('smkSonata');
             self.scene.start("winnerScreen2");
+            self.socket.off('playerUpdates');
 
         }
         });
