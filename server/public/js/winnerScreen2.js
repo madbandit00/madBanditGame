@@ -1,6 +1,6 @@
-class WinnerScreen extends Phaser.Scene {
+class WinnerScreen2 extends Phaser.Scene {
     constructor() {
-      super({key: 'winnerScreen'});
+      super({key: 'winnerScreen2'});
     }
 
     preload(){
@@ -13,7 +13,7 @@ class WinnerScreen extends Phaser.Scene {
 
       let Socket = this.socket;
 
-      this.add.text(60, 20, "CCS wins").setScale(2, 2).setColor('#0000ff');
+      this.add.text(60, 20, "Jojo wins").setScale(2, 2).setColor('#00ffff');
       //this.dealText = this.add.text(75, 350, ['DEAL CARDS']).setFontSize(18).setFontFamily('Trebuchet MS').setColor('#00ffff').setInteractive();
       
       let random = this.add.text(120, 60, "Play Random").setFontSize(80).setInteractive();
@@ -43,4 +43,4 @@ class WinnerScreen extends Phaser.Scene {
     }
   }
 
-  export default WinnerScreen;
+  export default WinnerScreen2;
