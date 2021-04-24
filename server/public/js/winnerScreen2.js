@@ -16,7 +16,7 @@ class WinnerScreen2 extends Phaser.Scene {
 
     create() {
 
-      this.socket = io();
+      //this.socket = io();
 
       this.socket = this.Socket;
 
