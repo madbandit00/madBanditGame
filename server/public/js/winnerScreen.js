@@ -11,30 +11,36 @@ class WinnerScreen extends Phaser.Scene {
 
       this.socket = io();
 
+      this.socket = this.Socket;
+
       let Socket = this.socket;
 
-      this.add.text(60, 20, "CCS wins").setScale(2, 2).setColor('#0000ff');
+      this.add.text(60, 20, "Jojo wins").setScale(2, 2).setColor('#00ffff');
       //this.dealText = this.add.text(75, 350, ['DEAL CARDS']).setFontSize(18).setFontFamily('Trebuchet MS').setColor('#00ffff').setInteractive();
       
-      let random = this.add.text(120, 60, "Play Random").setFontSize(80).setInteractive();
+      let playAgain = this.add.text(120, 60, "Refresh to Play Again").setFontSize(80).setInteractive();
 
-      let withFriend = this.add.text(120, 350, "Play With Friend").setFontSize(80).setInteractive();
+      //let withFriend = this.add.text(120, 350, "Play With Friend").setFontSize(80).setInteractive();
       
       console.log("titleworking");
 
-      random.on('pointerdown', function (pointer) {
+      // playAgain.on('pointerdown', function (pointer) {
 
-        this.scene.start("characterSelect", Socket);
+      //   this.registry.destroy(); // destroy registry
+      //   this.events.off();﻿ // disable all active events
 
-      }, this);
+      //   this.scene.start("titleScreen");
+      //   this.scene.remove("winnerScreen2");
 
-      withFriend.on('pointerdown', function (pointer) {
+      // }, this);
 
-        console.log('down');
+      // withFriend.on('pointerdown', function (pointer) {
 
-        this.scene.start("roomScreen", Socket);
+      //   console.log('down');
 
-      }, this);
+      //   this.scene.start("roomScreen", Socket);
+
+      // }, this);
       
     }
 
