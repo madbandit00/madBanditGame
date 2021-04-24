@@ -31,15 +31,17 @@ class WinnerScreen2 extends Phaser.Scene {
       
       console.log("titleworking");
 
-      // playAgain.on('pointerdown', function (pointer) {
+      playAgain.on('pointerdown', function (pointer) {
 
-      //   this.registry.destroy(); // destroy registry
-      //   this.events.off();﻿ // disable all active events
+        // this.registry.destroy(); // destroy registry
+        // this.events.off();﻿ // disable all active events
 
-      //   this.scene.start("titleScreen");
-      //   this.scene.remove("winnerScreen2");
+        this.sys.game.destroy(true);
 
-      // }, this);
+        this.scene.start("titleScreen");
+        this.scene.remove("winnerScreen2");
+
+      }, this);
 
       // withFriend.on('pointerdown', function (pointer) {
 
