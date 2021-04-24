@@ -34,6 +34,7 @@ class WinnerScreen2 extends Phaser.Scene {
       playAgain.on('pointerdown', function (pointer) {
 
         this.scene.start("titleScreen");
+        this.scene.remove("winnerScreen2");
 
       }, this);
 
