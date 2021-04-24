@@ -568,6 +568,8 @@ class SMKSonata extends Phaser.Scene {
             //self.dealText.setColor('#00ffff');
             self.dropZone.data.values.cards = 0;
             self.dropZone2.data.values.cards = 0;
+            this.answerAcheck = false;
+            this.answerBcheck = false;
             self.dealCards();
 
             }
@@ -634,6 +636,8 @@ class SMKSonata extends Phaser.Scene {
             //self.dealText.setColor('#00ffff');
             self.dropZone.data.values.cards = 0;
             self.dropZone2.data.values.cards = 0;
+            this.answerAcheck = false;
+            this.answerBcheck = false;
             self.dealCards();
 
            
