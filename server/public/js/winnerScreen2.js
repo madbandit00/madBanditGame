@@ -3,12 +3,12 @@ class WinnerScreen2 extends Phaser.Scene {
       super({key: 'winnerScreen2'});
     }
 
-    init (data)
-    {
-      this.Socket = data;
-      //console.log(this.Socket.id.toString())
+    // init (data)
+    // {
+    //   this.Socket = data;
+    //   //console.log(this.Socket.id.toString())
      
-    }
+    // }
 
     preload(){
 
@@ -16,7 +16,7 @@ class WinnerScreen2 extends Phaser.Scene {
 
     create() {
 
-      //this.socket = io();
+      this.socket = io();
 
       this.socket = this.Socket;
 
@@ -25,25 +25,25 @@ class WinnerScreen2 extends Phaser.Scene {
       this.add.text(60, 20, "Jojo wins").setScale(2, 2).setColor('#00ffff');
       //this.dealText = this.add.text(75, 350, ['DEAL CARDS']).setFontSize(18).setFontFamily('Trebuchet MS').setColor('#00ffff').setInteractive();
       
-      let random = this.add.text(120, 60, "Play Random").setFontSize(80).setInteractive();
+      let playAgain = this.add.text(120, 60, "Play Again").setFontSize(80).setInteractive();
 
-      let withFriend = this.add.text(120, 350, "Play With Friend").setFontSize(80).setInteractive();
+      //let withFriend = this.add.text(120, 350, "Play With Friend").setFontSize(80).setInteractive();
       
       console.log("titleworking");
 
-      random.on('pointerdown', function (pointer) {
+      playAgain.on('pointerdown', function (pointer) {
 
-        this.scene.start("characterSelect", Socket);
-
-      }, this);
-
-      withFriend.on('pointerdown', function (pointer) {
-
-        console.log('down');
-
-        this.scene.start("roomScreen", Socket);
+        this.scene.start("titleScreen");
 
       }, this);
+
+      // withFriend.on('pointerdown', function (pointer) {
+
+      //   console.log('down');
+
+      //   this.scene.start("roomScreen", Socket);
+
+      // }, this);
       
     }
 
