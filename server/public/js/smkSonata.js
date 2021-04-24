@@ -684,7 +684,7 @@ class SMKSonata extends Phaser.Scene {
             self.scene.start("winnerScreen");
             self.scene.remove('smkSonata');
             //scores.blue = 0;
-            //self.socket.off('playerUpdates');
+            self.socket.off('playerUpdates');
             
         };
 
@@ -693,7 +693,7 @@ class SMKSonata extends Phaser.Scene {
             self.scene.start("winnerScreen2");
             self.scene.remove('smkSonata');
             //scores.red = 0;
-            //self.socket.off('playerUpdates');
+            self.socket.off('playerUpdates');
 
         }
         });
