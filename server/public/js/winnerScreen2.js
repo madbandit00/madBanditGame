@@ -3,6 +3,13 @@ class WinnerScreen2 extends Phaser.Scene {
       super({key: 'winnerScreen2'});
     }
 
+    init (data)
+    {
+      this.Socket = data;
+      //console.log(this.Socket.id.toString())
+     
+    }
+
     preload(){
 
     }
@@ -10,6 +17,8 @@ class WinnerScreen2 extends Phaser.Scene {
     create() {
 
       this.socket = io();
+
+      this.socket = this.Socket;
 
       let Socket = this.socket;
 
