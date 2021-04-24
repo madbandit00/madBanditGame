@@ -681,8 +681,8 @@ class SMKSonata extends Phaser.Scene {
         if (scores.blue > 29){
             console.log ('CCS wins')
             //this.scene.start("characterSelect", Socket);
-            //self.scene.stop('smkSonata');
             self.scene.start("winnerScreen");
+            self.scene.remove('smkSonata');
             //scores.blue = 0;
             //self.socket.off('playerUpdates');
             
@@ -690,8 +690,8 @@ class SMKSonata extends Phaser.Scene {
 
         if (scores.red > 29){
             console.log ('JOJO wins')
-            //self.scene.stop('smkSonata');
             self.scene.start("winnerScreen2");
+            self.scene.remove('smkSonata');
             //scores.red = 0;
             //self.socket.off('playerUpdates');
 
