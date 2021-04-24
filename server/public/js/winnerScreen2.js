@@ -3,24 +3,15 @@ class WinnerScreen2 extends Phaser.Scene {
       super({key: 'winnerScreen2'});
     }
 
-    init (data)
-    {
-      this.Socket = data;    
-      //console.log(this.Socket.id.toString());
-      //this.scene.remove('roomScreen');      
-    }
-
-
     preload(){
 
     }
 
     create() {
 
-      var self = this;
-      this.socket = this.Socket;
+      this.socket = io();
 
-      //let Socket = this.socket;
+      let Socket = this.socket;
 
       this.add.text(60, 20, "Jojo wins").setScale(2, 2).setColor('#00ffff');
       //this.dealText = this.add.text(75, 350, ['DEAL CARDS']).setFontSize(18).setFontFamily('Trebuchet MS').setColor('#00ffff').setInteractive();
@@ -33,7 +24,7 @@ class WinnerScreen2 extends Phaser.Scene {
 
       random.on('pointerdown', function (pointer) {
 
-        this.scene.start("characterSelect", this.socket);
+        this.scene.start("characterSelect", Socket);
 
       }, this);
 
