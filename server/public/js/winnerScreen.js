@@ -3,15 +3,21 @@ class WinnerScreen extends Phaser.Scene {
       super({key: 'winnerScreen'});
     }
 
+    init (data)
+    {
+      this.Socket = data;    
+      //console.log(this.Socket.id.toString());
+      //this.scene.remove('roomScreen');      
+    }
+
     preload(){
 
     }
 
     create() {
 
-      this.socket = io();
-
-      let Socket = this.socket;
+      var self = this;
+      this.socket = this.Socket;
 
       this.add.text(60, 20, "CCS wins").setScale(2, 2).setColor('#0000ff');
       //this.dealText = this.add.text(75, 350, ['DEAL CARDS']).setFontSize(18).setFontFamily('Trebuchet MS').setColor('#00ffff').setInteractive();
