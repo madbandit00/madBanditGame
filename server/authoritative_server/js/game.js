@@ -204,8 +204,8 @@ function create() {
       self.scores.red = 0;
       self.scores.blue = 0;
 
-      console.log(self.scores.red)
-      console.log(self.scores.blue)
+      //console.log(self.scores.red)
+      //console.log(self.scores.blue)
 
       io.emit('updateScore', self.scores);
 
