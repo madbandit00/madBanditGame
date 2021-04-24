@@ -33,10 +33,12 @@ class WinnerScreen2 extends Phaser.Scene {
 
       playAgain.on('pointerdown', function (pointer) {
 
-        // this.registry.destroy(); // destroy registry
-        // this.events.off();﻿ // disable all active events
+        this.scene.stop();
+        this.registry.destroy(); // destroy registry
+        this.events.off();﻿ // disable all active events
+        this.scene.restart();﻿﻿﻿﻿ // restart current scene
 
-        this.sys.game.destroy(true);
+        //this.sys.game.destroy(true);
 
         this.scene.start("titleScreen");
         this.scene.remove("winnerScreen2");
