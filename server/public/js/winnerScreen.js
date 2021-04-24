@@ -30,7 +30,7 @@ class WinnerScreen extends Phaser.Scene {
 
       random.on('pointerdown', function (pointer) {
 
-        this.scene.start("characterSelect", Socket);
+        this.scene.start("characterSelect", this.socket);
 
       }, this);
 
