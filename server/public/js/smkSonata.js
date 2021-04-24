@@ -42,6 +42,9 @@ class SMKSonata extends Phaser.Scene {
         
     var self = this;
     this.socket = this.Socket;
+
+    let Socket = this.socket;
+
     this.players = this.add.group();
 
     let cam = this.cameras.main;
