@@ -18,7 +18,7 @@ class TitleScreen extends Phaser.Scene {
       
       let random = this.add.text(120, 60, "Play Random").setFontSize(80).setInteractive();
 
-      let withFriend = this.add.text(120, 350, "Play With Friend").setFontSize(80).setInteractive();
+      //let withFriend = this.add.text(120, 350, "Play With Friend").setFontSize(80).setInteractive();
       
       console.log("titleworking");
 
@@ -28,13 +28,13 @@ class TitleScreen extends Phaser.Scene {
 
       }, this);
 
-      withFriend.on('pointerdown', function (pointer) {
+      // withFriend.on('pointerdown', function (pointer) {
 
-        console.log('down');
+      //   console.log('down');
 
-        this.scene.start("roomScreen", Socket);
+      //   this.scene.start("roomScreen", Socket);
 
-      }, this);
+      // }, this);
       
     }
 
