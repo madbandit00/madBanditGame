@@ -267,6 +267,8 @@ function create() {
     if (playersDetect.length > 2 ) {
 
       self.confirmedTexture = [];
+      io.emit('texturePicked', self.confirmedTexture);
+      console.log(self.confirmedTexture);
     }
 
     socket.on('textureKey', checkTexture);
