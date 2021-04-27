@@ -188,11 +188,6 @@ class SMKSonata extends Phaser.Scene {
         B: 'B. Kilo'
         },
         {
-        question: 'What is the ziggurat function?',
-        A: 'A. Library',
-        B: 'B. Place of worship'
-        },
-        {
         question: 'Which chromosomes pairing are for male?',
         A: 'A. X, Y',
         B: 'B. X, X'
@@ -201,7 +196,12 @@ class SMKSonata extends Phaser.Scene {
         question: '20% of 2 is equal to?',
         A: 'A. 0.4',
         B: 'B. 0.2'
-        }
+        },
+        {
+        question: 'What is the ziggurat function?',
+        A: 'A. Place of worship',
+        B: 'B. Library'
+        },
         
     ];
 
@@ -423,11 +423,11 @@ class SMKSonata extends Phaser.Scene {
 
         let renderQuestions = self.renderQ(500, 250, Phaser.Math.RND.pick(questionList));
         let indexCheck = questionList.indexOf(renderQuestions.text);
-        if (indexCheck <= 3){
+        if (indexCheck <= 2){
         this.answerBcheck = true;
         }
 
-        if (indexCheck > 3){
+        if (indexCheck > 2){
         this.answerAcheck = true;
         }
 
