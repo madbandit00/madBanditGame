@@ -189,8 +189,8 @@ class SMKSonata extends Phaser.Scene {
         },
         {
         question: 'What is the ziggurat function?',
-        A: 'A. Place of worship',
-        B: 'B. library'
+        A: 'A. Library',
+        B: 'B. Place of worship'
         },
         {
         question: 'Which chromosomes pairing are for male?',
