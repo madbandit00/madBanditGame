@@ -22,7 +22,7 @@ class WinnerScreen2 extends Phaser.Scene {
 
       let Socket = this.socket;
 
-      this.add.text(60, 20, "Jojo wins").setScale(2, 2).setColor('#FF0000');
+      this.add.text(60, 20, "Jojo wins").setScale(2, 2).setColor('#ae0700');
       //this.dealText = this.add.text(75, 350, ['DEAL CARDS']).setFontSize(18).setFontFamily('Trebuchet MS').setColor('#00ffff').setInteractive();
       
       let playAgain = this.add.text(120, 60, "Refresh to Play Again").setFontSize(80).setInteractive();
