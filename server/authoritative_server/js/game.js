@@ -264,7 +264,7 @@ function create() {
 
     }
 
-    if (playersDetect.length == 1 || playersDetect.length > 2 ) {
+    if (playersDetect.length == 1 || playersDetect.length > 1 ) {
 
       self.confirmedTexture = [];
 
