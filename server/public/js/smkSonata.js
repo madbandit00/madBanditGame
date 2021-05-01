@@ -301,6 +301,16 @@ class SMKSonata extends Phaser.Scene {
 
     
     }, 9000);
+
+    this.socket.on('starLocation', function (starLocation) {
+        console.log(self.star)
+        if (!self.star) {
+ 
+            self.star = self.add.image(starLocation.x, starLocation.y, 'star');
+        } else {
+            self.star.setPosition(starLocation.x, starLocation.y);
+        }
+        });
       
 
     this.dealCards = () => {
@@ -710,15 +720,7 @@ class SMKSonata extends Phaser.Scene {
         }
         });
 
-        this.socket.on('starLocation', function (starLocation) {
-        console.log(self.star)
-        if (!self.star) {
- 
-            self.star = self.add.image(starLocation.x, starLocation.y, 'star');
-        } else {
-            self.star.setPosition(starLocation.x, starLocation.y);
-        }
-        });
+
 
         this.cursors = this.input.keyboard.createCursorKeys();
         this.leftKeyPressed = false;
