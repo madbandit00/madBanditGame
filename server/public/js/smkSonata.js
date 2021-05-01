@@ -710,6 +710,7 @@ class SMKSonata extends Phaser.Scene {
         }
         });
 
+        this.star = undefined;
 
         this.socket.on('starLocation', function (starLocation) {
         if (!self.star) {
