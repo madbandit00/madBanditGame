@@ -710,11 +710,10 @@ class SMKSonata extends Phaser.Scene {
         }
         });
 
-        this.star = undefined;
-
         this.socket.on('starLocation', function (starLocation) {
-        if (self.star == undefined) {
-            console.log(self.star)
+        console.log(self.star)
+        if (!self.star) {
+ 
             self.star = self.add.image(starLocation.x, starLocation.y, 'star');
         } else {
             self.star.setPosition(starLocation.x, starLocation.y);
