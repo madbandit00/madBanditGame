@@ -710,28 +710,15 @@ class SMKSonata extends Phaser.Scene {
         }
         });
 
-        // this.socket.on('starLocation', function (starLocation) {
-        // console.log(self.star)
-        // if (!self.star) {
- 
-        //     self.star = self.add.image(starLocation.x, starLocation.y, 'star');
-        // } else {
-        //     self.star.setPosition(starLocation.x, starLocation.y);
-        // }
-        // });
-
-        this.socket.on('starLocation', getStarLocation);
-
-        function getStarLocation(starLocation) {
-    
-            console.log(self.star)
+        this.socket.on('starLocation', function (starLocation) {
+        console.log(self.star)
         if (!self.star) {
  
             self.star = self.add.image(starLocation.x, starLocation.y, 'star');
         } else {
             self.star.setPosition(starLocation.x, starLocation.y);
         }
-        }
+        });
 
         this.cursors = this.input.keyboard.createCursorKeys();
         this.leftKeyPressed = false;
