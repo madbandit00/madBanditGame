@@ -168,8 +168,7 @@ function create() {
     socket.emit('currentPlayers', players);
     // update all other players of the new player
     socket.broadcast.emit('newPlayer', players[socket.id]);
-    // send the star object to the new player
-    io.emit('starLocation', { x: self.star.x, y: self.star.y });
+
     // send the current scores
     socket.emit('updateScore', self.scores);
 
@@ -337,6 +336,8 @@ function create() {
     // };
 
     socket.on('dealCards', function () {
+        // send the star object to the new player
+        socket.emit('starLocation', { x: self.star.x, y: self.star.y });
         io.emit('dealCards');
     });
 
