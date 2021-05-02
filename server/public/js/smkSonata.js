@@ -299,6 +299,16 @@ class SMKSonata extends Phaser.Scene {
 
         this.scene.remove('roomScreen');
 
+        this.socket.on('starLocation', function (starLocation) {
+            console.log(self.star)
+            if (!self.star) {
+     
+                self.star = self.add.image(starLocation.x, starLocation.y, 'star');
+            } else {
+                self.star.setPosition(starLocation.x, starLocation.y);
+            }
+            });
+
     
     }, 9000);
       
@@ -710,15 +720,7 @@ class SMKSonata extends Phaser.Scene {
         }
         });
 
-        this.socket.on('starLocation', function (starLocation) {
-        console.log(self.star)
-        if (!self.star) {
- 
-            self.star = self.add.image(starLocation.x, starLocation.y, 'star');
-        } else {
-            self.star.setPosition(starLocation.x, starLocation.y);
-        }
-        });
+
 
         this.cursors = this.input.keyboard.createCursorKeys();
         this.leftKeyPressed = false;
