@@ -84,10 +84,13 @@ function create() {
       scoreCheckerBlue += 10;
 
     }
+    console.log(self.scores.red)
+    console.log(self.scores.blue)
+
+    
     //self.star.setPosition(randomPosition(700), randomPosition(500));
     io.emit('updateScore', self.scores);
     io.emit('destroyStar');
-    this.star = this.physics.add.image(1100, 400, 'star');
     //io.emit('starLocation', { x: self.star.x, y: self.star.y });
   }); 
 
