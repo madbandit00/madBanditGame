@@ -373,6 +373,7 @@ function update() {
       
     if (input.left) {
       player.setPosition(1000, 300); 
+      self.input.left = false;
  
       //console.log(scoreCheckerRed);
     }
