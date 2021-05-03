@@ -342,9 +342,10 @@ function create() {
 
     socket.on('dealCards', function () {
         // send the star object to the new player
-        socket.emit('starLocation', { x: self.star.x, y: self.star.y });
+        
         io.emit('dealCards');
         self.star = self.physics.add.image(1100, 400, 'star');
+        socket.emit('starLocation', { x: self.star.x, y: self.star.y });
 
     });
 
