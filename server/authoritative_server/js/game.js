@@ -84,9 +84,6 @@ function create() {
       scoreCheckerBlue += 10;
 
     }
-    console.log(self.scores.red)
-    console.log(self.scores.blue)
-
     
     //self.star.setPosition(randomPosition(700), randomPosition(500));
     io.emit('updateScore', self.scores);
@@ -344,7 +341,7 @@ function create() {
         // send the star object to the new player
         socket.emit('starLocation', { x: self.star.x, y: self.star.y });
         io.emit('dealCards');
-        console.log(this.players)
+        console.log(self.players)
     });
 
     socket.on('cardPlayed', function (gameObject, isPlayerA) {
