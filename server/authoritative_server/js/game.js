@@ -344,6 +344,8 @@ function create() {
         // send the star object to the new player
         socket.emit('starLocation', { x: self.star.x, y: self.star.y });
         io.emit('dealCards');
+        self.star.x = 1100;
+        self.star.y = 400;
 
     });
 
