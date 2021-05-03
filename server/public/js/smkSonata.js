@@ -307,6 +307,8 @@ class SMKSonata extends Phaser.Scene {
         //console.log (self.confirmTexture);
 
         console.log('player A: ' + self.isPlayerA);
+
+        this.leftKeyPressed = false;
         
         setTimeout(() => {
             if (self.isPlayerA) {
