@@ -723,7 +723,7 @@ class SMKSonata extends Phaser.Scene {
         this.socket.on('destroyStar', function () {
             console.log('destroyStar')
             self.star.destroy();
-            this.leftKeyPressed = false
+            self.leftKeyPressed = false
 
         });
 
