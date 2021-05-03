@@ -70,7 +70,7 @@ function create() {
 
   this.isPlayerA = false;
 
-  this.star = this.physics.add.image(1100, 400, 'star');
+  //this.star = this.physics.add.image(1100, 400, 'star');
   this.physics.add.collider(this.players);
 
   this.input.addPointer(2);
@@ -319,7 +319,7 @@ function create() {
     function returnTexture(confirmTextureKey) {
       self.confirmedTexture = self.confirmedTexture;
       
-{
+      {
       io.emit('texturePicked', self.confirmedTexture);
       console.log("this is random");
       }
@@ -339,9 +339,10 @@ function create() {
 
     socket.on('dealCards', function () {
         // send the star object to the new player
+        this.star = this.physics.add.image(1100, 400, 'star');
         socket.emit('starLocation', { x: self.star.x, y: self.star.y });
         io.emit('dealCards');
-        console.log(self.players)
+
     });
 
     socket.on('cardPlayed', function (gameObject, isPlayerA) {
