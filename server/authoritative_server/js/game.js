@@ -343,8 +343,8 @@ function create() {
     socket.on('dealCards', function () {
         // send the star object to the new player
         socket.emit('starLocation', { x: self.star.x, y: self.star.y });
-        io.emit('playerUpdates', players);
         io.emit('dealCards');
+        console.log(this.players)
     });
 
     socket.on('cardPlayed', function (gameObject, isPlayerA) {
@@ -398,7 +398,7 @@ function update() {
   });
   
   this.physics.world.wrap(this.players, 5);
-  //io.emit('playerUpdates', players);
+  io.emit('playerUpdates', players);
 }
 
 function randomPosition(max) {
