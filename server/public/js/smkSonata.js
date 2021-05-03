@@ -723,8 +723,7 @@ class SMKSonata extends Phaser.Scene {
         this.socket.on('destroyStar', function () {
             console.log('destroyStar')
             self.star.destroy();
-            self.leftKeyPressed = false
-
+            
         });
 
         this.cursors = this.input.keyboard.createCursorKeys();
