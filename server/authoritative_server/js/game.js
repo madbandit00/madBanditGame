@@ -84,9 +84,10 @@ function create() {
       scoreCheckerBlue += 10;
 
     }
-    self.star.setPosition(randomPosition(700), randomPosition(500));
+    //self.star.setPosition(randomPosition(700), randomPosition(500));
     io.emit('updateScore', self.scores);
-    io.emit('starLocation', { x: self.star.x, y: self.star.y });
+    io.emit('destroyStar');
+    //io.emit('starLocation', { x: self.star.x, y: self.star.y });
   }); 
 
   io.on('connection', function (socket) {
