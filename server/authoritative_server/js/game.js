@@ -91,7 +91,6 @@ function create() {
     io.emit('updateScore', self.scores);
     io.emit('destroyStar');
 
-    input.left = false;
     //io.emit('starLocation', { x: self.star.x, y: self.star.y });
   }); 
 
@@ -370,7 +369,7 @@ function create() {
 function update() {
   this.players.getChildren().forEach((player) => {
 
-    this.input.addPointer(1);
+    this.input.addPointer(100);
     const input = players[player.playerId].input;
       
     if (input.left) {
