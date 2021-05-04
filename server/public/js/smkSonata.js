@@ -744,6 +744,7 @@ class SMKSonata extends Phaser.Scene {
     if (this.answerBcounter ==+ 1 && this.answerBcheck == true || this.answerAcounter ==+ 1 && this.answerAcheck == true  ) {
         this.leftKeyPressed = true;
         this.socket.emit('playerInput', { left: this.leftKeyPressed })
+        console.log(this.leftKeyPressed )
 
     } 
 
