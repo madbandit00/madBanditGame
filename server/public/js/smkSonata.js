@@ -652,6 +652,15 @@ class SMKSonata extends Phaser.Scene {
 
         }
 
+        if ( this.answerBcounter == 1 && this.answerBcheck == true ){
+            if(playerCardImage[0].includes(gameObject.texture.key)){
+            self.answerBcounter=10
+            //console.log(self.answerBcounter);
+            self.socket.emit('points', self.answerBcounter);
+            }
+                
+        }
+
         console.log("cards dropped" + (self.dropZone.data.values.cards + self.dropZone2.data.values.cards))
         
         return dropZone2
@@ -741,7 +750,7 @@ class SMKSonata extends Phaser.Scene {
     const right = this.rightKeyPressed;
     const up = this.upKeyPressed;
 
-    if (this.answerBcounter ==+ 1 && this.answerBcheck == true) {
+    if (this.answerBcounter == 1 && this.answerBcheck == true) {
         this.leftKeyPressed = true;
         this.socket.emit('playerInput', { left: this.leftKeyPressed })
 
