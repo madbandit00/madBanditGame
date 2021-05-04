@@ -705,8 +705,8 @@ class SMKSonata extends Phaser.Scene {
             self.socket.off('playerUpdates');
             self.socket.off('updateScore');
 
-            self.answerBcounter = 0;
-            self.answerBcheck = false;
+            this.answerBcounter = 0;
+            this.answerBcheck = false;
             
         };
 
@@ -719,8 +719,8 @@ class SMKSonata extends Phaser.Scene {
             self.socket.off('playerUpdates');
             self.socket.off('updateScore');
 
-            self.answerBcounter = 0;
-            self.answerBcheck = false;
+            this.answerBcounter = 0;
+            this.answerBcheck = false;
 
         }
         });
@@ -756,7 +756,7 @@ class SMKSonata extends Phaser.Scene {
     const right = this.rightKeyPressed;
     const up = this.upKeyPressed;
 
-    if (self.answerBcounter == 1 && self.answerBcheck == true) {
+    if (this.answerBcounter == 1 && this.answerBcheck == true) {
         this.leftKeyPressed = true;
         this.socket.emit('playerInput', { left: this.leftKeyPressed })
 
