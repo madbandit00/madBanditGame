@@ -75,7 +75,7 @@ function create() {
 
   this.input.addPointer(2);
 
-  this.physics.add.overlap(this.players, this.star, function (star, player) {
+  this.physics.add.overlap(this.players, self.star, function (star, player) {
     if (players[player.playerId].team === 'red' ) {
       self.scores.red += 10;
       scoreCheckerRed += 10;
@@ -345,9 +345,10 @@ function create() {
         
         io.emit('dealCards');
         //self.star = self.physics.add.image(1100, 400, 'star');
-        socket.emit('starLocation', { x: self.star.x, y: self.star.y })
 
-        this.star = this.physics.add.image(1100, 400, 'star');
+        self.star = self.physics.add.image(1100, 400, 'star');
+
+        socket.emit('starLocation', { x: self.star.x, y: self.star.y })
 
     });
 
