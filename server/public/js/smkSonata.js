@@ -652,14 +652,14 @@ class SMKSonata extends Phaser.Scene {
 
         }
 
-        if ( self.answerBcounter == 1 && self.answerBcheck == true ){
+        // if ( self.answerBcounter == 1 && self.answerBcheck == true ){
             
-            self.answerBcounter=10
-            //console.log(self.answerBcounter);
-            self.socket.emit('points', self.answerBcounter);
+        //     self.answerBcounter=10
+        //     //console.log(self.answerBcounter);
+        //     self.socket.emit('points', self.answerBcounter);
             
                 
-        }
+        // }
 
         console.log("cards dropped" + (self.dropZone.data.values.cards + self.dropZone2.data.values.cards))
         
@@ -704,6 +704,9 @@ class SMKSonata extends Phaser.Scene {
             scores.red = 0;
             self.socket.off('playerUpdates');
             self.socket.off('updateScore');
+
+            self.answerBcounter = 0;
+            self.answerBcheck = false;
             
         };
 
@@ -715,6 +718,9 @@ class SMKSonata extends Phaser.Scene {
             scores.red = 0;
             self.socket.off('playerUpdates');
             self.socket.off('updateScore');
+
+            self.answerBcounter = 0;
+            self.answerBcheck = false;
 
         }
         });
@@ -750,11 +756,11 @@ class SMKSonata extends Phaser.Scene {
     const right = this.rightKeyPressed;
     const up = this.upKeyPressed;
 
-    // if (this.answerBcounter == 1 && this.answerBcheck == true) {
-    //     this.leftKeyPressed = true;
-    //     this.socket.emit('playerInput', { left: this.leftKeyPressed })
+    if (this.answerBcounter == 1 && this.answerBcheck == true) {
+        this.leftKeyPressed = true;
+        this.socket.emit('playerInput', { left: this.leftKeyPressed })
 
-    // } 
+    } 
 
     // if (this.answerBcounter ==+ 1 && this.answerBcheck == true || this.answerAcounter ==+ 1 && this.answerAcheck == true  ) {
     //     this.leftKeyPressed = true;
