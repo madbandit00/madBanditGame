@@ -90,6 +90,8 @@ function create() {
     //self.star.setPosition(randomPosition(700), randomPosition(500));
     io.emit('updateScore', self.scores);
     io.emit('destroyStar');
+
+    input.left = false;
     //io.emit('starLocation', { x: self.star.x, y: self.star.y });
   }); 
 
