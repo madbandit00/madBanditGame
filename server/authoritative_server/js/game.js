@@ -345,6 +345,7 @@ function create() {
         io.emit('dealCards');
         //self.star = self.physics.add.image(1100, 400, 'star');
         socket.emit('starLocation', { x: self.star.x, y: self.star.y });
+        console.log (self.players);
 
     });
 
