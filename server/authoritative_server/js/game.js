@@ -73,7 +73,7 @@ function create() {
   this.star = this.physics.add.image(1100, 400, 'star');
   this.physics.add.collider(this.players);
 
-  this.input.addPointer(100);
+  this.input.addPointer(2);
 
   this.physics.add.overlap(this.players, this.star, function (star, player) {
     if (players[player.playerId].team === 'red' ) {
@@ -345,6 +345,7 @@ function create() {
         io.emit('dealCards');
         //self.star = self.physics.add.image(1100, 400, 'star');
         socket.emit('starLocation', { x: self.star.x, y: self.star.y });
+        console.log(self.star.x)
 
     });
 
