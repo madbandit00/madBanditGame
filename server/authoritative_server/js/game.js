@@ -70,7 +70,6 @@ function create() {
 
   this.isPlayerA = false;
 
-  this.star = this.physics.add.image(1100, 400, 'star');
   this.physics.add.collider(this.players);
 
   this.input.addPointer(2);
@@ -85,7 +84,7 @@ function create() {
 
     }
 
-    self.star.x = 10;
+    self.star.destroy();
     
     //self.star.setPosition(randomPosition(700), randomPosition(500));
     io.emit('updateScore', self.scores);
@@ -344,6 +343,8 @@ function create() {
         // send the star object to the new player
         
         io.emit('dealCards');
+        this.star = self.physics.add.image(1100, 400, 'star');
+
         //self.star = self.physics.add.image(1100, 400, 'star');
         socket.emit('starLocation', { x: self.star.x, y: self.star.y })
 
