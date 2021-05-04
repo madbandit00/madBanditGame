@@ -742,8 +742,9 @@ class SMKSonata extends Phaser.Scene {
     const up = this.upKeyPressed;
 
     if (this.answerBcounter == 1 && this.answerBcheck == true || this.answerAcounter == 1 && this.answerAcheck == true  ) {
-        this.leftKeyPressed = true
-        console.log('leftKey');
+        this.leftKeyPressed = true;
+            this.leftKeyPressed = false;
+
 
     } 
 
