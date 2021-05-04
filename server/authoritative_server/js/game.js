@@ -74,7 +74,7 @@ function create() {
 
   this.input.addPointer(2);
 
-  this.physics.add.overlap(this.players, this.star, function (star, player) {
+  this.physics.add.overlap(this.players, self.star, function (star, player) {
     if (players[player.playerId].team === 'red' ) {
       self.scores.red += 10;
       scoreCheckerRed += 10;
