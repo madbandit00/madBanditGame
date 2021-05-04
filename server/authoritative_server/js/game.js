@@ -70,7 +70,7 @@ function create() {
 
   this.isPlayerA = false;
 
-  this.star = this.physics.add.image(1100, 400, 'star');
+  
   this.physics.add.collider(this.players);
 
   this.input.addPointer(2);
@@ -346,6 +346,8 @@ function create() {
         io.emit('dealCards');
         //self.star = self.physics.add.image(1100, 400, 'star');
         socket.emit('starLocation', { x: self.star.x, y: self.star.y })
+
+        this.star = this.physics.add.image(1100, 400, 'star');
 
     });
 
