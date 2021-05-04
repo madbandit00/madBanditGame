@@ -653,11 +653,11 @@ class SMKSonata extends Phaser.Scene {
         }
 
         if ( this.answerBcounter == 1 && this.answerBcheck == true ){
-            if(playerCardImage[0].includes(gameObject.texture.key)){
+            
             self.answerBcounter=10
             //console.log(self.answerBcounter);
             self.socket.emit('points', self.answerBcounter);
-            }
+            
                 
         }
 
