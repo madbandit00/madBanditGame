@@ -85,7 +85,7 @@ function create() {
 
     }
 
-    console.log(self.star.x)
+    self.star.destroy()
     
     //self.star.setPosition(randomPosition(700), randomPosition(500));
     io.emit('updateScore', self.scores);
