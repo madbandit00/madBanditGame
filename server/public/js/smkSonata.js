@@ -741,11 +741,20 @@ class SMKSonata extends Phaser.Scene {
     const right = this.rightKeyPressed;
     const up = this.upKeyPressed;
 
-    if (this.answerBcounter ==+ 1 && this.answerBcheck == true ) {
+    if (this.answerBcounter ==+ 1 && this.answerBcheck == true) {
         this.leftKeyPressed = true;
-        self.socket.emit('playerInput', { left: this.leftKeyPressed })
+        this.socket.emit('playerInput', { left: this.leftKeyPressed })
+        console.log(this.leftKeyPressed )
 
     } 
+
+    // if (this.answerBcounter ==+ 1 && this.answerBcheck == true || this.answerAcounter ==+ 1 && this.answerAcheck == true  ) {
+    //     this.leftKeyPressed = true;
+    //     this.socket.emit('playerInput', { left: this.leftKeyPressed })
+    //     console.log(this.leftKeyPressed )
+
+    // } 
+
 
     // if (answerBcounter == 2 && answerBcheck == true) {
     //   this.leftKeyPressed = true;
