@@ -172,7 +172,7 @@ function create() {
     // send the players object to the new player
     socket.emit('currentPlayers', players);
     // update all other players of the new player
-    socket.broadcast.emit('newPlayer', players[socket.id]);
+    socket.emit('newPlayer', players[socket.id]);
 
     // send the current scores
     socket.emit('updateScore', self.scores);
@@ -369,7 +369,7 @@ function create() {
 function update() {
   this.players.getChildren().forEach((player) => {
 
-    this.input.addPointer(100);
+    this.input.addPointer(1);
     const input = players[player.playerId].input;
       
     if (input.left) {
