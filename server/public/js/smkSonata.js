@@ -724,7 +724,7 @@ class SMKSonata extends Phaser.Scene {
         });
 
         this.socket.on('starLocation', function (starLocation) {
-        console.log(self.star)
+        //console.log(self.star)
         if (!self.star) {
  
             self.star = self.add.image(starLocation.x, starLocation.y, 'star');
