@@ -343,7 +343,7 @@ function create() {
         // send the star object to the new player
         
         io.emit('dealCards');
-        this.star = self.physics.add.image(1100, 400, 'star');
+        self.star = self.physics.add.image(1100, 400, 'star');
 
         //self.star = self.physics.add.image(1100, 400, 'star');
         socket.emit('starLocation', { x: self.star.x, y: self.star.y })
