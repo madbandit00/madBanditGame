@@ -652,7 +652,7 @@ class SMKSonata extends Phaser.Scene {
 
         }
 
-        if ( this.answerBcounter == 1 && this.answerBcheck == true ){
+        if ( self.answerBcounter == 1 && self.answerBcheck == true ){
             
             self.answerBcounter=10
             //console.log(self.answerBcounter);
