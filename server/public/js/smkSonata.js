@@ -752,7 +752,7 @@ class SMKSonata extends Phaser.Scene {
     
     if (this.cursors.right.isDown ) {
         this.rightKeyPressed = true;
-    } else if (this.answerBcounter !== 1){
+    } else if (this.answerBcounter !==+ 1){
         this.leftKeyPressed = false;
         this.rightKeyPressed = false;
     }
