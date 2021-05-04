@@ -85,7 +85,7 @@ function create() {
 
     }
 
-    //self.star.destroy();
+    console.log(self.star.x)
     
     //self.star.setPosition(randomPosition(700), randomPosition(500));
     io.emit('updateScore', self.scores);
@@ -172,7 +172,7 @@ function create() {
     // send the players object to the new player
     socket.emit('currentPlayers', players);
     // update all other players of the new player
-    socket.emit('newPlayer', players[socket.id]);
+    socket.broadcast.emit('newPlayer', players[socket.id]);
 
     // send the current scores
     socket.emit('updateScore', self.scores);
