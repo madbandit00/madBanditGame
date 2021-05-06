@@ -184,8 +184,13 @@ class SMKSonata extends Phaser.Scene {
         },
         {
         question: 'What unit is smaller then giga?',
-        A: 'A. Tera',
+        A: 'A. Glia',
         B: 'B. Kilo'
+        },
+        {
+        question: 'What carries nerve impulses away from the cell body?',
+        A: 'A. Tera',
+        B: 'B. Axon'            
         },
         {
         question: 'Which chromosomes pairing are for male?',
@@ -205,7 +210,7 @@ class SMKSonata extends Phaser.Scene {
         
     ];
 
-    let questionList = [questions[0].question, questions[1].question, questions[2].question, questions[3].question, questions[4].question, questions[5].question];
+    let questionList = [questions[0].question, questions[1].question, questions[2].question, questions[3].question, questions[4].question, questions[5].question, questions[6].question];
 
 
     // let Q1 = ['What year did world war 2 ended?', 'A. 1957', 'B. 1945'];
@@ -214,8 +219,8 @@ class SMKSonata extends Phaser.Scene {
     // let Q4 = ['Which chromosomes pairing are for male?', 'A. X, Y', 'B. X, X'];
     // let Q5 = ['20% of 2 is equal to?', 'A. 0.4', 'B. 0.2'];
 
-    let answerA = [questions[0].A, questions[1].A, questions[2].A, questions[3].A, questions[4].A, questions[5].A];
-    let answerB = [questions[0].B, questions[1].B, questions[2].B, questions[3].B, questions[4].B, questions[5].B];
+    let answerA = [questions[0].A, questions[1].A, questions[2].A, questions[3].A, questions[4].A, questions[5].A, questions[6].A];
+    let answerB = [questions[0].B, questions[1].B, questions[2].B, questions[3].B, questions[4].B, questions[5].B, questions[6].B];
 
 
     this.renderQ = (x, y, questionList) => {
@@ -423,11 +428,11 @@ class SMKSonata extends Phaser.Scene {
 
         let renderQuestions = self.renderQ(500, 250, Phaser.Math.RND.pick(questionList));
         let indexCheck = questionList.indexOf(renderQuestions.text);
-        if (indexCheck <= 2){
+        if (indexCheck <= 3){
         this.answerBcheck = true;
         }
 
-        if (indexCheck > 2){
+        if (indexCheck > 3){
         this.answerAcheck = true;
         }
 
