@@ -184,13 +184,13 @@ class SMKSonata extends Phaser.Scene {
         },
         {
         question: 'What unit is smaller then giga?',
-        A: 'A. Glia',
+        A: 'A. Tera',
         B: 'B. Kilo'
         },
         {
         question: 'What carries nerve impulses away from the cell body?',
-        A: 'A. Tera',
-        B: 'B. Axon'            
+        A: 'A. Glia',
+        B: 'B. Axon'       
         },
         {
         question: 'Which chromosomes pairing are for male?',
