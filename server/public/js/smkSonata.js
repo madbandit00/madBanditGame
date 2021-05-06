@@ -188,7 +188,7 @@ class SMKSonata extends Phaser.Scene {
         B: 'B. Kilo'
         },
         {
-        question: 'What carries nerve impulses away from the cell body?',
+        question: 'What carries nerve impulses out of the cell body?',
         A: 'A. Glia',
         B: 'B. Axon'       
         },
