@@ -5,6 +5,8 @@ class TitleScreen extends Phaser.Scene {
 
     preload(){
 
+      this.cameras.main.backgroundColor = Phaser.Display.Color.HexStringToColor("#3498db");
+
     }
 
     create() {
