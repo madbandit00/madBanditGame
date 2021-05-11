@@ -307,7 +307,7 @@ class SMKSonata extends Phaser.Scene {
     
     }, 9000);
 
-    let specialMove = this.add.text(200, 100, "Special Move").setFontSize(40).setInteractive();
+    let specialMove = this.add.text(160, 100, "Special Move").setFontSize(40).setColor('#808080').setInteractive();
       
 
     this.dealCards = () => {
