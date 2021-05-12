@@ -167,8 +167,8 @@ class SMKSonata extends Phaser.Scene {
 
     //this.dealer = new Dealer(this);
 
-    this.blueScoreText = this.add.text(20, 16, '', { fontSize: '32px', fill: '#0000FF' });
-    this.redScoreText = this.add.text(1060, 16, '', { fontSize: '32px', fill: '#FF0000' });
+    this.blueScoreText = this.add.text(100, 16, '', { fontSize: '32px', fill: '#0000FF' });
+    this.redScoreText = this.add.text(1100, 16, '', { fontSize: '32px', fill: '#FF0000' });
 
     let questions = [
         
