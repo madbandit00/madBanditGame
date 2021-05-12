@@ -167,8 +167,8 @@ class SMKSonata extends Phaser.Scene {
 
     //this.dealer = new Dealer(this);
 
-    this.blueScoreText = this.add.text(100, 16, '', { fontSize: '32px', fill: '#0000FF' });
-    this.redScoreText = this.add.text(1100, 16, '', { fontSize: '32px', fill: '#FF0000' });
+    this.blueScoreText = this.add.text(80, 16, '', { fontSize: '32px', fill: '#0000FF' });
+    this.redScoreText = this.add.text(1130, 16, '', { fontSize: '32px', fill: '#FF0000' });
 
     let questions = [
         
@@ -307,7 +307,7 @@ class SMKSonata extends Phaser.Scene {
     
     }, 9000);
 
-    let specialMove = this.add.text(70, 100, "Special Move").setFontSize(40).setColor('#808080').setInteractive();
+    let specialMove = this.add.text(50, 100, "Special Move").setFontSize(40).setColor('#808080').setInteractive();
 
     let specialMove2 = this.add.text(1050, 100, "Special Move").setFontSize(40).setColor('#808080').setInteractive();
       
