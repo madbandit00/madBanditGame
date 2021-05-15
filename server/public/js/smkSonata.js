@@ -94,7 +94,7 @@ class SMKSonata extends Phaser.Scene {
 
         self.confirmedTextures.push(ConfirmedTexture);
 
-        console.log(self.confirmedTextures);
+        //console.log(self.confirmedTextures);
 
     };
     
@@ -543,7 +543,7 @@ class SMKSonata extends Phaser.Scene {
 
         this.input.on('drop', function (pointer, gameObject, dropZone) {
 
-        console.log(self.dropZone.data.values.cards + self.dropZone2.data.values.cards);
+        //console.log(self.dropZone.data.values.cards + self.dropZone2.data.values.cards);
 
         //console.log(gameObject.texture.key);
         if (dropZone.name == "dropZone1") {
@@ -571,7 +571,7 @@ class SMKSonata extends Phaser.Scene {
             self.answerAcounter=1;
             self.socket.emit('points', self.answerAcounter);
             }
-            console.log('A working');
+            //console.log('A working');
 
             
         }
@@ -613,7 +613,7 @@ class SMKSonata extends Phaser.Scene {
         // });
         //console.log(gameObject.texture.key);
 
-        console.log(self.dropZone.data.values.cards + self.dropZone2.data.values.cards);
+        //console.log(self.dropZone.data.values.cards + self.dropZone2.data.values.cards);
 
         if (dropZone2.name == "dropZone2") {
 
@@ -640,7 +640,7 @@ class SMKSonata extends Phaser.Scene {
             //console.log(self.answerBcounter);
             self.socket.emit('points', self.answerBcounter);
             }
-            console.log('B working');
+            //console.log('B working');
                 
         }
 
