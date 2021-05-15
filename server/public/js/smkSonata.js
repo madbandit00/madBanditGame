@@ -716,7 +716,11 @@ class SMKSonata extends Phaser.Scene {
 
             this.sys.game.destroy(true);
             
-        };
+            };
+
+        if (scores.blue > 2){
+            console.log ('specialMove1')
+            }
 
         if (scores.red > 29){
             console.log ('JOJO wins')
@@ -729,7 +733,11 @@ class SMKSonata extends Phaser.Scene {
 
             this.sys.game.destroy(true);
 
-        }
+            };
+
+        if (scores.red > 2){
+                console.log ('specialMove2')
+            }
         });
 
         this.socket.on('starLocation', function (starLocation) {
